@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const { sequelize } = require('./db/models');
 const session = require('express-session');
+const { sessionSecret } = require('./config');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -17,7 +18,13 @@ app.set('view engine', 'pug');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(cookieParser(sessionSecret));
+app.use(session({
+  name: 'ggplays.sid',
+  secret: sessionSecret,
+  resave: false,
+  saveUninitialized: false,
+}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // set up session middleware

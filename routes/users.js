@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { check, validationResult } = require('express-validator');
 const { User } = require('../db/models')
+const { loginUser } = require('../auth');
 const { csrfProtection, asyncHandler } = require('./utils');
 const bcrypt = require('bcryptjs');
 const db = require('../db/models');
@@ -34,7 +35,7 @@ const userValidators = [
     .withMessage('Please provide a valid email')
     .isLength({ max: 30 })
     .withMessage('Email must not be more than 30 characters')
-    .isEmail({checkFalsy: true})
+    .isEmail({ checkFalsy: true })
     .withMessage('Input must be a valid email')
     .custom(value => {
       return User.findOne({ where: { email: value } }).then(user => {
@@ -79,6 +80,7 @@ router.post('/sign-up', csrfProtection, userValidators, asyncHandler(async (req,
     const hashedPassword = await bcrypt.hash(password, 10);
     user.hashed_password = hashedPassword;
     await user.save();
+    loginUser(req, res, user);
     res.redirect('/');
   } else {
     const errors = validatorErrors.array().map((error) => error.msg);
@@ -121,7 +123,7 @@ router.post('/login', csrfProtection, loginValidators,
     const validatorErrors = validationResult(req);
 
     if (validatorErrors.isEmpty()) {
-      const user = await User.findOne({ where: {email: email}});
+      const user = await User.findOne({ where: { email: email } });
 
       if (user !== null) {
         // If the user exists then compare their password
@@ -131,6 +133,7 @@ router.post('/login', csrfProtection, loginValidators,
         if (passwordMatch) {
           // If the password hashes match, then login the user
           // and redirect them to the default route.
+          loginUser(req, res, user);
           return res.redirect('/');
         }
       }
