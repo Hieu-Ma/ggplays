@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs');
 
 const { User } = require('../db/models')
 const { csrfProtection, asyncHandler } = require('./utils');
-const { loginUser, logoutUser } = require('../auth');
+const { loginUser, logoutUser, requireAuth } = require('../auth');
 const db = require('../db/models');
 
 router.get('/sign-up', csrfProtection, asyncHandler(async (req, res) => {
@@ -154,12 +154,23 @@ router.post('/login', csrfProtection, loginValidators,
 
 router.post('/logout', (req, res) => {
   logoutUser(req, res);
-  res.redirect('/login');
+  res.redirect('/users/login');
 });
 
 /* GET users listing. */
-router.get('/', function (req, res, next) {
+router.get('/', (req, res, next) => {
   res.send('respond with a resource');
 });
+
+router.get('/profile', requireAuth, asyncHandler(async (req, res, next) => {
+  // const userId = parseInt(req.params.userId, 10);
+  // res.locals.user
+  const { userId } = req.session.auth;
+  const user = await User.findByPk(userId);
+  // console.log("test log " + user.username);
+  // const username = await User.findByPk(userId);
+  // let user = User;
+  res.render('profile', {user});
+}));
 
 module.exports = router;

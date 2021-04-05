@@ -6,6 +6,9 @@ html
         link(rel='stylesheet' href='/stylesheets/reset.css')
   body
     h1= title
+    a( href='/users/profile') Profile
+    button(class="demo_login") 
+      a(href='/') Demo Login
     if locals.authenticated
       span(class='navbar-text px-4') Welcome #{user.username}!
       form(class='form-inline pr-4' action='/users/logout' method='post')
