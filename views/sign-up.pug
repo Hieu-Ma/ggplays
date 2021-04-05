@@ -1,0 +1,12 @@
+extends layout.pug
+
+block content
+  //- +validationErrorSummary(errors)
+  form(action='/sign-up' method='post')
+    input(type='hidden' name='_csrf' value=csrfToken)
+    +field('Username', 'username', user.username)
+    +field('Email Address', 'email', user.email)
+    +field('Password', 'password', user.password, 'password')
+    +field('Confirm Password', 'confirmPassword', '', 'password')
+    div(class='py-4')
+      button(type='submit' class='btn btn-primary') Sign Up
