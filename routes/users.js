@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const { check, validationResult } = require('express-validator');
-const { User } = require('../db/models')
-const { loginUser } = require('../auth');
-const { csrfProtection, asyncHandler } = require('./utils');
 const bcrypt = require('bcryptjs');
-const db = require('../db/models');
 
+const { User } = require('../db/models')
+const { csrfProtection, asyncHandler } = require('./utils');
+const { loginUser, logoutUser } = require('../auth');
+const db = require('../db/models');
 
 router.get('/sign-up', csrfProtection, asyncHandler(async (req, res) => {
   const user = User.build();
@@ -151,6 +151,11 @@ router.post('/login', csrfProtection, loginValidators,
       csrfToken: req.csrfToken(),
     });
   }));
+
+router.post('/logout', (req, res) => {
+  logoutUser(req, res);
+  res.redirect('/login');
+});
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
