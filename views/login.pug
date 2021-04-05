@@ -4,10 +4,12 @@ include utils.pug
 
 block content
   +validationErrorSummary(errors)
-  form(action='/user/login' method='post')
+  form(action='/users/login' method='post')
     input(type='hidden' name='_csrf' value=csrfToken)
-    +field('Email Address', 'emailAddress', emailAddress)
+    +field('Email Address', 'email', email)
     +field('Password', 'password', null, 'password')
     div(class='py-4')
       button(type='submit' class='btn btn-primary') Login
       a(href='/' class='btn btn-warning ml-2') Cancel
+  div
+    p: a(href='/users/sign-up') Don't have an account?

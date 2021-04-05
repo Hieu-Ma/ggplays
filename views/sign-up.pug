@@ -7,9 +7,11 @@ block content
   form(action='/users/sign-up' method='post')
     input(type='hidden' name='_csrf' value=csrfToken)
     +field('Username', 'username', user.username)
-    +field('Email Address', 'email', user.email)
+    +field('Email Address', 'email', user.email, 'email')
     +field('Password', 'password', user.password, 'password')
     +field('Confirm Password', 'confirmPassword', '', 'password')
     div(class='py-4')
       button(type='submit' class='btn btn-primary') Sign Up
       a(href='/' class='btn btn-warning ml-2') Cancel
+  div
+    p: a(href='/users/login') Already have an account? Log in!
