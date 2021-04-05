@@ -14,7 +14,46 @@ router.get('/sign-up', csrfProtection, asyncHandler(async (req, res) => {
 }));
 
 const userValidators = [
-
+  check('username')
+    .exists({ checkFalsy: true })
+    .withMessage('Please provide a valid username')
+    .isLength({ max: 30 })
+    .withMessage('Username must not be more than 30 characters')
+    .custom(value => {
+      return User.findOne({ where: { username: value } }).then(user => {
+        if (user) {
+          return Promise.reject('Username is already in use');
+        }
+      });
+    }),
+  check('email')
+    .exists({ checkFalsy: true })
+    .withMessage('Please provide a valid email')
+    .isLength({ max: 30 })
+    .withMessage('Email must not be more than 30 characters')
+    .custom(value => {
+      return User.findOne({ where: { email: value } }).then(user => {
+        if (user) {
+          return Promise.reject('Email is already in use');
+        }
+      });
+    }),
+  check('password')
+    .exists({ checkFalsy: true })
+    .withMessage('Please provide a value for Password')
+    .isLength({ max: 50 })
+    .withMessage('Password must not be more than 50 characters long'),
+  check('confirmPassword')
+    .exists({ checkFalsy: true })
+    .withMessage('Please provide a value for Confirm Password')
+    .isLength({ max: 50 })
+    .withMessage('Confirm Password must not be more than 50 characters long')
+    .custom((value, { req }) => {
+      if (value !== req.body.password) {
+        throw new Error('Confirm Password does not match Password');
+      }
+      return true;
+    })
 ];
 
 router.post('/sign-up', csrfProtection, userValidators, asyncHandler(async (req, res) => {
