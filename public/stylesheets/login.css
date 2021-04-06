@@ -1,0 +1,29 @@
+body {
+    background-color: #f9d5bb;
+}
+
+#errors-container {
+    background-color: lightpink;
+    color: lightcoral;
+    margin: 25px;
+}
+
+#login-container {
+    background-color: #fff;
+    border: solid pink;
+    border-radius: .5px;
+    display: flex;
+    padding: 40px;
+    margin: 50px;
+}
+
+#login-button {
+    background-color: #fff;
+    border: #3C3D47 solid 1px;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+#form-container {
+    display: 
+}
