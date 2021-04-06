@@ -1,8 +1,16 @@
 #navbar-container {
    height: 106px;
    background-color: #3C3D47;
-   display: flex;
-   justify-content: center; 
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-template-areas:
+   ". logo buttons"
+   ;
+   /* justify-content: space-around;     */
+   justify-items: center;
+   align-items: center;
+
+
 }
 
 .navbar-button {
@@ -15,11 +23,12 @@
    font-weight: 400;
    font-style: normal;
    font-size: 21px;
+   text-decoration: none;
 }
 
 #logo {
+   grid-area: logo;
    background-color: #F66767;
-   position: absolute;
    height: 141px;
    width: 398px;
    display: flex;
@@ -37,9 +46,11 @@
 }
 
 #button-container {
-   position: absolute;
-   top:27px;
-   right:60px;
+   grid-area: buttons;
+   display: flex;
+   justify-content: flex-end;
+   padding-bottom: 35px;
+   /* padding-left: 180px; */
 }
 
 

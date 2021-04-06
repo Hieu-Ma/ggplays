@@ -10,17 +10,17 @@ html
     div(id='navbar-container' class='navbar')
       div(id='logo')
         a(href='/' id='logo-name') ggPlays
-    div(id='button-container')
-      span(class='navbar-button')
-        a(href='/users/profile' class='navbar-link') Profile
-      if locals.authenticated
-        //- span(class='navbar-text px-4') Welcome #{user.username}!
-        form(class='form-inline pr-4' action='/users/logout' method='post')
-          button(class='btn btn-sm btn-warning' type='submit') Logout
-      else
+      div(id='button-container')
         span(class='navbar-button')
-          a(class='navbar-link' href='/users/login') Login
-          a(class='navbar-link' href='/users/sign-up') Register
+        if locals.authenticated
+          //- span(class='navbar-text px-4') Welcome #{user.username}!
+          a(class='navbar-link' href='/users/profile') Profile
+          form(class='form-inline pr-4' action='/users/logout' method='post')
+            button(class='btn btn-sm btn-warning' type='submit') Logout
+        else
+          span(class='navbar-button')
+            a(class='navbar-link' href='/users/login') Login
+            a(class='navbar-link' href='/users/sign-up') Register
     block content
 
       //-     a( href='/users/profile') Profile
