@@ -173,4 +173,6 @@ router.get('/profile', requireAuth, asyncHandler(async (req, res, next) => {
   res.render('profile', {user});
 }));
 
+router.post('/demo-user', )
+
 module.exports = router;
