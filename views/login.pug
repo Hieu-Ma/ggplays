@@ -7,20 +7,24 @@ append head
 
 block content
   div(id="login-container")
-    div(id="errors-container")
-      +validationErrorSummary(errors)
-    div(class="form-container")
-      form(action='/users/login' method='post')
+    div(class="form" id="form-container")
+      div(id="errors-container")
+        +validationErrorSummary(errors)
+      form(id="login-form" action='/users/login' method='post')
         input(type='hidden' name='_csrf' value=csrfToken)
         +field('Email Address', 'email', email)
         +field('Password', 'password', null, 'password')
-        div(class='py-4')
-          button(type='submit' id='login-button') Login
-          a(href='/' class='btn btn-warning ml-2') Cancel
-        form(action='/users/login' method='post')
-          input(type='hidden' name='_csrf' value=csrfToken)
-          input(type='hidden' name='email' value='demo@gmail.com')
-          input(type='hidden' name='password' value='123')
-          button(type='submit' class='btn btn-primary') Demo Login
+        div(class='login-cancel')
+          button(type='submit' class='login-button') Login
+          button(type='button' class='login-button')
+            a(id="cancel-login-button" href='/') Cancel
+      form(class="buttons" action='/users/login' method='post')
+        input(type='hidden' name='_csrf' value=csrfToken)
+        input(type='hidden' name='email' value='demo@gmail.com')
+        input(type='hidden' name='password' value='123')
+        button(type='submit' class='login-button') Demo Login
       div
         p: a(href='/users/sign-up') Don't have an account?
+
+      //- form(class="buttons" method="get" action="/")
+      //-   button(type='submit' class='login-button') Cancel

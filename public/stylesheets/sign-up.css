@@ -2,7 +2,7 @@ body {
     background-color: #f9d5bb;
 }
 
-#login-container {
+#signup-container {
     font-family: "Bungee Inline";
     background-color: #fff;
     opacity: .68;
@@ -45,7 +45,7 @@ body {
     font-size: 20px;
 }
 
-#login-form {
+#signup-form {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -61,7 +61,7 @@ body {
     display: flex;
 }
 
-.login-button {
+.signup-button {
     font-family: "Bungee Inline";
     background-color: #fff;
     border: #3C3D47 solid 1px;
