@@ -30,8 +30,10 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     }
   }, {});
-  Game.associate = function(models) {
+  Game.associate = function (models) {
     // associations can be defined here
+    Game.belongsTo(models.Genre, { foreignKey: 'genre_id' })
+    Game.hasMany(models.Shelf, { foreignKey: 'game_id' })
   };
   return Game;
 };
