@@ -5,11 +5,8 @@ html
         title= "ggPlays"
         link(rel='stylesheet' href='/stylesheets/reset.css')
   body
-    //- h1= title
     block navbar
       a( href='/users/profile') Profile
-      button(class="demo_login") 
-        a(href='/') Demo Login
       if locals.authenticated
         span(class='navbar-text px-4') Welcome #{user.username}!
         form(class='form-inline pr-4' action='/users/logout' method='post')
@@ -19,3 +16,15 @@ html
           a(class='btn btn-sm btn-dark mr-2' href='/users/login') Login
           a(class='btn btn-sm btn-dark' href='/users/sign-up') Register
     block content
+
+      //-     a( href='/users/profile') Profile
+      //- button(class="demo_login") 
+      //-   a(href='/') Demo Login
+      //- if locals.authenticated
+      //-   span(class='navbar-text px-4') Welcome #{user.username}!
+      //-   form(class='form-inline pr-4' action='/users/logout' method='post')
+      //-     button(class='btn btn-sm btn-warning' type='submit') Logout
+      //- else
+      //-   span(class='navbar-text px-4')
+      //-     a(class='btn btn-sm btn-dark mr-2' href='/users/login') Login
+      //-     a(class='btn btn-sm btn-dark' href='/users/sign-up') Register
