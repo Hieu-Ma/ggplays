@@ -4,17 +4,22 @@ html
       block head
         title= "ggPlays"
         link(rel='stylesheet' href='/stylesheets/reset.css')
+        link(rel='stylesheet' href='/stylesheets/navbar.css')
+        link(rel="stylesheet" href="https://use.typekit.net/yhv1vwm.css")
   body
-    block navbar
-      a( href='/users/profile') Profile
+    div(id='navbar-container' class='navbar')
+      div(id='logo')
+        a(href='/' id='logo-name') ggPlays
+      span(class='navbar-button')
+        a(href='/users/profile' class='navbar-link') Profile
       if locals.authenticated
         span(class='navbar-text px-4') Welcome #{user.username}!
         form(class='form-inline pr-4' action='/users/logout' method='post')
           button(class='btn btn-sm btn-warning' type='submit') Logout
       else
-        span(class='navbar-text px-4')
-          a(class='btn btn-sm btn-dark mr-2' href='/users/login') Login
-          a(class='btn btn-sm btn-dark' href='/users/sign-up') Register
+        span(class='navbar-button')
+          a(class='navbar-link' href='/users/login') Login
+          a(class='navbar-link' href='/users/sign-up') Register
     block content
 
       //-     a( href='/users/profile') Profile

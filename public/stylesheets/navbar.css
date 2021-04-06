@@ -1,0 +1,56 @@
+#navbar-container {
+   height: 106px;
+   background-color: #3C3D47;
+   position: relative;
+   display: flex;
+   justify-content: center; 
+}
+
+.navbar-button {
+   background-color: white;
+} 
+
+.navbar-link {
+   color: white;
+   font-family: bungee, sans-serif;
+   font-weight: 400;
+   font-style: normal;
+}
+
+#logo {
+   background-color: #F66767;
+   position: absolute;
+   height: 141px;
+   width: 398px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+#logo-name {
+   color: white;
+   font-size: 59px;
+   font-family: bungee, sans-serif;
+   font-weight: 600;
+   font-style: normal;
+   text-decoration: none;
+}
+
+
+/* 
+regular
+
+font-family: bungee, sans-serif;
+
+font-weight: 400;
+
+font-style: normal; */
+
+/* 
+inline
+
+font-family: bungee, sans-serif;
+
+font-weight: 600;
+
+font-style: normal; */
