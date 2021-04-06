@@ -1,0 +1,124 @@
+body {
+   outline: none;
+}
+
+#navbar-container {
+   height: 106px;
+   background-color: #3C3D47;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-template-areas:
+   ". logo buttons"
+   ;
+   /* justify-content: space-around;     */
+   justify-items: center;
+   /* align-items: center; */
+}
+
+.navbar-button {
+   /* background-color: white; */
+} 
+
+.navbar-link {
+   color: white;
+   font-family: bungee, sans-serif;
+   font-weight: 400;
+   font-style: normal;
+   font-size: 21px;
+   text-decoration: none;
+}
+
+#logo {
+   grid-area: logo;
+   justify-items: center;
+
+   background-color: #F66767;
+   height: 141px;
+   width: 398px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+#logo-name {
+   color: white;
+   font-size: 59px;
+   font-family: bungee, sans-serif;
+   font-weight: 600;
+   font-style: normal;
+   text-decoration: none;
+}
+
+#button-container {
+   grid-area: buttons;
+   display: flex;
+   align-items: center;
+   padding-bottom: 35px;
+   padding-left: 320px;
+}
+
+#logout {   
+   font-family: bungee, sans-serif;
+   font-weight: 400;
+   font-style: normal;
+   color: white;
+   font-size: 21px;
+   background: none;
+   border: none;
+   outline: none;
+   cursor: pointer;
+}
+
+.slash {
+   font-family: bungee, sans-serif;
+   font-weight: 400;
+   font-style: normal;
+   color: white;
+   font-size: 21px;
+}
+
+.dropdown {
+
+ }
+
+.dropdown-content {
+   display: none;
+   background-color: #3C3D47;
+   /* height: 300px; */
+   width: 300px;
+   position:absolute;
+   top:106px;
+}
+
+.dropdown-item {
+   font-family: bungee, sans-serif;
+   font-weight: 400;
+   font-style: normal;
+   color: white;
+   text-decoration: none;
+   font-size: 21px;
+   border-top: 1px solid black;
+   /* border-bottom: 3px solid black; */
+}
+
+#profile {
+   padding-bottom: 26px;
+}
+
+/* 
+regular
+
+font-family: bungee, sans-serif;
+
+font-weight: 400;
+
+font-style: normal; */
+
+/* 
+inline
+
+font-family: bungee, sans-serif;
+
+font-weight: 600;
+
+font-style: normal; */
