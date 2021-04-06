@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Pro.associate = function(models) {
     // associations can be defined here
+    Pro.hasMany(models.Review, { foreignKey: 'pro_id' })
   };
   return Pro;
 };
