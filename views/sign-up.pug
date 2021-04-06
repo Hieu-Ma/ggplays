@@ -2,16 +2,28 @@ extends layout.pug
 
 include utils.pug
 
+append head 
+  link(rel="stylesheet" href="/stylesheets/sign-up.css")
+
 block content
-  +validationErrorSummary(errors)
-  form(action='/users/sign-up' method='post')
-    input(type='hidden' name='_csrf' value=csrfToken)
-    +field('Username', 'username', user.username)
-    +field('Email Address', 'email', user.email, 'email')
-    +field('Password', 'password', user.password, 'password')
-    +field('Confirm Password', 'confirmPassword', '', 'password')
-    div(class='py-4')
-      button(type='submit' class='btn btn-primary') Sign Up
-      a(href='/' class='btn btn-warning ml-2') Cancel
-  div
-    p: a(href='/users/login') Already have an account? Log in!
+  div(id="signup-container")
+    div(class="form" id="form-container")
+      div(id="errors-container")
+        +validationErrorSummary(errors)
+      form(id="signup-form" action='/users/sign-up' method='post')
+        input(type='hidden' name='_csrf' value=csrfToken)
+        +field('Username', 'username', user.username)
+        +field('Email Address', 'email', user.email, 'email')
+        +field('Password', 'password', user.password, 'password')
+        +field('Confirm Password', 'confirmPassword', '', 'password')
+        div(class='login-cancel')
+          button(type='submit' class='signup-button') Sign Up
+          button(type='button' class='signup-button')
+            a(id="cancel-login-button" href='/') Cancel
+      form(class="buttons" action='/users/login' method='post')
+        input(type='hidden' name='_csrf' value=csrfToken)
+        input(type='hidden' name='email' value='demo@gmail.com')
+        input(type='hidden' name='password' value='123')
+        button(type='submit' class='signup-button') Demo Login
+      div
+        p: a(href='/users/login') Already have an account? Log in!
