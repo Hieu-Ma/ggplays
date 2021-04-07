@@ -16,18 +16,43 @@ block content
         each game in fps
           div(class="game")
             div(class="gameImg")
-              a(href='/users/game/:id')
+              a(href=`/users/games/${game.id}`)
+                img(src=`${game.image_url}` width="150" height="200")
+            div(class="title")
+              p= game.name     
+
+    div(class="genre_title")
+          h2 Action
+    div(class="scroll")
+      ul(class="menu")
+        each game in action
+          div(class="game")
+            div(class="gameImg")
+              a(href=`/users/games/${game.id}`)
                 img(src=`${game.image_url}` width="150" height="200")
             div(class="title")
               p= game.name
-    //- div(class="genre_title")
-    //-       h2 Action
-    //-     div(class="scroll")
-    //-       ul(class="menu")
-    //-         each game in action
-    //-           div(class="game")
-    //-             div(class="gameImg")
-    //-               a(href='/users/game/:id')
-    //-                 img(src=`${game.image_url}` width="150" height="200")
-    //-             div(class="title")
-    //-               p= game.name
+
+    div(class="genre_title")
+          h2 Sports
+    div(class="scroll")
+      ul(class="menu")
+        each game in sports
+          div(class="game")
+            div(class="gameImg")
+              a(href=`/users/games/${game.id}`)
+                img(src=`${game.image_url}` width="150" height="200")
+            div(class="title")
+              p= game.name
+
+    div(class="genre_title")
+          h2 RPG
+    div(class="scroll")
+      ul(class="menu")
+        each game in rpg
+          div(class="game")
+            div(class="gameImg")
+              a(href=`/users/games/${game.id}`)
+                img(src=`${game.image_url}` width="150" height="200")
+            div(class="title")
+              p= game.name

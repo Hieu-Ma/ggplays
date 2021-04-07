@@ -12,13 +12,18 @@ div.homepage_container {
 div.genre_title {
     /* justify-content: center; */
     margin-left: 120px;
-    border-bottom: 10px solid lightcoral;
-    width: 80px;
+    border-bottom: 10px solid #F66767;
+    width: fit-content;
 }
 
 h2 {
     font-family: "Bungee Inline";
     font-size: 40px;
+}
+
+div.genre_title:hover {
+    /* color: #525a75; */
+    border-bottom: 10px solid #3C3D47;
 }
 
 div.scroll {
@@ -27,6 +32,9 @@ div.scroll {
     background-color: #fdf2ea;
     overflow: auto;
     white-space: nowrap;
+    border: 2px solid #52535f;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 20px 10px rgba(160, 160, 160, 0.6);
 }
 
 div.scroll div.game {
@@ -41,14 +49,20 @@ div.scroll div.game {
     max-height: 200px;
     max-width: 150px;
     float: inherit;
+    box-shadow: 10px 15px 8px lightslategray;
     /* margin: 10px; */
 }
 
+.gameImg img {
+    object-fit: inherit;
+}
+
 div.title {
-    background-color: darkgray;
+    background-color: #3C3D47;
     width: 150px;
     max-height: 100px;
     padding: 1px;
+    box-shadow: 10px 10px 8px lightslategray;
     /* text-wrap: ; */
     /* overflow: scroll; */
 }
