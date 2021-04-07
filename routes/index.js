@@ -11,6 +11,29 @@ router.get('/', asyncHandler(async (req, res, next) => {
       genre_id: 1
     }
   })
+
+  console.log("checking game", fps);
+
+  const action = await Game.findAll({
+    where: {
+      genre_id: 2
+    }
+  })
+
+  const sports = await Game.findAll({
+    where: {
+      genre_id: 3
+    }
+  })
+
+  const rpg = await Game.findAll({
+    where: {
+      genre_id: 4
+    }
+  })
+
+  res.render('index', { fps, action, sports, rpg });
+
   // console.log("checking game", fps);
   res.render('index', { fps });
 
