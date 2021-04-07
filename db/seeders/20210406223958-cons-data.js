@@ -9,6 +9,7 @@ module.exports = {
       Example:
       */
     return queryInterface.bulkInsert('Cons', [
+      { content: 'Bad Graphics', createdAt: new Date(), updatedAt: new Date(), },
       { content: 'Uncultured Story-line', createdAt: new Date(), updatedAt: new Date(), },
       { content: 'Laggy', createdAt: new Date(), updatedAt: new Date(), },
       { content: 'Difficult Controls', createdAt: new Date(), updatedAt: new Date(), },
