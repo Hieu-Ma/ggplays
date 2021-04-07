@@ -11,6 +11,7 @@ router.get('/', asyncHandler(async (req, res, next) => {
       genre_id: 1
     }
   })
+
   console.log("checking game", fps);
 
   const action = await Game.findAll({
@@ -32,6 +33,9 @@ router.get('/', asyncHandler(async (req, res, next) => {
   })
 
   res.render('index', { fps, action, sports, rpg });
+
+  // console.log("checking game", fps);
+  res.render('index', { fps });
 
 }));
 
