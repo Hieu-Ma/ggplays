@@ -23,7 +23,7 @@ module.exports = {
       { content: 'Beautiful Soundtrack', createdAt: new Date(), updatedAt: new Date() },
       { content: 'Multiplayer', createdAt: new Date(), updatedAt: new Date() },
       { content: 'Dynamic Combat System', createdAt: new Date(), updatedAt: new Date() },
-      { content: 'Strong Replayability', createdAt: new Date(), updatedAt: new Date() },
+      { content: 'Inspirational Characters', createdAt: new Date(), updatedAt: new Date() },
       { content: 'Relaxing', createdAt: new Date(), updatedAt: new Date() },
       { content: 'Memorable Characters', createdAt: new Date(), updatedAt: new Date() },
       { content: 'Open World', createdAt: new Date(), updatedAt: new Date() },
