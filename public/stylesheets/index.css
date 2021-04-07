@@ -1,9 +1,28 @@
 body {
     background-color: #f9d5bb;
+    font-family: "Bungee Inline";
+}
+
+div.homepage_container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 75px;
+}
+
+div.genre_title {
+    /* justify-content: center; */
+    margin-left: 120px;
+    border-bottom: 10px solid lightcoral;
+    width: 80px;
+}
+
+h2 {
+    font-family: "Bungee Inline";
+    font-size: 40px;
 }
 
 div.scroll {
-    margin: 70px;
+    margin:  20px 120px 60px 120px;
     padding: 20px;
     background-color: #fdf2ea;
     overflow: auto;
@@ -19,15 +38,25 @@ div.scroll div.game {
 }
 
 .gameImg {
-    max-height: 220px;
-    max-width: 200px;
+    max-height: 200px;
+    max-width: 150px;
     float: inherit;
     /* margin: 10px; */
 }
 
-.title {
+div.title {
     background-color: darkgray;
-    width: 230px;
-    height: 50px;
-    word-wrap:break-word;
+    width: 150px;
+    max-height: 100px;
+    padding: 1px;
+    /* text-wrap: ; */
+    /* overflow: scroll; */
+}
+
+p {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    word-wrap: break-word;
+    max-width: 150px;
+    font-size: 12px;
 }

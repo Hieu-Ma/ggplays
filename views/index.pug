@@ -8,18 +8,26 @@ append head
 
 
 block content
-
-  div(class="scroll")
-    ul(class="menu")
-      each game in fps
-        div(class="game")
-          div(class="gameImg")
-            a(href='/users/login')
-              img(src=`${game.image_url}` width="230" height="250")
-          div(class="title" width="230")= game.name
-          //- div(class="description")= game.description
-        //- li(class="item")= game.image_url
-    //- div(class="arrows")
-    //-   button(class="left-arrow arrow hidden")= "<"
-    //-   button(class="right-arrow arrow hidden")= ">"
-
+  div(class="homepage_container")
+    div(class="genre_title")
+      h2 FPS
+    div(class="scroll")
+      ul(class="menu")
+        each game in fps
+          div(class="game")
+            div(class="gameImg")
+              a(href='/users/game/:id')
+                img(src=`${game.image_url}` width="150" height="200")
+            div(class="title")
+              p= game.name
+    //- div(class="genre_title")
+    //-       h2 Action
+    //-     div(class="scroll")
+    //-       ul(class="menu")
+    //-         each game in action
+    //-           div(class="game")
+    //-             div(class="gameImg")
+    //-               a(href='/users/game/:id')
+    //-                 img(src=`${game.image_url}` width="150" height="200")
+    //-             div(class="title")
+    //-               p= game.name
