@@ -7,27 +7,29 @@
    margin: 50px;
    margin-top: 85px;
    display: grid;
+   column-gap: 20px;
+   row-gap: 20px;
    grid-template-columns: repeat(5, 1fr);
    grid-template-rows: auto;
    grid-template-areas: 
    "image image title title title"
    "image image description description description"
    "image image description description description"
-   "image image description description description";
+   "image image description description description"
 }
 
 #game-img {
    grid-area: image;
+   
 }
 
 #game-img img{
    /* grid-area: image; */
-   /* background-image-; */
-   /* background-color: black; */
-   object-fit: fit;
-   height: 200px;
+   object-fit: cover;
+   height: 100%;
    width: 100%;
 }
+
 
 #game-title {
    grid-area: title;
@@ -42,9 +44,22 @@
 }
 
 #description-container {
-   font-family: "Bungee Inline";
    grid-area: description;
    width: 100%;
    background-color: white;
    border: 3px solid black;
 }
+
+#description-title {
+   font-family: "Bungee Inline";
+}
+
+#description, #year-released, #developer, #platforms, #genre {
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+#year-released-title, #developer-title, #platforms-title, #genre-title {
+   font-family: "Bungee Inline";
+}
+
+

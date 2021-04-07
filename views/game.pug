@@ -5,7 +5,21 @@ block content
       div(id= "game-img")
          img(src= src=game.image_url)
       div(id= "game-title")= game.name
+         div(id= "game-score")= score
       div(id= "description-container")
          div(id= "description-title") Description
-         div(id= "description")= game.description
-      
+            div(id= "description")= game.description
+         div(id= "year-released-title") Year Released:
+            div(id= "year-released")= game.year_released
+         div(id= "developer-title") Developer:
+            div(id= "developer")= game.developer
+         div(id= "platforms-title") Platform(s):
+            div(id= "platforms")= game.platforms
+         div(id= "genre-title") Genre:
+            div(id= "genre")= game.Genre.type
+      div(id= "reviews") Reviews
+         each review in reviews
+            div(id= "game-review")
+               div(id= "review-title")= review.title + " " + review.score
+            
+
