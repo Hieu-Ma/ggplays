@@ -11,7 +11,7 @@ router.get('/', asyncHandler(async (req, res, next) => {
       genre_id: 1
     }
   })
-  console.log("checking game", fps);
+  // console.log("checking game", fps);
   res.render('index', { fps });
 
 }));
