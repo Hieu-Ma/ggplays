@@ -5,5 +5,13 @@ append head
 
 
 block content
-   h1 this is our profile page
-   h1= user.username
+   div(id="profile-container")
+      div(id="profile-info")
+         h3= `${user.username}'s Profile`
+         p= `Member Since: ${user.createdAt}`
+      div(id="gameshelves-container")
+         ul(class="menu")
+            each shelf in gameshelves
+               div(class="game")
+                  div(class="title")
+                  p= shelf.title
