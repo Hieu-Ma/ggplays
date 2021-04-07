@@ -6,21 +6,45 @@
    padding: 40px;
    margin: 50px;
    margin-top: 85px;
-   /* display: grid;
+   display: grid;
    grid-template-columns: repeat(5, 1fr);
-   grid-template-rows: auto; */
+   grid-template-rows: auto;
+   grid-template-areas: 
+   "image image title title title"
+   "image image description description description"
+   "image image description description description"
+   "image image description description description";
 }
 
-#game-container-content {
-   background-color: white;
-   width: 100%;
-   /* margin: 10px; */
+#game-img {
+   grid-area: image;
 }
 
 #game-img img{
+   /* grid-area: image; */
    /* background-image-; */
    /* background-color: black; */
-   object-fit:contain;
+   object-fit: fit;
    height: 200px;
    width: 100%;
+}
+
+#game-title {
+   grid-area: title;
+   width: 100%;
+   background-color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: 3px solid black;
+   font-family: "Bungee Inline";
+   font-size: 40px;
+}
+
+#description-container {
+   font-family: "Bungee Inline";
+   grid-area: description;
+   width: 100%;
+   background-color: white;
+   border: 3px solid black;
 }
