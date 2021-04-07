@@ -6,6 +6,11 @@ append head
   //- add page specific js
   script(src="/javascripts/index.js" type="module" defer)
 
-  
+
 block content
 
+  div
+    each game in fps
+      li=game.name
+      li=game.description
+      li=game.image_url
