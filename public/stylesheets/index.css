@@ -1,3 +1,33 @@
-h1 {
-    color: #555555;
+body {
+    background-color: #f9d5bb;
+}
+
+div.scroll {
+    margin: 70px;
+    padding: 20px;
+    background-color: #fdf2ea;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+div.scroll div.game {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+
+.gameImg {
+    max-height: 220px;
+    max-width: 200px;
+    float: inherit;
+    /* margin: 10px; */
+}
+
+.title {
+    background-color: darkgray;
+    width: 230px;
+    height: 50px;
+    word-wrap:break-word;
 }
