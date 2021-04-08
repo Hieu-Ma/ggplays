@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { check, validationResult } = require('express-validator');
-const { Gameshelf, Game } = require('../db/models');
+const { Gameshelf, Game, User } = require('../db/models');
 const { requireAuth } = require('../auth');
 const { asyncHandler } = require('./utils');
 
@@ -38,7 +38,15 @@ router.post('/create-shelf', requireAuth, shelfValidators, asyncHandler(async (r
         const errors = validatorErrors.array().map((error) => error.msg);
         res.render('gameshelves', { errors });
     }
+}));
 
+router.get('/edit', requireAuth, asyncHandler(async (req, res) => {
+    const { userId } = req.session.auth;
+    const gameshelves = await Gameshelf.findOne({
+        where: { user_id: userId }
+    });
+
+    res.render('gameshelves-edit', { gameshelves });
 }));
 
 module.exports = router;

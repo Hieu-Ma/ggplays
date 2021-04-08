@@ -1,0 +1,21 @@
+#gameshelves-edit-container {
+   background-color: #FDF2E9;
+    /* opacity: .68; */
+    border: solid lightpink;
+    border-radius: 10px;
+    /* padding: 40px; */
+    margin: 50px;
+    margin-top: 85px;
+    /* display: grid;
+    grid-template-columns: 1fr 4fr; */
+    /* grid-template-areas: 
+    "shelves-list games"; */
+}
+
+#gameshelves-title, #shelf-container {
+  font-family: "Bungee Inline";
+}
+
+#shelf-container {
+  background-color: white;
+}
