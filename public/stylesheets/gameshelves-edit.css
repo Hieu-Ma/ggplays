@@ -24,7 +24,7 @@
   margin: 40px;
 }
 
-#shelf {
+#shelf, #custom-shelf {
   font-family: "Bungee Inline";
   background-color: white;
   border: 1px solid lightpink;
@@ -35,5 +35,11 @@
 }
 
 #rename-container, #delete-container {
-  display: inline
+  display: inline-flex;
+
+}
+
+
+#delete-container {
+  justify-content: flex-end;
 }
