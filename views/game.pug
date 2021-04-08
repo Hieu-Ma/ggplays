@@ -19,6 +19,12 @@ block content
             div(id= "genre")= game.Genre.type
       div(id= "reviews")
          div(id= "reviews-title") Reviews
+            //- if (logged in and has review)
+            //-    button(id= "change-review") Change Review
+            //- if (logged in)
+            //-    button(id= "review-game")
+            //- else
+            //-    button(id= "log-in-to-review") Log in to review
          each review in reviews
             div(id= "game-review")
                div(id= "review-title-container")
