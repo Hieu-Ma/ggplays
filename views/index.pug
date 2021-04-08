@@ -17,7 +17,7 @@ block content
         each game in fps
           div(class="game")
             div(class="gameImg")
-              a(href=`/users/games/${game.id}`)
+              a(href=`/games/${game.id}`)
                 img(src=`${game.image_url}` width="150" height="200")
             div(class="title")
               p= game.name     
@@ -30,7 +30,7 @@ block content
         each game in action
           div(class="game")
             div(class="gameImg")
-              a(href=`/users/games/${game.id}`)
+              a(href=`/games/${game.id}`)
                 img(src=`${game.image_url}` width="150" height="200")
             div(class="title")
               p= game.name
@@ -43,7 +43,7 @@ block content
         each game in sports
           div(class="game")
             div(class="gameImg")
-              a(href=`/users/games/${game.id}`)
+              a(href=`/games/${game.id}`)
                 img(src=`${game.image_url}` width="150" height="200")
             div(class="title")
               p= game.name
@@ -56,7 +56,7 @@ block content
         each game in rpg
           div(class="game")
             div(class="gameImg")
-              a(href=`/users/games/${game.id}`)
+              a(href=`/games/${game.id}`)
                 img(src=`${game.image_url}` width="150" height="200")
             div(class="title")
               p= game.name

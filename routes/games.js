@@ -14,9 +14,6 @@ router.get('/:id', asyncHandler(async (req, res) => {
       include: [User, Pro, Con]
    })
    let total = 0;
-   // keep count of how many reviews there are
-   // add each score to total sum
-   // find avg by dividing total by count of reviews
    let count = 0;
    for (let review of reviews) {
       total += review.score;
