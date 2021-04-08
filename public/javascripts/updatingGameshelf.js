@@ -1,34 +1,27 @@
-const gameshelfSelect = document.getElementById("select-options");
-const selectForm = document.getQuerySelector(".select-form")
+const gameshelfSelect = document.querySelector(".select-options");
+const selectForm = document.querySelector(".select-form")
 
-gameshelfSelect.addEventListener('change', () => {
+gameshelfSelect.addEventListener('change', async() => {
     // e.preventDefault();
     const formData = new FormData(selectForm);
-    const shelfTitle = formData.get("gameshelf");
-    const body = { shelfTitle };
+    const shelfId = formData.get("gameshelf");
+    const gameId = formData.get("gameId")
+    const body = { shelfId, gameId };
 
-    const gameId = req.session
     try {
-        const res = await fetch(`http://localhost:8080/games/${ss}`, {
-          method: "POST",
-          body: JSON.stringify(body),
-          headers: {
-            "Content-Type": "application/json",
-          },
+        const res = await fetch(`/api/games/${gameId}`, {
+            method: "POST",
+            body: JSON.stringify(body),
+            headers: {
+                "Content-Type": "application/json",
+            },
         });
 
         if (!res.ok) {
-          throw res;
+            throw res;
         }
 
-        
-
-
-      } catch (err) {
-          throw new Error(err)
-      }
+    } catch (err) {
+        console.error(err.message)
+    }
 })
-
-// q for if game is associated with game shelf
-    // if so, delete game shel
-    // then create with new game shelf id 

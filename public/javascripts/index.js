@@ -1,11 +1,11 @@
 window.addEventListener("load", (event)=>{
-    console.log("hello from javascript!")
+    // console.log("hello from javascript!")
 })
 let profile = document.getElementById('profile');
-console.log(profile);
+// console.log(profile);
 
 let dropDownItems = document.getElementById('dropdown-content');
-console.log(dropDownItems);
+// console.log(dropDownItems);
 
 profile.addEventListener("mouseover", (event) => {
     dropDownItems.style.display = "block";

@@ -1,7 +1,7 @@
 extends layout.pug 
 
 append head 
-   script(src="/javascripts/updatingGameshelf.js")
+   script(src="/javascripts/updatingGameshelf.js", type="module")
 
 
 block content 
@@ -11,7 +11,8 @@ block content
       if userId
          div(id="gameshelf-dropdown")
             form(class="select-form")
-               select(id="select-options" name="gameshelf")
+               input(type="hidden" value=game.id name="gameId")
+               select(class="select-options" name="gameshelf")
                   each shelf in gameshelves
                      option(value=shelf.id)= shelf.title 
       div(id= "game-title")= game.name
