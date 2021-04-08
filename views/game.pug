@@ -1,12 +1,16 @@
 extends layout.pug 
 
+append head 
+   script(src="/javascripts/updatingGameshelf.js")
+
+
 block content 
    div(id= "game-container")
       div(id= "game-img")
          img(src= src=game.image_url)
       if userId
-         div(id= "gameshelf-dropdown")
-            select(name="gameshelf")
+         div(id="gameshelf-dropdown")
+            select(id="select-options" name="gameshelf")
                each shelf in gameshelves
                   option(value=shelf.id)= shelf.title 
       div(id= "game-title")= game.name
