@@ -1,0 +1,34 @@
+extends layout.pug 
+
+include utils.pug
+
+append head 
+    link(rel="stylesheet" href="/stylesheets/gameshelves.css")
+
+block content
+    div(id= "gameshelves-container")
+        div(class="gameshelves-list")
+            h3 My Game Shelves
+            li All Games
+            div(class="form" id="form-container")
+                if errors
+                    div(id="errors-container")
+                        ul
+                            each error in errors
+                                li= error
+                form(id="newshelf-form" action='/gameshelves/create-shelf' method="post")
+                    label(for="title")= "Create New Shelf:"
+                    input(type="text" id="title" name="title" value=title)
+                    button(type='submit' class='login-button') Create
+
+            ul 
+                li want to play 
+                li have played 
+                li currently playing
+        div(class="games-container")
+            div(class="games-container" id="title-description")
+                h3 Games 
+                h3 Description
+            div(class="games-container" id="game-description")
+                div(class="games-container" id="game")
+                div(class="games-container" id="description")
