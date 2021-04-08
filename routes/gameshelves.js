@@ -1,14 +1,17 @@
 const express = require('express');
 const router = express.Router();
 const { check, validationResult } = require('express-validator');
-const { Gameshelf, Game } = require('../db/models');
+const { Gameshelf, Game, Genre } = require('../db/models');
 const { requireAuth } = require('../auth');
 const { asyncHandler } = require('./utils');
 
 router.get('/', requireAuth, asyncHandler(async (req, res, next) => {
     const shelves = await Gameshelf.findAll()
-    res.render('gameshelves', { shelves });
-
+    const games = await Game.findAll({
+        include: Genre
+    });
+    console.log(Genre);
+    res.render('gameshelves', { shelves, games });
 }));
 
 const shelfValidators = [
