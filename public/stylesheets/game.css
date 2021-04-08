@@ -16,21 +16,19 @@
    "image image description description description"
    "image image description description description"
    "image image description description description"
+   "review review review review review"
 }
 
 #game-img {
    grid-area: image;
    max-height: 600px;
    width: 100%;
-   /* float: inherit; */
 }
 
 #game-img img{
-   /* grid-area: image; */
    object-fit: contain;
    height: 100%;
    width: 100%;
-   
 }
 
 
@@ -65,4 +63,9 @@
    font-family: "Bungee Inline";
 }
 
-
+#reviews {
+   grid-area: review;
+   width: 100%;
+   background-color: white;
+   border: 3px solid black;
+}
