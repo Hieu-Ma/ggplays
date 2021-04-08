@@ -1,9 +1,65 @@
 #game-container {
-   background-color: #FFF;
-   opacity: .68;
+   background-color: #FDF2E9;
+   /* opacity: .68; */
    border: solid pink;
    border-radius: 10px;
    padding: 40px;
    margin: 50px;
    margin-top: 85px;
+   display: grid;
+   column-gap: 20px;
+   row-gap: 20px;
+   grid-template-columns: repeat(5, 1fr);
+   grid-template-rows: auto;
+   grid-template-areas: 
+   "image image title title title"
+   "image image description description description"
+   "image image description description description"
+   "image image description description description"
 }
+
+#game-img {
+   grid-area: image;
+   
+}
+
+#game-img img{
+   /* grid-area: image; */
+   object-fit: cover;
+   height: 100%;
+   width: 100%;
+}
+
+
+#game-title {
+   grid-area: title;
+   width: 100%;
+   background-color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: 3px solid black;
+   font-family: "Bungee Inline";
+   font-size: 40px;
+}
+
+#description-container {
+   grid-area: description;
+   width: 100%;
+   background-color: white;
+   border: 3px solid black;
+}
+
+#description-title {
+   font-family: "Bungee Inline";
+}
+
+#description, #year-released, #developer, #platforms, #genre {
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+#year-released-title, #developer-title, #platforms-title, #genre-title {
+   font-family: "Bungee Inline";
+}
+
+
