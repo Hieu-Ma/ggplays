@@ -7,6 +7,7 @@ const { User } = require('../db/models')
 const { csrfProtection, asyncHandler } = require('./utils');
 const { loginUser, logoutUser, requireAuth } = require('../auth');
 const db = require('../db/models');
+const { Gameshelf, Review, Game } = require('../db/models');
 
 router.get('/sign-up', csrfProtection, asyncHandler(async (req, res) => {
   const user = User.build();
@@ -82,12 +83,16 @@ router.post('/sign-up', csrfProtection, userValidators, asyncHandler(async (req,
     await user.save();
     loginUser(req, res, user);
     const { userId } = req.session.auth;
-
+    
     await db.Gameshelf.create(
+
       { title: "Currently Playing", user_id: userId },
+
+      { title: "Want to Play", user_id: userId },
+
     );
     await db.Gameshelf.create(
-      { title: "Want to Play", user_id: userId },
+      { title: "Currently Playing", user_id: userId },
     );
     await db.Gameshelf.create(
       { title: "Played", user_id: userId },
@@ -177,12 +182,21 @@ router.get('/', (req, res, next) => {
 router.get('/profile', requireAuth, asyncHandler(async (req, res, next) => {
   // const userId = parseInt(req.params.userId, 10);
   // res.locals.user
+  console.log("gameshelf", Gameshelf);
   const { userId } = req.session.auth;
   const user = await User.findByPk(userId);
-  // console.log("test log " + user.username);
+  const gameshelves = await Gameshelf.findAll({
+    where: { user_id : userId }
+  });
+  const reviews = await Review.findAll({
+    where: { user_id : userId },
+    include: Game
+  })
+  console.log("reviews", reviews);
+   // console.log("test log " + user.username);
   // const username = await User.findByPk(userId);
   // let user = User;
-  res.render('profile', { user });
+  res.render('profile', { user, gameshelves, reviews });
 }));
 
 router.post('/demo-user',)
