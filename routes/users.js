@@ -167,7 +167,7 @@ router.get('/profile', requireAuth, asyncHandler(async (req, res, next) => {
   // res.locals.user
   const { userId } = req.session.auth;
   const user = await User.findByPk(userId);
-  console.log(req.session.auth);
+  console.log(user);
   // console.log("test log " + user.username);
   // const username = await User.findByPk(userId);
   // let user = User;
