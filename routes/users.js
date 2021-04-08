@@ -7,8 +7,7 @@ const { User } = require('../db/models')
 const { csrfProtection, asyncHandler } = require('./utils');
 const { loginUser, logoutUser, requireAuth } = require('../auth');
 const db = require('../db/models');
-const { Gameshelf } = require('../db/models');
-const { Review } = require('../db/models');
+const { Gameshelf, Review, Game } = require('../db/models');
 
 router.get('/sign-up', csrfProtection, asyncHandler(async (req, res) => {
   const user = User.build();
@@ -186,12 +185,14 @@ router.get('/profile', requireAuth, asyncHandler(async (req, res, next) => {
     where: { user_id : userId }
   });
   const reviews = await Review.findAll({
-    where: { user_id : userId }
+    where: { user_id : userId },
+    include: Game
   })
+  console.log("reviews", reviews);
    // console.log("test log " + user.username);
   // const username = await User.findByPk(userId);
   // let user = User;
-  res.render('profile', { user, gameshelves });
+  res.render('profile', { user, gameshelves, reviews });
 }));
 
 router.post('/demo-user',)

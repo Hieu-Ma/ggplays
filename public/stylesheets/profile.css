@@ -34,9 +34,11 @@ h2 {
     margin-top: 50px;
     text-decoration: underline;
 }
+
 #reviews-and-container {
     font-family: "Bungee Inline";
 }
+
 #reviews-container {
     font-family: "Bungee Inline";
     background-color: #FFF;
@@ -48,12 +50,26 @@ h2 {
     margin-top: 20px;
 }
 
+#circle {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-radius: 50%;
+}
+
 #button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 24px;
     padding: 14px 40px;
     background-color: white;
     margin-left: 100px;
     width: 175px;
+}
+
+#white-background {
+    background-color: white;
 }
 
 div.scroll {
