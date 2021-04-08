@@ -6,8 +6,8 @@ const { requireAuth } = require('../auth');
 const { asyncHandler } = require('./utils');
 
 router.get('/', requireAuth, asyncHandler(async (req, res, next) => {
-    const gameshelves = await Gameshelf.findAll()
-    res.render('gameshelves', { gameshelves });
+    const shelves = await Gameshelf.findAll()
+    res.render('gameshelves', { shelves });
 
 }));
 
