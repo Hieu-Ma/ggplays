@@ -12,7 +12,7 @@ router.get('/', asyncHandler(async (req, res, next) => {
     }
   })
 
-  console.log("checking game", fps);
+  // console.log("checking game", fps);
 
   const action = await Game.findAll({
     where: {
