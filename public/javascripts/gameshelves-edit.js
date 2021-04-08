@@ -1,16 +1,6 @@
-let renameBtn = document.getElementById('rename');
-let deleteBtn = document.getElementById('delete');
+document.getElementById('shelf-container').addEventListener("click", (event) => {
+  let deleteBtn = event.target.id;
 
-window.addEventListener("DOMContentLoaded", () => {
-  renameBtn.addEventListener('click', (event) => {
-    event.target.id
-    console.log("rename");
-  })
-  
-  deleteBtn.addEventListener('click', (event) => {
-    console.log("delete");
-  })
- 
 })
 
 
