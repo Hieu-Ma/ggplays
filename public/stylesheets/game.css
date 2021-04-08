@@ -16,18 +16,20 @@
    "image image description description description"
    "image image description description description"
    "image image description description description"
+   "review review review review review"
 }
 
 #game-img {
    grid-area: image;
-   
+   /* max-height: 800px; */
+   /* width: 100%; */
 }
 
 #game-img img{
-   /* grid-area: image; */
-   object-fit: cover;
-   height: 100%;
-   width: 100%;
+   object-fit: contain;
+   max-height: 800px;
+   /* height: 100%; */
+   width: 100%; 
 }
 
 
@@ -39,7 +41,7 @@
    justify-content: center;
    align-items: center;
    border: 3px solid black;
-   font-family: "Bungee Inline";
+   font-family: "Bungee";
    font-size: 40px;
 }
 
@@ -51,7 +53,7 @@
 }
 
 #description-title {
-   font-family: "Bungee Inline";
+   font-family: "Bungee";
 }
 
 #description, #year-released, #developer, #platforms, #genre {
@@ -59,7 +61,94 @@
 }
 
 #year-released-title, #developer-title, #platforms-title, #genre-title {
-   font-family: "Bungee Inline";
+   font-family: "Bungee";
+}
+
+#reviews {
+   grid-area: review;
+   width: 100%;
+   background-color: white;
+   border: 3px solid black;
+   font-family: "Bungee";
+}
+
+#reviews-title {
+   font-size: 25px;
+   margin: 0 9px;
+}
+
+#game-review{
+   font-family: Arial, Helvetica, sans-serif;
+   border: 2px solid black;
+   border-radius: 5px;
+   margin: 0 7px;
+   margin-bottom: 7px;
+}
+
+#review-title-container {
+   display: flex;
+   align-items: center;
+   margin-top:5px;
+}
+
+#review-title {
+   font-family: "Bungee";
+   display: flex;
+   align-items: center;
+}
+
+#review-score {
+   border: 3px solid black;
+   border-radius: 50%;
+   height: 35px;
+   width: 35px;
+   font-family: "Bungee";
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 12px;
+   margin: 0 5px;
+}
+
+#pros-and-cons {
+   font-family: "Bungee";
+   display: flex
+}
+
+#pro-title {
+   display: flex;
+   /* justify-content: center; */
+   align-items: center;
+   margin-left: 5px;
+}
+
+#pro-description{
+   font-family: Arial, Helvetica, sans-serif;
+   margin-left: 5px;
+   margin-right: 5px;
+}
+
+#con-title {
+   display: flex;
+   /* justify-content: center; */
+   align-items: center;
+}
+
+#con-description {
+   font-family: Arial, Helvetica, sans-serif;
+   margin-left: 5px;
+}
+
+#review-description-container {
+   padding-bottom: 15px;
+   padding-top: 5px;
+   /* margin: 0 5px; */
+   /* border: 2px solid black;
+   border-radius: 5px; */
+}
+
+#review-description {
+   margin: 0 5px;
 }
 
 
