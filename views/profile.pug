@@ -9,13 +9,13 @@ block content
       div(id="profile-info")
          h3= `${user.username}'s Profile`
          p= `Member Since: ${user.createdAt}`
-      //- div(id="gameshelves-container")
-      //-    ul(class="menu")
-      //-       each shelf in gameshelves
-      //-          div(class="game")
-      //-             div(class="title")
-      //-             h3= `${shelf.title}`
-   h3= 'Game Shelves:'
-      h4= 'More...'
-   each shelf in gameshelves
-      button(href=`/gameshelves/${shelf.id}` type="button")= `${shelf.title}`
+   div(id="gameshelves-container")
+      h3 Game Shelves:
+      h4 More...
+      div(id="buttons")
+      each shelf in gameshelves
+         //- div(style="text-align: center")
+         button(href=`/gameshelves/${shelf.id}` id="button" type="button")= `${shelf.title}`
+   div(id="reviews-and-container")
+      h2 Reviews
+      div(id="reviews-container")
