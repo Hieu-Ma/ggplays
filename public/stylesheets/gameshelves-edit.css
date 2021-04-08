@@ -12,10 +12,28 @@
     "shelves-list games"; */
 }
 
-#gameshelves-title, #shelf-container {
+#gameshelves-title {
   font-family: "Bungee Inline";
+  font-size: 49px;
+  margin: 40px;
+  padding-left: 20px;
+  background-color: #FDF2E9
 }
 
 #shelf-container {
+  margin: 40px;
+}
+
+#shelf {
+  font-family: "Bungee Inline";
   background-color: white;
+  border: 1px solid lightpink;
+  font-size: 25px;
+  padding: 25px;
+  margin: 20px;
+  position: relative;
+}
+
+#rename-container, #delete-container {
+  display: inline
 }
