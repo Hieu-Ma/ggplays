@@ -85,7 +85,11 @@ router.post('/sign-up', csrfProtection, userValidators, asyncHandler(async (req,
     const { userId } = req.session.auth;
     
     await db.Gameshelf.create(
+
+      { title: "Currently Playing", user_id: userId },
+
       { title: "Want to Play", user_id: userId },
+
     );
     await db.Gameshelf.create(
       { title: "Currently Playing", user_id: userId },

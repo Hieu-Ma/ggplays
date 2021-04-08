@@ -1,0 +1,21 @@
+extends layout.pug
+
+include utils.pug
+
+append head 
+    link(rel="stylesheet" href="/stylesheets/gameshelves-edit.css")
+    script(src="/javascripts/gameshelves-edit.js")
+
+block content
+    div(id= "gameshelves-edit-container")
+        div(id= "gameshelves-title") Game Shelves
+        div(id= "shelf-container")
+            each shelf in gameshelves
+                div(id= "shelf")= shelf.title
+            each customShelf in customShelves
+                div(id= "custom-shelf")= customShelf.title
+                    div(id= "rename-container")
+                        button(id= `rename-${customShelf.id}`) Rename
+                    div(id= "delete-container")
+                        button(id= `delete-${customShelf.id}`) X
+                           
