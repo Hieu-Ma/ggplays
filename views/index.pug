@@ -10,7 +10,8 @@ append head
 block content
   div(class="homepage_container")
     div(class="genre_title")
-      h2 FPS
+      h2
+        a(href="/gameshelves") FPS
     div(class="scroll")
       ul(class="menu")
         each game in fps
@@ -22,7 +23,8 @@ block content
               p= game.name     
 
     div(class="genre_title")
-          h2 Action
+      h2
+        a(href="/gameshelves") Action
     div(class="scroll")
       ul(class="menu")
         each game in action
@@ -34,7 +36,8 @@ block content
               p= game.name
 
     div(class="genre_title")
-          h2 Sports
+      h2 
+        a(href="/gameshelves") Action
     div(class="scroll")
       ul(class="menu")
         each game in sports
@@ -46,7 +49,8 @@ block content
               p= game.name
 
     div(class="genre_title")
-          h2 RPG
+      h2 
+        a(href="/gameshelves") RPG
     div(class="scroll")
       ul(class="menu")
         each game in rpg
