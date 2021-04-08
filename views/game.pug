@@ -17,10 +17,19 @@ block content
             div(id= "platforms")= game.platforms
          div(id= "genre-title") Genre:
             div(id= "genre")= game.Genre.type
-      div(id= "reviews") Reviews
+      div(id= "reviews")
+         div(id= "reviews-title") Reviews
          each review in reviews
             div(id= "game-review")
-               div(id= "review-title")= review.title + " " + review.score
-               div(id= "review")= review.description
+               div(id= "review-title-container")
+                  div(id= "review-score")= review.score
+                  div(id= "review-title")= review.User.username + ": " + "\"" + review.title + "\"" 
+               div(id= "pros-and-cons")
+                  div(id= "pro-title") Pro:  
+                     div(id= "pro-description")= review.Pro.content
+                  div(id= "con-title") Con:  
+                     div(id= "con-description")= review.Con.content
+               div(id= "review-description-container")
+                  div(id= "review-description")= review.description
             
 

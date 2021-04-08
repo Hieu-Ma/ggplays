@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const { User, Game, Review, Genre } = require('../db/models');
+const { User, Game, Review, Genre, Pro, Con } = require('../db/models');
 const { csrfProtection, asyncHandler } = require('./utils');
 
 router.get('/:id', asyncHandler(async (req, res) => {
@@ -10,7 +10,8 @@ router.get('/:id', asyncHandler(async (req, res) => {
    });
 
    const reviews = await Review.findAll({
-      where: { game_id: id }
+      where: { game_id: id },
+      include: [User, Pro, Con]
    })
    let total = 0;
    // keep count of how many reviews there are
