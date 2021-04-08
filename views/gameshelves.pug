@@ -22,9 +22,8 @@ block content
                     button(type='submit' class='login-button') Create
 
             ul 
-                li want to play 
-                li have played 
-                li currently playing
+                each shelf in shelves
+                    li= shelf.title 
         div(class="games-container")
             div(class="games-container" id="title-description")
                 h3 Games 
