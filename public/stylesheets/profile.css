@@ -20,6 +20,13 @@ div#profile-container h3 {
     font-family: "Bungee Inline";
 }
 
+#buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
 h3 {
     font-size: 3em;
 }
