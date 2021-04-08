@@ -83,12 +83,12 @@ router.post('/sign-up', csrfProtection, userValidators, asyncHandler(async (req,
     await user.save();
     loginUser(req, res, user);
     const { userId } = req.session.auth;
-
-    await db.Gameshelf.create(
-      { title: "Currenty Playing", user_id: userId },
-    );
+    
     await db.Gameshelf.create(
       { title: "Want to Play", user_id: userId },
+    );
+    await db.Gameshelf.create(
+      { title: "Currently Playing", user_id: userId },
     );
     await db.Gameshelf.create(
       { title: "Played", user_id: userId },
