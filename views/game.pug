@@ -4,6 +4,11 @@ block content
    div(id= "game-container")
       div(id= "game-img")
          img(src= src=game.image_url)
+      if userId
+         div(id= "gameshelf-dropdown")
+            select(name="gameshelf")
+               each shelf in gameshelves
+                  option(value=shelf.id)= shelf.title 
       div(id= "game-title")= game.name
          div(id= "game-score")= score
       div(id= "description-container")
@@ -19,7 +24,7 @@ block content
             div(id= "genre")= game.Genre.type
       div(id= "reviews")
          div(id= "reviews-title") Reviews
-            //- if (logged in and has review)
+            //- if (logged in and has review) locals.authenticated
             //-    button(id= "change-review") Change Review
             //- if (logged in)
             //-    button(id= "review-game")
