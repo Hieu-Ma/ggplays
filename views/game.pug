@@ -10,9 +10,10 @@ block content
          img(src= src=game.image_url)
       if userId
          div(id="gameshelf-dropdown")
-            select(id="select-options" name="gameshelf")
-               each shelf in gameshelves
-                  option(value=shelf.id)= shelf.title 
+            form(class="select-form")
+               select(id="select-options" name="gameshelf")
+                  each shelf in gameshelves
+                     option(value=shelf.id)= shelf.title 
       div(id= "game-title")= game.name
          div(id= "game-score")= score
       div(id= "description-container")

@@ -8,7 +8,7 @@ router.get('/:id', asyncHandler(async (req, res) => {
    const id = parseInt(req.params.id, 10);
    let hasReview = false;
    const {userId} = req.session.auth;
-   console.log(userId)
+   console.log("reqbody", req.params.id)
    const game = await Game.findByPk(id, {
       include: [Review, Genre]
    });
