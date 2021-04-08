@@ -14,7 +14,8 @@ block content
       //-       each shelf in gameshelves
       //-          div(class="game")
       //-             div(class="title")
-      //-             p= shelf.title
+      //-             h3= `${shelf.title}`
    h3= 'Game Shelves:'
       h4= 'More...'
-   a(href='//')
+   each shelf in gameshelves
+      button(href=`/gameshelves/${shelf.id}` type="button")= `${shelf.title}`
