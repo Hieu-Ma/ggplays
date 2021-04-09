@@ -29,29 +29,6 @@ div.gameshelves-list h3 {
     margin-top: 50px;
 }
 
-#form-container {
-    padding: 0 25px 25px 25px;
-}
-
-#errors-container {
-    color: lightcoral;
-    margin-bottom: 5px;
-}
-
-#errors-container li {
-    font-size: 12px;
-}
-
-.login-button {
-    font-family: "Bungee Inline";
-    background-color: #fff;
-    border: #3C3D47 solid 1px;
-    font-size: 14px;
-    padding: 3px 10px;
-    border-radius: 5px;
-    margin-left: 5px;
-}
-
 div.gameshelves-list li {
     font-size: 18px;
     padding: 10px;
@@ -64,40 +41,12 @@ div.games-container {
     flex-direction: column;
 }
 
-div.games-container#game-description {
-    grid-area: games;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-
-}
-
-#title-description {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    font-size: 24px;
-    padding: 0 25px 25px 25px;
-    margin-top: 50px;
-}
-
 #game {
     border: 2px solid grey;
     min-height: 100px;
     min-width: 50px;
     max-height: 200px;
     max-width: 150px;
-    margin-top: 50px; 
-    margin: 50px;
-
-}
-
-#description {
-    border: 2px solid blue;
-    min-height: 100px;
-    min-width: 400px;
-    max-height: 200px;
-    max-width: 800px;
     margin-top: 50px; 
     margin: 50px;
 

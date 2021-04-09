@@ -9,11 +9,16 @@ block content
         div(class="gameshelves-list")
             h3 Genres
             li All Games
-            div(class="form" id="form-container")
             ul 
-                each game in games
-                    li= game.name
+                each genre in genres
+                    li= genre.type
         div(class="games-container")
             h3 Games 
-            div(class="games-container" id="game-description")
-                div(class="games-container" id="game")
+            div(class="games-container")
+                each game in games
+                    div(class="game")
+                        div(class="gameImg")
+                        a(href=`/games/${game.id}`)
+                            img(src=`${game.image_url}` width="150" height="200")
+                        div(class="title")
+                        p= game.name  
