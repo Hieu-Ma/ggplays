@@ -85,8 +85,13 @@
    border-radius: 10px;
 }  
 
-#review-title-container {
-   grid-area: reviewTitle
+#review-page-title-container {
+   grid-area: reviewTitle;
+   border: 2px solid black;
+   font-size: 15px;
+   font-family: "Bungee";
+   background-color: white;
+   border-bottom: 0px;
 }
 
 #review-input-container {

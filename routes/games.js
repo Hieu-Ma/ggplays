@@ -77,10 +77,27 @@ router.get('/:id/review', asyncHandler(async (req, res) => {
 
    let cons = await Con.findAll()
 
-
-
-
    res.render('review', {game, gameshelves, cons, pros});
+}));
+
+router.post('/:id/review', asyncHandler(async (req, res) => {
+   const userId = req.session.auth.userId; 
+   // const id = parseInt(req.params.id, 10);
+   const {review_title, game_review_score, review_description, pro_options, con_options, gameId} = req.body;
+   let review = await Review.create({
+      title: review_title,
+      score: game_review_score,
+      description: review_description,
+      user_id: userId,
+      game_id: gameId,
+      pro_id: pro_options,
+      con_id: con_options,
+   })
+   // console.log(review_title, game_review_score, review_description, pro_options, con_options, gameId, userId);
+   // console.log("this property is,", game_review_score)
+   // res.json(rating)
+   // res.json({review});
+   res.redirect(`/games/${gameId}`);
 }));
 
 module.exports = router;
