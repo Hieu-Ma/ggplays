@@ -2,6 +2,14 @@ extends layout.pug
 
 block content 
    div(id='review-container')
+      //- h1 hello
       form(id='review-form' action='/games/:id/review' method='post')
-         div(id='game-title')= game.name
+         div(id='game-review-title-container')
+            div(id='game-review-title')= game.name
+         label(for='game-review-score') Rating:
+         input(type='number' name='game-review-score')
+         select(class="select-options" name="gameshelf")
+           option(value= "")= ""
+           each shelf in gameshelves
+              option(value=shelf.id)= shelf.title            
          
