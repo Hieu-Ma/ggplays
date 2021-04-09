@@ -5,7 +5,6 @@ body {
 #login-container {
     font-family: "Bungee Inline";
     background-color: #fff;
-    opacity: .68;
     position: relative;
     display: flex;
     justify-content: center;
