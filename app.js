@@ -16,7 +16,6 @@ const gameshelvesRouter = require('./routes/gameshelves')
 const addGameshelfRouter = require('./routes/apiaddgametoshelf')
 // const apiGameShelfRouter = require('./routes/apigameshelf')
 const apiRenameGameshelfRouter = require('./routes/apirenamegameshelf');
-
 const app = express();
 
 // view engine setup
