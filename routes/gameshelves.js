@@ -4,7 +4,7 @@ const { check, validationResult } = require('express-validator');
 const { Gameshelf, Game, Genre, Sequelize, Shelf } = require('../db/models');
 const { requireAuth } = require('../auth');
 const { asyncHandler } = require('./utils');
-// const Op = Sequelize.Op;
+const Op = Sequelize.Op;
 
 router.get('/', requireAuth, asyncHandler(async (req, res, next) => {
     const { userId } = req.session.auth;
