@@ -78,7 +78,7 @@ router.get('/:id', asyncHandler(async (req, res) => {
     //     where: { gameshelfId: game_id }
     // })
     console.log("these are our gameshelves" , gameshelf);
-    res.render('gameshelves-list', { gameshelf })
+    res.render('gameshelves', { gameshelf })
     // res.json({ gameshelf }); // amazing for seeing what you're working with
 }));
 
