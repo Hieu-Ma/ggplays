@@ -45,13 +45,14 @@ router.post('/create-shelf', requireAuth, shelfValidators, asyncHandler(async (r
 
 router.get('/edit', requireAuth, asyncHandler(async (req, res) => {
     const { userId } = req.session.auth;
+    // need to query for default shelves separately from custom shelves
     const gameshelves = await Gameshelf.findAll({
         where: { 
             user_id: userId,
             title: ['Currently Playing', 'Want to Play', 'Played']
         }
     });
-
+    
     const customShelves = await Gameshelf.findAll({
         where: {
             user_id: userId,
@@ -61,7 +62,6 @@ router.get('/edit', requireAuth, asyncHandler(async (req, res) => {
         }
     })
 
- 
     res.render('gameshelves-edit', { gameshelves, customShelves });
 }));
 
