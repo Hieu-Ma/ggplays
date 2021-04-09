@@ -1,0 +1,7 @@
+extends layout.pug
+
+block content 
+   div(id='review-container')
+      form(id='review-form' action='/games/:id/review' method='post')
+         div(id='game-title')= game.name
+         
