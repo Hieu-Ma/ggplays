@@ -28,8 +28,13 @@
   box-shadow: -1px 1px 3px 3px rgba(124, 123, 123, 0.1);
   display: flex;
   /* justify-content: space-between; */
+  /* position: relative; */
+}
+
+#custom-shelf {
   position: relative;
 }
+
 
 #delete-container {
   justify-content: flex-end;
@@ -39,13 +44,25 @@
   display: none;
 }
 
-/* #rename-btn {
+.delete-btn {
   position: absolute;
-  margin-left: 15px;
-} */
+  top: 50%;
+  bottom: 50%;
+  right: 20px;
+  height: 20px;
+  width: 20px;
+}
 
-#rename-delete-btn {
+#rename-btn {
+  /* position: absolute; */
+  margin-left: 15px;
+  align-content: center;
+} 
+
+
+/* 
+div#rename-delete-btn {
   display: flex;
   justify-content: space-between;
-}
+} */
 
