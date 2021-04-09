@@ -1,6 +1,5 @@
 #game-container {
    background-color: #FDF2E9;
-   /* opacity: .68; */
    border: solid pink;
    border-radius: 10px;
    padding: 60px;
@@ -8,12 +7,11 @@
    margin-top: 85px;
    display: grid;
    column-gap: 20px;
-   row-gap: 20px;
+   row-gap: 25px;
    grid-template-columns: repeat(5, 1fr);
    grid-template-rows: auto;
    grid-template-areas: 
    "image image title title title"
-   "image image description description description"
    "image image description description description"
    "gameshelf gameshelf description description description"
    "review review review review review"
@@ -27,7 +25,7 @@
 
 #game-img img{
    object-fit: contain;
-   height: 500px;
+   height: 450px;
    /* height: 100%; */
    width: 100%; 
 }
@@ -45,7 +43,21 @@
    align-items: center;
    border: 3px solid black;
    font-family: "Bungee";
-   font-size: 40px;
+   font-size: 27px;
+   /* padding: 20px; */
+}
+
+#game-score {
+   border: 3px solid black;
+   border-radius: 50%;
+   height: 50px;
+   width: 50px;
+   font-family: "Bungee";
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 25px;
+   margin: 0 5px;
 }
 
 #description-container {
@@ -53,6 +65,7 @@
    width: 100%;
    background-color: white;
    border: 3px solid black;
+   padding: 20px;
 }
 
 #description-title {
@@ -71,8 +84,9 @@
    grid-area: review;
    width: 100%;
    background-color: white;
-   border: 3px solid black;
+   border: 2px solid black;
    font-family: "Bungee";
+   padding: 15px 30px;
 }
 
 #reviews-title {
@@ -84,8 +98,9 @@
    font-family: Arial, Helvetica, sans-serif;
    border: 2px solid black;
    border-radius: 5px;
-   margin: 0 7px;
-   margin-bottom: 7px;
+   margin: 30px 5px;
+   padding: 25px;
+   box-shadow: -1px 1px 5px 5px rgba(124, 123, 123, 0.2);
 }
 
 #my-review {
