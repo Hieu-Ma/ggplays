@@ -122,9 +122,41 @@ router.get('/:id/review/edit', asyncHandler(async (req, res) => {
          game_id: id
       }
    })
-   console.log("this is the gameId", userReview.description)
+   // console.log("this is the gameId", userReview.description)
    // res.json({userReview});
    res.render('review-edit', {userReview, game, gameshelves, cons, pros })
+}));
+
+router.post('/:id/review/edit', asyncHandler(async (req, res) => {
+   const userId = req.session.auth.userId; 
+   const id = parseInt(req.params.id, 10);
+   
+   const {review_title, game_review_score, review_description, pro_options, con_options, gameId, gameshelf} = req.body;
+   await Review.destroy({
+      where: {
+         user_id: userId,
+         game_id: gameId
+      }
+   })
+   console.log("this is the id of the game", id)
+   console.log("this is the 2nd id of the game", gameshelf)
+   // await reviewToDelete.destroy();
+
+   let review = await Review.create({
+      title: review_title,
+      score: game_review_score,
+      description: review_description,
+      user_id: userId,
+      game_id: gameId,
+      pro_id: pro_options,
+      con_id: con_options,
+   })
+   // console.log(gameshelf)
+   // console.log(review_title, game_review_score, review_description, pro_options, con_options, gameId, userId);
+   // console.log("this property is,", game_review_score)
+   // res.json(rating)
+   // res.json({review});
+   res.redirect(`/games/${gameId}/review/edit`);
 }));
 
 module.exports = router;

@@ -2,7 +2,7 @@ extends layout.pug
 
 block content 
    div(id='review-container')
-      form(id='review-form' action='/games/:id/review' method='post')
+      form(id='review-form' action='/games/:id/review/edit' method='post')
          input(type="hidden" value= game.id name="gameId")
          div(id='game-review-title-container')
             div(id='game-review-title')= game.name
