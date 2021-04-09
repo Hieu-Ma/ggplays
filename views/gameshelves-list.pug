@@ -1,19 +1,19 @@
-extends layout.pug
+//- extends layout.pug
 
-append head
-  link(rel="stylesheet" href="/stylesheets/games-list.css")
+//- append head
+//-   link(rel="stylesheet" href="/stylesheets/games-list.css")
 
 
-block content
-    div(id= "gameshelves-container")
-        div(class="gameshelves-list")
-            h3 Games in Gameshelf
-            li Gameshelf Games
-            ul
-                each game in gameshelf.Games
-                    li
-                        img(src=`${game.image_url}`)
-                        p= game.name
+//- block content
+//-     div(id= "gameshelves-container")
+//-         div(class="gameshelves-list")
+//-             h3 Games in Gameshelf
+//-             li Gameshelf Games
+//-             ul
+//-                 each game in gameshelf.Games
+//-                     li
+//-                         img(src=`${game.image_url}`)
+//-                         p= game.name
         //- div(class="games-container")
         //-     h3 Games
         //-     div(class="games-container")
@@ -24,3 +24,44 @@ block content
         //-                     img(src=`${game.image_url}` width="150" height="200")
         //-                 div(class="title")
         //-                 p= game.name
+extends layout.pug
+
+include utils.pug
+
+append head
+    link(rel="stylesheet" href="/stylesheets/gameshelves.css")
+
+block content
+    div(id= "gameshelves-container")
+        div(class="gameshelves-list")
+            h3 My Game Shelves
+            li Games
+            //- div(class="form" id="form-container")
+            //-     if errors
+            //-         div(id="errors-container")
+            //-             ul
+            //-                 each error in errors
+            //-                     li= error
+            //-     form(id="newshelf-form" action='/gameshelves/create-shelf' method="post")
+            //-         label(for="title")= "Create New Shelf:"
+            //-         input(type="text" id="title" name="title" value=title)
+            //-         button(type='submit' class='login-button') Create
+
+            ul
+                each shelf in shelves
+                    li
+                    a(href=`/gameshelves/${shelf.id}`)= shelf.title
+        div(class="games-container")
+            each game in gameshelf.Games
+                div(class="games-container" id="title-description")
+                    div(class="games-container" id="game")
+                        div(id="game-img")
+                            h3 Games:
+                            img(id="image-id" src=game.image_url)
+                            h3=`${game.name}`
+                div(class="games-container" id="description")
+                    div(class="games-container" id="game-description")
+                            h3 Description:
+                            h5= `Developer: ${game.developer}`
+                            h5= `Release Date: ${game.year_released}`
+                            //- h5= `Genre: ${game.Genre.type}`
