@@ -11,7 +11,8 @@ block content
          p= `Member Since: ${user.createdAt}`
    div(id="gameshelves-container")
       h3 Game Shelves:
-      h4 More...
+      h4 
+         a(href="/gameshelves")= "More..."
       div(id="buttons")
          each shelf in gameshelves
             form(action=`/gameshelves/${shelf.id}`)
