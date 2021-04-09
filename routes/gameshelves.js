@@ -80,16 +80,24 @@ router.get('/edit', requireAuth, asyncHandler(async (req, res) => {
     res.render('gameshelves-edit', { gameshelves, customShelves });
 }));
 
-router.get('/:id', asyncHandler(async (req, res) => {
+router.get('/:id', requireAuth, asyncHandler(async (req, res) => {
     const gameshelfId = parseInt(req.params.id, 10);
+    const { userId } = req.session.auth;
     const gameshelf = await Gameshelf.findByPk(gameshelfId, {
-        include: Game
+        include: Game,
     })
+    const shelves = await Gameshelf.findAll({
+        // include: Shelf,
+        where: { user_id: userId }
+        // where: { gameshelfId : game_shelf_id }
+    });
     // const games = await Game.findAll({
     //     where: { gameshelfId: game_id }
     // })
-    // console.log("these are our gameshelves" , gameshelf);
-    res.render('gameshelves-list', { gameshelf })
+    console.log("these are our gameshelves" , gameshelf);
+    // res.json({ gameshelf });
+    // res.json(shelves);
+    res.render('gameshelves-list', { shelves, gameshelf })
     // res.json({ gameshelf }); // amazing for seeing what you're working with
 }));
 
