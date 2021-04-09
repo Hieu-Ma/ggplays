@@ -19,4 +19,8 @@ router.put('/', requireAuth, asyncHandler(async (req, res) => {
   res.json({ customShelf });
 }))
 
+router.delete('', requireAuth, asyncHandler(async (req, res) => {
+  
+}))
+
 module.exports = router;
