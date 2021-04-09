@@ -11,7 +11,7 @@ block content
             li All Games
             ul 
                 each genre in genres
-                    li= genre.type
+                    li: a(href=`/games-list/${genre.id}`)= genre.type
         div(class="games-container")
             h3 Games 
             div(class="games-container")

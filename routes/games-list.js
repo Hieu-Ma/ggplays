@@ -3,7 +3,7 @@ const router = express.Router();
 const { Gameshelf, Game, User, Genre } = require('../db/models');
 const { asyncHandler } = require('./utils');
 
-router.get('/', asyncHandler(async(req, res, next) => {
+router.get('/', asyncHandler(async (req, res, next) => {
     const games = await Game.findAll()
 
     const genres = await Genre.findAll()
@@ -11,6 +11,15 @@ router.get('/', asyncHandler(async(req, res, next) => {
     res.render('games-list', { genres, games })
 }));
 
+router.get('/:id', asyncHandler(async (req, res) => {
+    const genreId = parseInt(req.params.id, 10);
+
+    const ggames = await Game.findAll({
+        where: { genre_id: genreId }
+    })
+
+    res.render('games-list', { ggames })
+}));
 
 
 module.exports = router
