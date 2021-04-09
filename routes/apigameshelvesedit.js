@@ -7,10 +7,11 @@ const { asyncHandler } = require('./utils');
 
 // rename
 router.put('/', requireAuth, asyncHandler(async (req, res) => {
-  // console.log('hello');
+  console.log('hello');
   const { newName, shelfId } = req.body;
   console.log(newName, shelfId);
   const customShelf = await Gameshelf.findByPk(shelfId);
+  console.log("customShelf", customShelf)
 
   customShelf.title = newName;
   await customShelf.save();

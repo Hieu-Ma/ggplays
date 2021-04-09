@@ -11,19 +11,27 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     // document.querySelectorAll('.rename-form').style.display = 'none';
     if (buttonClass === 'rename-btn') {
-      const customShelfId = parseInt(buttonId.slice(5), 10);
+      const customShelfId = buttonId.slice(7);
       const renameInputField = document.getElementById(`rename-input-${customShelfId}`)
+      console.log(customShelfId, renameInputField);
       renameInputField.type = 'text';
       // document.getElementById(`form-${customShelfId}`).style.display = 'block';
-      console.log(customShelfId);
     }
 
     if (buttonClass === 'save-btn') {
-      document.querySelector('.rename-form').style.display = 'none';
-      document.querySelector('.rename-btn').style.display = 'block';
-      const renameForm = event.target.querySelector('.rename-form');
+      const customShelfId = buttonId.slice(5);
+      const renameInputField = document.getElementById(`rename-input-${customShelfId}`)
+      console.log(customShelfId, renameInputField);
+      renameInputField.type = 'hidden';
+
+      // document.querySelector('.rename-form').style.display = 'none';
+      // document.querySelector('.rename-btn').style.display = 'block';
+
+      const renameForm = document.getElementById(`form-${customShelfId}`);
+      console.log("renameForm", renameForm)
       const formData = new FormData(renameForm);
       const newName = formData.get('new-name');
+      console.log("newName", newName)
       const shelfId = formData.get('shelf-id');
       const body = { newName, shelfId };
 

@@ -16,7 +16,7 @@ block content
                 div(id= "custom-shelf")= customShelf.title
                     form(action= "/gameshelves/edit" method= "put" class= "rename-form" id= `form-${customShelf.id}`)
                         div(id= "rename-container")
-                            input(type="hidden" name= "new-name" id= `rename-input-${customShelf.id}` value= `${newName}`)
+                            input(type="hidden" name= "new-name" id= `rename-input-${customShelf.id}` value= `${customShelf.title}`)
                             button(type= "hidden" class= "save-btn" id= `save-${customShelf.id}` name= "shelf-id") Save
                     div(id= "rename-btn")
                         button(type= "hidden" class= "rename-btn" id= `rename-${customShelf.id}` name= "rename-shelf-id") Rename

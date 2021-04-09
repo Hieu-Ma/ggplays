@@ -14,7 +14,7 @@ router.get('/', requireAuth, asyncHandler(async (req, res, next) => {
     const games = await Game.findAll({
         include: Genre
     });
-    
+
     res.render('gameshelves', { shelves, games });
 }));
 
