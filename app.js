@@ -15,6 +15,7 @@ const gamesRouter = require('./routes/games');
 const gameshelvesRouter = require('./routes/gameshelves')
 const addGameshelfRouter = require('./routes/apiaddgametoshelf')
 // const apiGameShelfRouter = require('./routes/apigameshelf')
+const apiRenameGameshelfRouter = require('./routes/apirenamegameshelf');
 
 const app = express();
 
@@ -55,6 +56,7 @@ app.use('/gameshelves', gameshelvesRouter);
 app.use('/games', gamesRouter);
 app.use('/api/games', addGameshelfRouter);
 // app.use('/api/gameshelves', apiGameShelfRouter);
+app.use('/api/gameshelves/edit', apiRenameGameshelfRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
