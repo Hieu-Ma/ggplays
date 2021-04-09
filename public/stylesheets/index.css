@@ -10,7 +10,6 @@ div.homepage_container {
 }
 
 div.genre_title {
-    /* justify-content: center; */
     margin-left: 120px;
     border-bottom: 10px solid #F66767;
     width: fit-content;
@@ -23,7 +22,6 @@ h2 a{
 }
 
 div.genre_title:hover {
-    /* color: #525a75; */
     border-bottom: 10px solid #3C3D47;
 }
 
@@ -51,7 +49,6 @@ div.scroll div.game {
     max-width: 150px;
     float: inherit;
     box-shadow: 10px 15px 8px lightslategray;
-    /* margin: 10px; */
 }
 
 .gameImg img {
@@ -64,8 +61,6 @@ div.title {
     max-height: 100px;
     padding: 1px;
     box-shadow: 10px 10px 8px lightslategray;
-    /* text-wrap: ; */
-    /* overflow: scroll; */
 }
 
 p {
