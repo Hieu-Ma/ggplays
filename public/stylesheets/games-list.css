@@ -23,7 +23,7 @@ div.gameshelves-list {
     flex-direction: column;
 }
 
-div.gameshelves-list h3 {
+h3 {
     font-size: 24px;
     padding: 0 25px 25px 25px;
     margin-top: 50px;
@@ -38,10 +38,13 @@ div.gameshelves-list li {
 
 div.games-container {
     display: flex;
-    flex-direction: column;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    padding-bottom: 50px;
+    
 }
 
-#game {
+.game {
     border: 2px solid grey;
     min-height: 100px;
     min-width: 50px;
@@ -49,5 +52,5 @@ div.games-container {
     max-width: 150px;
     margin-top: 50px; 
     margin: 50px;
-
+    /* padding: 0px; */
 }
