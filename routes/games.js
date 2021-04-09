@@ -65,14 +65,22 @@ router.get('/:id', asyncHandler(async (req, res) => {
 
 router.get('/:id/review', asyncHandler(async (req, res) => {
    let userId = req.session.auth.userId;
+   const id = parseInt(req.params.id, 10);
 
-   gameshelves = await Gameshelf.findAll({
+   let gameshelves = await Gameshelf.findAll({
       where: { user_id: userId }
    })
 
-   const id = parseInt(req.params.id, 10);
    let game = await Game.findByPk(id);
-   res.render('review', {game, gameshelves});
+   
+   let pros = await Pro.findAll()
+
+   let cons = await Con.findAll()
+
+
+
+
+   res.render('review', {game, gameshelves, cons, pros});
 }));
 
 module.exports = router;
