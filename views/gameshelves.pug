@@ -1,8 +1,8 @@
-extends layout.pug 
+extends layout.pug
 
 include utils.pug
 
-append head 
+append head
     link(rel="stylesheet" href="/stylesheets/gameshelves.css")
 
 block content
@@ -21,13 +21,20 @@ block content
                     input(type="text" id="title" name="title" value=title)
                     button(type='submit' class='login-button') Create
 
-            ul 
+            ul
                 each shelf in shelves
-                    li= shelf.title 
+                    li= shelf.title
         div(class="games-container")
-            div(class="games-container" id="title-description")
-                h3 Games 
-                h3 Description
-            div(class="games-container" id="game-description")
-                div(class="games-container" id="game")
+            each game in games
+                div(class="games-container" id="title-description")
+                    div(class="games-container" id="game")
+                        div(id="game-img")
+                            h3 Games:
+                            img(id="image-id" src=game.image_url)
+                            h3=`${game.name}`
                 div(class="games-container" id="description")
+                    div(class="games-container" id="game-description")
+                            h3 Description:
+                            h5= `Developer: ${game.developer}`
+                            h5= `Release Date: ${game.year_released}`
+                            h5= `Genre: ${game.Genre.type}`

@@ -63,13 +63,4 @@ router.get('/:id', asyncHandler(async (req, res) => {
  }
 }));
 
-router.get('/:id/review', asyncHandler(async (req, res) => {
-   const id = parseInt(req.params.id, 10);
-   let game = await Game.findByPk(id)
-
-
-   res.render('review', game)
-}));
-
-
 module.exports = router;

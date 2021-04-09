@@ -6,7 +6,9 @@ const { asyncHandler } = require('./utils');
 
 /* GET home page. */
 router.get('/', asyncHandler(async (req, res, next) => {
+  
   const fps = await Game.findAll({
+    include: Genre,
     where: {
       genre_id: 1
     }
@@ -33,9 +35,6 @@ router.get('/', asyncHandler(async (req, res, next) => {
   })
 
   res.render('index', { fps, action, sports, rpg });
-
-  // console.log("checking game", fps);
-  res.render('index', { fps });
 
 }));
 
