@@ -24,6 +24,11 @@ h3 {
     "shelves-list games";
 }
 
+/* .games-container {
+    background-color: white;
+    border: black;
+} */
+
 #game-img {
     display: flex;
     flex-direction: column;
@@ -78,6 +83,14 @@ div.gameshelves-list li {
     list-style: none;
 }
 
+/* div.games-container#title-description {
+    float: left;
+}
+
+div.games-container#game-description {
+    margin-left: 200px;
+} */
+
 div.games-container {
     display: flex;
     flex-direction: column;
@@ -88,7 +101,6 @@ div.games-container#game-description {
     display: flex;
     justify-content: space-around;
     flex-direction: row;
-
 }
 
 #title-description {
@@ -102,6 +114,7 @@ div.games-container#game-description {
 
 #game {
     border: 2px solid grey;
+    background-color: white;
     min-height: 100px;
     min-width: 50px;
     max-height: 200px;
@@ -113,6 +126,7 @@ div.games-container#game-description {
 
 #description {
     border: 2px solid blue;
+    background-color: white;
     min-height: 100px;
     min-width: 400px;
     max-height: 200px;
