@@ -88,10 +88,10 @@
 #review-page-title-container {
    grid-area: reviewTitle;
    border: 2px solid black;
+   border-bottom: 0px;
    font-size: 15px;
    font-family: "Bungee";
    background-color: white;
-   border-bottom: 0px;
 }
 
 #review-input-container {

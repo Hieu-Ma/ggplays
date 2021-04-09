@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const { User, Game, Review, Genre, Pro, Con, Gameshelf } = require('../db/models');
+const { User, Game, Review, Genre, Pro, Con, Gameshelf, Shelf } = require('../db/models');
 const { csrfProtection, asyncHandler } = require('./utils');
 const { loginUser, requireAuth } = require('../auth');
 
@@ -37,10 +37,9 @@ router.get('/:id', asyncHandler(async (req, res) => {
             if(review.User.id === userId) {
                hasReview = true;
                userReview = review;
-            } else {
-               hasReview = false;
-            }
          }
+      }
+         
       gameshelves = await Gameshelf.findAll({
          where: { user_id: userId }
       })
@@ -55,7 +54,7 @@ router.get('/:id', asyncHandler(async (req, res) => {
       }
       count *= 100;
       let score = Math.floor((total / count) * 100);
-
+      
       res.render('game', { game, score, reviews, hasReview, userId, userReview, gameshelves })
 
  } catch (e) {
@@ -83,7 +82,7 @@ router.get('/:id/review', asyncHandler(async (req, res) => {
 router.post('/:id/review', asyncHandler(async (req, res) => {
    const userId = req.session.auth.userId; 
    // const id = parseInt(req.params.id, 10);
-   const {review_title, game_review_score, review_description, pro_options, con_options, gameId} = req.body;
+   const {review_title, game_review_score, review_description, pro_options, con_options, gameId, gameshelf} = req.body;
    let review = await Review.create({
       title: review_title,
       score: game_review_score,
@@ -93,11 +92,39 @@ router.post('/:id/review', asyncHandler(async (req, res) => {
       pro_id: pro_options,
       con_id: con_options,
    })
+   // console.log(gameshelf)
    // console.log(review_title, game_review_score, review_description, pro_options, con_options, gameId, userId);
    // console.log("this property is,", game_review_score)
    // res.json(rating)
    // res.json({review});
    res.redirect(`/games/${gameId}`);
+}));
+
+router.get('/:id/review/edit', asyncHandler(async (req, res) => {
+
+   let userId = req.session.auth.userId;
+
+   const id = parseInt(req.params.id, 10);
+
+   let gameshelves = await Gameshelf.findAll({
+      where: { user_id: userId }
+   })
+
+   let game = await Game.findByPk(id);
+   
+   let pros = await Pro.findAll()
+
+   let cons = await Con.findAll()
+
+   let userReview = await Review.findOne({
+      where: {
+         user_id: userId,
+         game_id: id
+      }
+   })
+   console.log("this is the gameId", userReview.description)
+   // res.json({userReview});
+   res.render('review-edit', {userReview, game, gameshelves, cons, pros })
 }));
 
 module.exports = router;
