@@ -14,8 +14,12 @@ block content
                 div(id= "shelf")= shelf.title
             each customShelf in customShelves
                 div(id= "custom-shelf")= customShelf.title
-                    div(id= "rename-container")
-                        button(id= `rename-${customShelf.id}`) Rename
-                    div(id= "delete-container")
-                        button(id= `delete-${customShelf.id}`) X
+                    form(action= "/gameshelves/edit" method= "put" class= "rename-form")
+                        div(id= "rename-container")
+                            input(name= "new-name" id= "rename-input" value= `${newName}`)
+                            button(type= "submit" class= "save-btn" id= `save-${customShelf.id}` name= "shelf-id") Save
+                    div(id= "rename-btn")
+                        button(type= "submit" class= "rename-btn" id= `rename-${customShelf.id}` name= "shelf-id") Rename
+                    div(id= "delete-btn")
+                        button(class= "delete-btn" id= `delete-${customShelf.id}`) X
                            
