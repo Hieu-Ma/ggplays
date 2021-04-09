@@ -47,7 +47,7 @@ block content
                      div(id= "my-review-title") My Review
                      div(id= "edit-button-container")
                         button(id= "edit-button") 
-                           a(href="/" id= "edit-button-link") Edit
+                           a(href= `/games/${game.id}/review/edit` id= "edit-button-link") Edit
                   div(id= "review-title-container")
                      div(id= "review-score")= userReview.score
                      div(id= "review-title")= userReview.User.username + ": " + "\"" + userReview.title + "\"" 
@@ -61,7 +61,7 @@ block content
          else
             if (locals.authenticated)
                button(id= "review-game") 
-                  a(id= "review-game-link" href= "/") Review this game!
+                  a(id= "review-game-link" href= `/games/${game.id}/review`) Review this game!
             else
                button(id= "log-in-to-review" ) 
                   a(id= "log-in-to-review-link" href= "/users/login") Log in to review!

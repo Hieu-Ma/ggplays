@@ -1,0 +1,37 @@
+extends layout.pug
+
+block content 
+   div(id='review-container')
+      //- h1 hello
+      form(id='review-form' action='/games/:id/review' method='post')
+         div(id='game-review-title-container')
+            div(id='game-review-title')= game.name
+         div(id='game-review-score-container')
+            label(for='game-review-score') Rating:
+            input(type='number' name='game-review-score' min='0' max='100' required)
+         div(id='gameshelf-options-container')
+            label(for='gameshelf') gameshelves:
+            select(id='select-options' name='gameshelf' required)
+              option(value= '')= ''
+              each shelf in gameshelves
+                 option(value=shelf.id)= shelf.title
+         div(id='pro-options-container')
+            label(for='pro-options') pros:
+            select(id='pro-options' name='pro-options' required)
+              option(value= '')= ''
+              each pro in pros
+                 option(value=pro.id)= pro.content
+         div(id='con-options-container')
+            label(for='con-options') cons:
+            select(id='con-options' name='con-options' required)
+              option(value= '')= ''
+              each con in cons
+                 option(value=con.id)= con.content
+         div(id='review-title-container')
+            label(for='reveiew-title') title
+            input(type='text')
+         div(id='review-input-container')
+            label(for='input-review')
+            textarea(id='review-text' name='' placeholder='your review here!')
+         button(type='submit' id='submit-review') submit                       
+              
