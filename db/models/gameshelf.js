@@ -18,6 +18,13 @@ module.exports = (sequelize, DataTypes) => {
       otherKey:  'game_id',
       through: 'Shelf'
     });
+
+    // delete shelves associations before deleting gameshelf
+    Gameshelf.hasMany(models.Shelf, { 
+      foreignKey: "game_shelf_id",
+      onDelete: "Cascade",
+      hooks: true
+    })
   };
   return Gameshelf;
 };

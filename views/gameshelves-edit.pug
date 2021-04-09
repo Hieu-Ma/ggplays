@@ -11,15 +11,19 @@ block content
         div(id= "gameshelves-title") Game Shelves
         div(id= "shelf-container")
             each shelf in gameshelves
-                div(id= "shelf")= shelf.title
+                div(id= "shelf")
+                    h1= shelf.title
             each customShelf in customShelves
-                div(id= "custom-shelf")= customShelf.title
-                    form(action= "/gameshelves/edit" method= "put" class= "rename-form")
+                div(id= "custom-shelf")
+                    h1= customShelf.title
+                    form(action= "/gameshelves/edit" method= "put" class= "rename-form" id= `form-${customShelf.id}`)
                         div(id= "rename-container")
-                            input(name= "new-name" id= "rename-input" value= `${newName}`)
-                            button(type= "submit" class= "save-btn" id= `save-${customShelf.id}` name= "shelf-id") Save
+                            input(type="hidden" name= "new-name" id= `rename-input-${customShelf.id}` value= `${customShelf.title}`)
+                            input(type="hidden" name= "shelf-id" value=customShelf.id)
+                            button(type= "submit" class= "save-btn btn" id= `save-${customShelf.id}`) Save
                     div(id= "rename-btn")
-                        button(type= "submit" class= "rename-btn" id= `rename-${customShelf.id}` name= "rename-shelf-id") Rename
+                        button(type= "hidden" class= "rename-btn btn" id= `rename-${customShelf.id}` name= "rename-shelf-id") Rename
                     div(id= "delete-btn")
-                        button(class= "delete-btn" id= `delete-${customShelf.id}`) X
-                           
+                        form(action= "/gameshelves/edit/delete" method= "delete" class= "delete-form" id= `delete-form-${customShelf.id}`)
+                            input(type="hidden" name= "shelf-id" value=customShelf.id)
+                            button(type="submit" class= "delete-btn btn" id= `delete-${customShelf.id}`) X

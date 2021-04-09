@@ -71,7 +71,10 @@ router.get('/edit', requireAuth, asyncHandler(async (req, res) => {
             title: {
                 [Op.notIn]: ['Currently Playing', 'Want to Play', 'Played']
             }
-        }
+        },
+        order: [[
+            "createdAt", "ASC"
+        ]]
     })
 
     res.render('gameshelves-edit', { gameshelves, customShelves });
@@ -97,23 +100,5 @@ router.get('/:id', requireAuth, asyncHandler(async (req, res) => {
     res.render('gameshelves-list', { shelves, gameshelf })
     // res.json({ gameshelf }); // amazing for seeing what you're working with
 }));
-
-
-
-// router.delete('/:id(\\d+)', requireAuth, asyncHandler(async (req, res) => {
-//     const { userId } = req.session.auth;
-//     // click event for delete associated with game shelf
-//     const customShelfId = parseInt(req.params.id, 10);
-//     const customShelf = await Gameshelf.findOne({
-//         where: {
-//             user_id: userId,
-//             title: {
-//                 [Op.notIn]: ['Currently Playing', 'Want to Play', 'Played']
-//             },
-//             id: customShelfId
-//         }
-//     });
-//     await customShelf.destroy();
-// }))
 
 module.exports = router;
