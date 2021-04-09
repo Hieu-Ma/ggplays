@@ -1,17 +1,20 @@
 const express = require('express');
 const router = express.Router();
 const { check, validationResult } = require('express-validator');
-const { Gameshelf, Game, Genre, Sequelize } = require('../db/models');
+const { Gameshelf, Game, Genre, Sequelize, Shelf } = require('../db/models');
 const { requireAuth } = require('../auth');
 const { asyncHandler } = require('./utils');
 const Op = Sequelize.Op;
 
 router.get('/', requireAuth, asyncHandler(async (req, res, next) => {
-    const shelves = await Gameshelf.findAll()
+    const { userId } = req.session.auth;
+    const shelves = await Gameshelf.findAll({
+        where: { user_id: userId }
+    });
     const games = await Game.findAll({
         include: Genre
     });
-    console.log(Genre);
+
     res.render('gameshelves', { shelves, games });
 }));
 
@@ -29,6 +32,14 @@ router.post('/create-shelf', requireAuth, shelfValidators, asyncHandler(async (r
         title,
     } = req.body;
 
+    const shelves = await Gameshelf.findAll({
+        where: { user_id: userId }
+    });
+
+    const games = await Game.findAll({
+        include: Genre
+    });
+
     const newGameshelf = Gameshelf.build({
         title: title,
         user_id: userId,
@@ -40,7 +51,7 @@ router.post('/create-shelf', requireAuth, shelfValidators, asyncHandler(async (r
         res.redirect('/gameshelves');
     } else {
         const errors = validatorErrors.array().map((error) => error.msg);
-        res.render('gameshelves', { errors });
+        res.render('gameshelves', { shelves, games, errors });
     }
 }));
 
@@ -64,6 +75,19 @@ router.get('/edit', requireAuth, asyncHandler(async (req, res) => {
     })
 
     res.render('gameshelves-edit', { gameshelves, customShelves });
+}));
+
+router.get('/:id', asyncHandler(async (req, res) => {
+    const gameshelfId = parseInt(req.params.id, 10);
+    const gameshelf = await Gameshelf.findByPk(gameshelfId, {
+        include: Game
+    })
+    // const games = await Game.findAll({
+    //     where: { gameshelfId: game_id }
+    // })
+    console.log("these are our gameshelves" , gameshelf);
+    res.render('gameshelves-list', { gameshelf })
+    // res.json({ gameshelf }); // amazing for seeing what you're working with
 }));
 
 

@@ -27,19 +27,55 @@ div#profile-container h3 {
     height: 200px;
 }
 
-h3 {
-    font-size: 3em;
-}
-
-h4 {
-    font-size: 2em;
+div#genre-title {
+    margin: auto;
+    border-bottom: 10px solid #F66767;
+    width: fit-content;
 }
 
 h2 {
+    font-family: "Bungee Inline";
+    font-size: 60px;
+    margin: auto;
+    border-bottom: 10px solid #F66767;
+    width: fit-content;
+    text-decoration: none;
+}
+
+h3 a{
+    font-family: "Bungee Inline";
+    font-size: 60px;
+    margin: auto;
+    border-bottom: none;
+    width: fit-content;
+    text-decoration: none;
+}
+
+div#genre-title:hover {
+    border-bottom: 10px solid #3C3D47;
+}
+
+div.scroll {
+    margin:  20px 120px 60px 120px;
+    padding: 20px;
+    background-color: #fdf2ea;
+    overflow: auto;
+    white-space: nowrap;
+    border: 2px solid #52535f;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 20px 10px rgba(160, 160, 160, 0.6);
+}
+
+div.scroll div.game {
+    background-color: #3C3D47;
+    margin: 5px 15px 5px 15px;
+    border: 1px solid lightpink;
+    border-radius: 10px;
+    display: inline-block;
+    color: whitesmoke;
     text-align: center;
-    font-size: 4em;
-    margin-top: 50px;
-    text-decoration: underline;
+    padding: 14px;
+    text-decoration: none;
 }
 
 #reviews-and-container {
@@ -77,23 +113,4 @@ h2 {
 
 #white-background {
     background-color: white;
-}
-
-div.scroll {
-    margin:  20px 120px 60px 120px;
-    padding: 20px;
-    background-color: #fdf2ea;
-    overflow: auto;
-    white-space: nowrap;
-    border: 2px solid #52535f;
-    border-radius: 5px;
-    box-shadow: inset 0px 0px 20px 10px rgba(160, 160, 160, 0.6);
-}
-
-div.scroll div.game {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px;
-    text-decoration: none;
 }

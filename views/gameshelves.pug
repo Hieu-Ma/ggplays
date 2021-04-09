@@ -23,7 +23,8 @@ block content
 
             ul
                 each shelf in shelves
-                    li= shelf.title
+                    li
+                    a(href=`/gameshelves/${shelf.id}`)= shelf.title
         div(class="games-container")
             each game in games
                 div(class="games-container" id="title-description")
