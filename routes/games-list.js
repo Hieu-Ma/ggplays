@@ -14,11 +14,14 @@ router.get('/', asyncHandler(async (req, res, next) => {
 router.get('/:id', asyncHandler(async (req, res) => {
     const genreId = parseInt(req.params.id, 10);
 
-    const ggames = await Game.findAll({
+    const games = await Game.findAll({
         where: { genre_id: genreId }
     })
 
-    res.render('games-list', { ggames })
+    const genres = await Genre.findAll()
+
+
+    res.render('games-list', { genres, games })
 }));
 
 
