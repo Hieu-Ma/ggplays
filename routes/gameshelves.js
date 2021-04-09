@@ -7,11 +7,13 @@ const { asyncHandler } = require('./utils');
 const Op = Sequelize.Op;
 
 router.get('/', requireAuth, asyncHandler(async (req, res, next) => {
-    const shelves = await Gameshelf.findAll()
+    const { userId } = req.session.auth;
+    const shelves = await Gameshelf.findAll({
+        where: { user_id: userId }
+    });
     const games = await Game.findAll({
         include: Genre
     });
-    console.log(Genre);
     res.render('gameshelves', { shelves, games });
 }));
 
