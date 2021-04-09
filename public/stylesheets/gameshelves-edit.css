@@ -1,0 +1,45 @@
+#gameshelves-edit-container {
+   background-color: #FDF2E9;
+    /* opacity: .68; */
+    border: solid lightpink;
+    border-radius: 10px;
+    /* padding: 40px; */
+    margin: 50px;
+    margin-top: 85px;
+    /* display: grid;
+    grid-template-columns: 1fr 4fr; */
+    /* grid-template-areas: 
+    "shelves-list games"; */
+}
+
+#gameshelves-title {
+  font-family: "Bungee Inline";
+  font-size: 49px;
+  margin: 40px;
+  padding-left: 20px;
+  background-color: #FDF2E9
+}
+
+#shelf-container {
+  margin: 40px;
+}
+
+#shelf, #custom-shelf {
+  font-family: "Bungee Inline";
+  background-color: white;
+  border: 1px solid lightpink;
+  font-size: 25px;
+  padding: 25px;
+  margin: 20px;
+  position: relative;
+}
+
+#rename-container, #delete-container {
+  display: inline-flex;
+
+}
+
+
+#delete-container {
+  justify-content: flex-end;
+}

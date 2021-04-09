@@ -3,8 +3,8 @@
    /* opacity: .68; */
    border: solid pink;
    border-radius: 10px;
-   padding: 40px;
-   margin: 50px;
+   padding: 60px;
+   margin: 100px;
    margin-top: 85px;
    display: grid;
    column-gap: 20px;
@@ -15,7 +15,7 @@
    "image image title title title"
    "image image description description description"
    "image image description description description"
-   "image image description description description"
+   "gameshelf gameshelf description description description"
    "review review review review review"
 }
 
@@ -27,11 +27,14 @@
 
 #game-img img{
    object-fit: contain;
-   max-height: 800px;
+   height: 500px;
    /* height: 100%; */
    width: 100%; 
 }
 
+#gameshelf-dropdown {
+   grid-area: gameshelf
+}
 
 #game-title {
    grid-area: title;
@@ -83,6 +86,37 @@
    border-radius: 5px;
    margin: 0 7px;
    margin-bottom: 7px;
+}
+
+#my-review {
+   font-family: "Bungee";
+   margin: 0 5px;
+   border-bottom: 3px solid black;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+}
+
+#my-review-title {
+   font-size: 20px;
+   grid-column-start: 1;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+}
+
+#edit-button-container{
+   grid-column-start: 2;
+   display: flex;
+   justify-content: flex-end;
+}
+
+#edit-button {
+   font-family: "Bungee";
+   margin: 5px 0;
+}
+
+#edit-button-link {
+   text-decoration: none;
 }
 
 #review-title-container {
@@ -151,4 +185,22 @@
    margin: 0 5px;
 }
 
+#review-game {
+   font-family: "bungee";
+   margin: 0 7px 7px 7px;
+}
 
+#review-game-link {
+   text-decoration: none;
+}
+
+#log-in-to-review {
+   font-family: "bungee";
+   margin: 7px;
+}
+
+#log-in-to-review-link {
+   font-family: "bungee";
+   margin: 7px;
+   text-decoration: none;
+}
