@@ -13,6 +13,7 @@ module.exports = {
       }], {});
     */
     return queryInterface.bulkInsert('Pros', [
+      { content: 'None', createdAt: new Date(), updatedAt: new Date() },
       { content: 'Amazing Visuals', createdAt: new Date(), updatedAt: new Date() },
       { content: 'Great Storyline', createdAt: new Date(), updatedAt: new Date() },
       { content: 'Smooth Gameplay', createdAt: new Date(), updatedAt: new Date() },
@@ -32,7 +33,6 @@ module.exports = {
       { content: 'Active Community', createdAt: new Date(), updatedAt: new Date() },
       { content: 'Frequent Updates', createdAt: new Date(), updatedAt: new Date() },
       { content: 'Active Developers', createdAt: new Date(), updatedAt: new Date() },
-      { content: 'None', createdAt: new Date(), updatedAt: new Date() },
     ], {});
   },
 

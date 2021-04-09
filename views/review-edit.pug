@@ -2,13 +2,13 @@ extends layout.pug
 
 block content 
    div(id='review-container')
-      form(id='review-form' action='/games/:id/review' method='post')
-         input(type="hidden" value=game.id name="gameId")
+      form(id='review-form' action='/games/:id/review/edit' method='post')
+         input(type="hidden" value= game.id name="gameId")
          div(id='game-review-title-container')
             div(id='game-review-title')= game.name
          div(id='game-review-score-container')
             label(for='game_review_score') Rating:
-            input(type='number' value=10 name='game_review_score' min='0' max='100' required)
+            input(type='number' value= userReview.score name='game_review_score' min='0' max='100' required)
          div(id='gameshelf-options-container')
             label(for='gameshelf') gameshelves:
             select(id='select-options' name='gameshelf' required)
@@ -17,21 +17,20 @@ block content
                  option(value=shelf.id)= shelf.title
          div(id='pro-options-container')
             label(for='pro_options') pros:
-            select(id='pro-options' name='pro_options' required)
+            select(id='pro-options' value= userReview.pro_id name='pro_options' required)
               option(value= '')= ''
               each pro in pros
-                 option(value=pro.id)= pro.content
+                 option(value=pro.id selected=userReview.pro_id)= pro.content
          div(id='con-options-container')
             label(for='con_options') cons:
-            select(id='con-options' name='con_options' required)
+            select(id='con-options' value= userReview.con_id name='con_options' required)
               option(value= '')= ''
               each con in cons
-                 option(value=con.id)= con.content
+                 option(value=con.id selected=userReview.pro_id)= con.content
          div(id='review-page-title-container')
             label(for='review_title') title
-            input(type='text' name='review_title')
+            input(type='text' value= userReview.title name='review_title')
          div(id='review-input-container')
             label(for='review_description')
-            textarea(id='review-text' name='review_description' placeholder='your review here!')
-         button(type='submit' id='submit-review') submit                       
-              
+            textarea(id='review-text' name='review_description' value= userReview.description placeholder='your review here!')= userReview.description
+         button(type='submit' id='submit-review') submit
