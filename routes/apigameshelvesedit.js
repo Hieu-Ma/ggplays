@@ -20,24 +20,11 @@ router.put('/', requireAuth, asyncHandler(async (req, res) => {
 
 // delete Gameshelf and any associated 'shelves' (games in the shelf)
 router.delete('/delete', requireAuth, asyncHandler(async (req, res) => {
-  console.log("hello")
 
   const { shelfId } = req.body;
-
   const deleteGameshelf = await Gameshelf.findByPk(shelfId)
-  const deleteshelves = await Shelf.findAll({
-    where: { game_shelf_id: shelfId }
-  })
-
-  console.log(deleteGameshelf, deleteshelves)
-
-  // if there are associated 'shelves' inside Gameshelf
-  if (deleteshelves) {
-    await deleteshelves.destroy();
-  }
 
   await deleteGameshelf.destroy();
-
 
 }))
 
