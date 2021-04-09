@@ -138,8 +138,8 @@ router.post('/:id/review/edit', asyncHandler(async (req, res) => {
          game_id: gameId
       }
    })
-   console.log("this is the id of the game", id)
-   console.log("this is the 2nd id of the game", gameshelf)
+   // console.log("this is the id of the game", id)
+   // console.log("this is the 2nd id of the game", gameshelf)
    // await reviewToDelete.destroy();
 
    let review = await Review.create({
@@ -156,7 +156,7 @@ router.post('/:id/review/edit', asyncHandler(async (req, res) => {
    // console.log("this property is,", game_review_score)
    // res.json(rating)
    // res.json({review});
-   res.redirect(`/games/${gameId}/review/edit`);
+   res.redirect(`/games/${gameId}`);
 }));
 
 module.exports = router;
