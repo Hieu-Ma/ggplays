@@ -71,7 +71,10 @@ router.get('/edit', requireAuth, asyncHandler(async (req, res) => {
             title: {
                 [Op.notIn]: ['Currently Playing', 'Want to Play', 'Played']
             }
-        }
+        },
+        order: [[
+            "createdAt", "ASC"
+        ]]
     })
 
     res.render('gameshelves-edit', { gameshelves, customShelves });
