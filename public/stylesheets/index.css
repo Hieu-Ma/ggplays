@@ -16,9 +16,10 @@ div.genre_title {
     width: fit-content;
 }
 
-h2 {
+h2 a{
     font-family: "Bungee Inline";
     font-size: 40px;
+    text-decoration: none;
 }
 
 div.genre_title:hover {

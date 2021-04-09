@@ -8,10 +8,18 @@ block content
    div(id="profile-container")
       div(id="profile-info")
          h3= `${user.username}'s Profile`
-         p= `Member Since: ${user.createdAt.getFullYear()}`
-      div(id="gameshelves-container")
-         ul(class="menu")
-            //- each shelf in gameshelves
-            //-    div(class="game")
-            //-       div(class="title")
-            //-       p= shelf.title
+         p= `Member Since: ${user.createdAt}`
+   div(id="gameshelves-container")
+      h3 Game Shelves:
+      h4 More...
+      div(id="buttons")
+         each shelf in gameshelves
+            form(action=`/gameshelves/`)
+               input(type="submit" id="button" value=`${shelf.title}`)
+            //- button(href=`/gameshelves/${shelf.id}` id="button" type="button")= `${shelf.title}`
+   div(id="reviews-and-container")
+      h2 Reviews
+      each review in reviews
+         div(id="reviews-container")
+            h4=`${review.Game.name}`
+               h5=`${review.description}`
