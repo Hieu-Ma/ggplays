@@ -1,0 +1,19 @@
+extends layout.pug 
+
+append head 
+  link(rel="stylesheet" href="/stylesheets/games-list.css")
+
+
+block content 
+    div(id= "gameshelves-container")
+        div(class="gameshelves-list")
+            h3 Genres
+            li All Games
+            div(class="form" id="form-container")
+            ul 
+                each game in games
+                    li= game.name
+        div(class="games-container")
+            h3 Games 
+            div(class="games-container" id="game-description")
+                div(class="games-container" id="game")
