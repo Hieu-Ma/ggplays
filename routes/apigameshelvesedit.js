@@ -26,6 +26,7 @@ router.delete('/delete', requireAuth, asyncHandler(async (req, res) => {
 
   await deleteGameshelf.destroy();
 
+  res.status(204).end();
 }))
 
 module.exports = router;

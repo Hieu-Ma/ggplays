@@ -73,12 +73,18 @@ window.addEventListener('DOMContentLoaded', (event) => {
       // console.log(deleteForm, formData, shelfId)
 
       try {
-
         const res = await fetch('/api/gameshelves/edit/delete', {
           method: 'DELETE',
           body: JSON.stringify(body),
           headers: { 'Content-Type': 'application/json' }
         })
+
+        if (res.status === 204) {
+          const deleteCustomShelf = event.target.parentElement.parentElement.parentElement;
+          deleteCustomShelf.innerHTML = '';
+          deleteCustomShelf.style.position = 'absolute';
+          deleteCustomShelf.style.display = 'none';
+        }
 
         if (!res.ok) {
           throw res;
