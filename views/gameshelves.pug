@@ -27,18 +27,14 @@ block content
         div(class="games-container")
             each game in games
                 div(class="games-container" id="title-description")
-                    h3 Games
+                    div(class="games-container" id="game")
                         div(id="game-img")
+                            h3 Games: 
                             img(id="image-id" src=game.image_url)
                             h3=`${game.name}`
-                        //- div(id="game-title")= game.name
-
-                    h3 Description
-                        div(class="games-container" id="game-description")
+                div(class="games-container" id="description")
+                    div(class="games-container" id="game-description")
+                            h3 Description:
                             h5= `Developer: ${game.developer}`
                             h5= `Release Date: ${game.year_released}`
-                            h5= `Genre: ${game.Genre.name}`
-                    div(class="games-container" id="game")
-                div(class="games-container" id="description")
-                    //- h3= `Avg Rating: ${total}`
-                    //- h3= `Release Date: ${}`
+                            h5= `Genre: ${game.Genre.type}`
