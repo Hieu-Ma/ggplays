@@ -88,27 +88,9 @@ router.get('/:id', asyncHandler(async (req, res) => {
     // const games = await Game.findAll({
     //     where: { gameshelfId: game_id }
     // })
-    console.log("these are our gameshelves" , gameshelf);
+    // console.log("these are our gameshelves" , gameshelf);
     res.render('gameshelves-list', { gameshelf })
     // res.json({ gameshelf }); // amazing for seeing what you're working with
 }));
-
-
-
-// router.delete('/:id(\\d+)', requireAuth, asyncHandler(async (req, res) => {
-//     const { userId } = req.session.auth;
-//     // click event for delete associated with game shelf
-//     const customShelfId = parseInt(req.params.id, 10);
-//     const customShelf = await Gameshelf.findOne({
-//         where: {
-//             user_id: userId,
-//             title: {
-//                 [Op.notIn]: ['Currently Playing', 'Want to Play', 'Played']
-//             },
-//             id: customShelfId
-//         }
-//     });
-//     await customShelf.destroy();
-// }))
 
 module.exports = router;

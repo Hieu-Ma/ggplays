@@ -24,7 +24,9 @@ block content
                     div(id= "rename-btn")
                         button(type= "hidden" class= "rename-btn" id= `rename-${customShelf.id}` name= "rename-shelf-id") Rename
                     div(id= "delete-btn")
-                        button(class= "delete-btn" id= `delete-${customShelf.id}`) X
+                        form(action= "/gameshelves/edit/delete" method= "delete" class= "delete-form" id= `delete-form-${customShelf.id}`)
+                            input(type="hidden" name= "shelf-id" value=customShelf.id)
+                            button(type="submit" class= "delete-btn" id= `delete-${customShelf.id}`) X
                     
 
                     //- form(action= "/gameshelves/edit" method= "put" class= "rename-form")
