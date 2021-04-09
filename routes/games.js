@@ -5,50 +5,62 @@ const { csrfProtection, asyncHandler } = require('./utils');
 const { loginUser, requireAuth } = require('../auth');
 
 router.get('/:id', asyncHandler(async (req, res) => {
-   const id = parseInt(req.params.id, 10);
-   let hasReview = false;
-   const {userId} = req.session.auth;
-   // console.log("reqbody", req.params.id)
-   const game = await Game.findByPk(id, {
-      include: [Review, Genre]
-   });
+   try{
+      let userId;
 
-   const reviews = await Review.findAll({
-      where: { game_id: id },
-      include: [User, Pro, Con]
-   })
+      if(req.session.auth) {
+         userId = req.session.auth.userId;
+      } else {
+         userId = 0;
+      }
 
-   const gameshelves = await Gameshelf.findAll({
-      where: { user_id: userId}
-   })
-   // console.log("list of shelves" + gameshelves, "userId" + userId);
-   
-   let total = 0;
-   let count = 0;
+      const id = parseInt(req.params.id, 10);
+      let hasReview = false;
+      let userReview;
+      const game = await Game.findByPk(id, {
+         include: [Review, Genre]
+      });
 
-   for (let review of reviews) {
-      total += review.score;
-      count++;
-      // if(review.User.id === req.session.auth.userId) {
-      //    hasReview = true;
-      // } else {
-      //    hasReview = false;
-      // }
-      // console.log(review.User.id)
-   }
-   count *= 100;
-   let score = Math.floor((total / count) * 100);
+      const reviews = await Review.findAll({
+         where: { game_id: id },
+         include: [User, Pro, Con]
+      })
 
-   // console.log(req.session.auth);
-   // if(req.session.auth) {
-   //    const sessionId = req.session.auth.userId;
-   //    const sessionBoolean = true;
-   // } else {
-   //    const sessionBoolean = false;
-   // }
+      let gameshelves;
+      let total = 0;
+      let count = 0;
 
-   // console.log(req.session.auth.userId);
-   res.render('game', { game, score, reviews, hasReview, userId, gameshelves })
+      if(req.session.auth) {
+         for (let review of reviews) {
+            total += review.score;
+            count++;
+            if(review.User.id === userId) {
+               hasReview = true;
+               userReview = review;
+            } else {
+               hasReview = false;
+            }
+         }
+      gameshelves = await Gameshelf.findAll({
+         where: { user_id: userId }
+      })
+      } else {
+         for (let review of reviews) {
+            total += review.score;
+            count++;
+         }
+         gameshelves = await Gameshelf.findAll({
+            where: { user_id: userId }
+         })
+      }
+      count *= 100;
+      let score = Math.floor((total / count) * 100);
+
+      res.render('game', { game, score, reviews, hasReview, userId, userReview, gameshelves })
+
+ } catch (e) {
+   console.log(e)
+ }
 }));
 
 module.exports = router;

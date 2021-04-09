@@ -88,6 +88,37 @@
    margin-bottom: 7px;
 }
 
+#my-review {
+   font-family: "Bungee";
+   margin: 0 5px;
+   border-bottom: 3px solid black;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+}
+
+#my-review-title {
+   font-size: 20px;
+   grid-column-start: 1;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+}
+
+#edit-button-container{
+   grid-column-start: 2;
+   display: flex;
+   justify-content: flex-end;
+}
+
+#edit-button {
+   font-family: "Bungee";
+   margin: 5px 0;
+}
+
+#edit-button-link {
+   text-decoration: none;
+}
+
 #review-title-container {
    display: flex;
    align-items: center;
@@ -154,4 +185,22 @@
    margin: 0 5px;
 }
 
+#review-game {
+   font-family: "bungee";
+   margin: 0 7px 7px 7px;
+}
 
+#review-game-link {
+   text-decoration: none;
+}
+
+#log-in-to-review {
+   font-family: "bungee";
+   margin: 7px;
+}
+
+#log-in-to-review-link {
+   font-family: "bungee";
+   margin: 7px;
+   text-decoration: none;
+}
