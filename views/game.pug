@@ -1,9 +1,30 @@
 extends layout.pug 
 
+append head 
+   script(src="/javascripts/updatingGameshelf.js", type="module")
+
+
 block content 
    div(id= "game-container")
       div(id= "game-img")
          img(src= src=game.image_url)
+      if userId
+         div(id="gameshelf-dropdown")
+            form(class="select-form")
+               input(type="hidden" value=game.id name="gameId")
+               select(class="select-options" name="gameshelf")
+                  option(value= "")= ""
+                  each shelf in gameshelves
+                     option(value=shelf.id)= shelf.title 
+      else
+         div(id="gameshelf-dropdown")
+            form(class="select-form")
+               input(type="hidden" value=game.id name="gameId")
+               select(class="select-options" name="gameshelf")
+                  option(value= "")= ""
+                  option() Want To Play
+                  option() Currently Playing
+                  option() Played
       div(id= "game-title")= game.name
          div(id= "game-score")= score
       div(id= "description-container")
@@ -19,6 +40,31 @@ block content
             div(id= "genre")= game.Genre.type
       div(id= "reviews")
          div(id= "reviews-title") Reviews
+         if (locals.authenticated && hasReview)
+            div(id= "my-review-container")
+               div(id= "game-review")
+                  div(id= "my-review")
+                     div(id= "my-review-title") My Review
+                     div(id= "edit-button-container")
+                        button(id= "edit-button") 
+                           a(href="/" id= "edit-button-link") Edit
+                  div(id= "review-title-container")
+                     div(id= "review-score")= userReview.score
+                     div(id= "review-title")= userReview.User.username + ": " + "\"" + userReview.title + "\"" 
+                  div(id= "pros-and-cons")
+                     div(id= "pro-title") Pro:  
+                        div(id= "pro-description")= userReview.Pro.content
+                     div(id= "con-title") Con:  
+                        div(id= "con-description")= userReview.Con.content
+                  div(id= "review-description-container")
+                     div(id= "review-description")= userReview.description   
+         else
+            if (locals.authenticated)
+               button(id= "review-game") 
+                  a(id= "review-game-link" href= "/") Review this game!
+            else
+               button(id= "log-in-to-review" ) 
+                  a(id= "log-in-to-review-link" href= "/users/login") Log in to review!
          each review in reviews
             div(id= "game-review")
                div(id= "review-title-container")
