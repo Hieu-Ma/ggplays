@@ -11,10 +11,11 @@ block content
          p= `Member Since: ${user.createdAt}`
    div(id="gameshelves-container")
       h3 Game Shelves:
-      h4 More...
+      h4 
+         a(href="/gameshelves")= "More..."
       div(id="buttons")
          each shelf in gameshelves
-            form(action=`/gameshelves/${shelf.id}`)
+            form(action=`/gameshelves/`)
                input(type="submit" id="button" value=`${shelf.title}`)
             //- button(href=`/gameshelves/${shelf.id}` id="button" type="button")= `${shelf.title}`
    div(id="reviews-and-container")
@@ -22,4 +23,4 @@ block content
       each review in reviews
          div(id="reviews-container")
             h4=`${review.Game.name}`
-               div(id="white-background")=`${review.description}`
+               h5=`${review.description}`
