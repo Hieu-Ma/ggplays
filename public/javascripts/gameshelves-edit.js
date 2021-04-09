@@ -1,27 +1,27 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-  // document.querySelectorAll('.rename-form').style.display = 'none';
-
   // save new name of game shelf
   document.getElementById('shelf-container').addEventListener('click', async (event) => {
     event.preventDefault();
     let buttonId = event.target.id;
     let buttonClass = event.target.classList[0];
 
-
     // document.querySelectorAll('.rename-form').style.display = 'none';
     // rename form
 
     if (buttonClass === 'rename-btn') {
-      console.log(event.target)
       const customShelfId = buttonId.slice(7);
+      document.getElementById(`${buttonId}`).style.display = "none";
+      document.getElementById(`save-${customShelfId}`).style.display = "block";
+      // document.querySelectorAll('.save-btn').style.display = 'block'; 
       const renameInputField = document.getElementById(`rename-input-${customShelfId}`)
       renameInputField.type = 'text';
     }
 
     // Save form
-
     if (buttonClass === 'save-btn') {
       const customShelfId = buttonId.slice(5);
+      document.getElementById(`${buttonId}`).style.display = "none";
+      document.getElementById(`rename-${customShelfId}`).style.display = "block";
       const renameInputField = document.getElementById(`rename-input-${customShelfId}`)
       renameInputField.type = 'hidden';
 
@@ -59,18 +59,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
 
     // Delete form
-
     if (buttonClass === 'delete-btn') {
-      // console.log(event.target)
-
       const customShelfId = buttonId.slice(7);
-      // console.log(customShelfId)
-
       const deleteForm = document.getElementById(`delete-form-${customShelfId}`);
       const formData = new FormData(deleteForm);
       const shelfId = formData.get('shelf-id');
       const body = { shelfId }
-      // console.log(deleteForm, formData, shelfId)
 
       try {
         const res = await fetch('/api/gameshelves/edit/delete', {
@@ -93,12 +87,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
       } catch (error) {
         console.error(error.message);
       };
-
     }
-
   })
-
-
-
-
 })
