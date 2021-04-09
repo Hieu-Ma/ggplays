@@ -32,6 +32,14 @@ router.post('/create-shelf', requireAuth, shelfValidators, asyncHandler(async (r
         title,
     } = req.body;
 
+    const shelves = await Gameshelf.findAll({
+        where: { user_id: userId }
+    });
+
+    const games = await Game.findAll({
+        include: Genre
+    });
+
     const newGameshelf = Gameshelf.build({
         title: title,
         user_id: userId,
@@ -43,7 +51,7 @@ router.post('/create-shelf', requireAuth, shelfValidators, asyncHandler(async (r
         res.redirect('/gameshelves');
     } else {
         const errors = validatorErrors.array().map((error) => error.msg);
-        res.render('gameshelves', { errors });
+        res.render('gameshelves', { shelves, games, errors });
     }
 }));
 
@@ -78,7 +86,7 @@ router.get('/:id', asyncHandler(async (req, res) => {
     //     where: { gameshelfId: game_id }
     // })
     console.log("these are our gameshelves" , gameshelf);
-    res.render('gameshelves', { gameshelf })
+    res.render('gameshelves-list', { gameshelf })
     // res.json({ gameshelf }); // amazing for seeing what you're working with
 }));
 
