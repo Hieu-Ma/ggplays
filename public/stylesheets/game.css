@@ -1,4 +1,67 @@
 #game-container {
+   display: flex;
+   flex-direction: column;
+   background-color: #FDF2E9;
+   border: solid rgb(255, 202, 211);
+   border-radius: 10px;
+   padding: 60px;
+   margin: 100px;
+   position: relative;
+}
+
+#game-title {
+   padding-left: 40px;
+   font-family: "Bungee";
+   font-size: 35px;
+   border: 3px solid #555661;
+   margin-top: 10px;
+   background-color: #f8f8f8;
+   /* position: relative; */
+}
+
+#game-score-circle{
+   position: absolute;
+   top: 50px;
+   right: 150px;
+   font-size: 50px;
+   border: 5px solid #555661;
+   height: 150px;
+   width: 150px;
+   border-radius: 50%;
+   /* z-index: 99 !important; */
+   
+}
+
+#game-score {
+   font-family: "Bungee";
+   position: absolute;
+   top: 50px;
+   right: 80px;
+   font-size: 50px;
+
+}
+
+div#description-container {
+   border: 3px solid #555661;
+   border-top: none;
+   margin-bottom: 70px;
+   background-color: #f8f8f8;
+   flex-direction: row;
+   /* position: relative; */
+
+}
+
+#game-img img {
+   object-fit: contain;
+   height: 250px;
+   width: 150; 
+   margin-top: 30px;
+   margin-left: 30px;
+   
+}
+
+
+/* #game-container {
    background-color: #FDF2E9;
    border: solid pink;
    border-radius: 10px;
@@ -6,36 +69,16 @@
    margin: 100px;
    margin-top: 85px;
    display: grid;
-   column-gap: 20px;
-   row-gap: 25px;
-   grid-template-columns: repeat(5, 1fr);
-   grid-template-rows: auto;
-   grid-template-areas: 
-   "image image title title title"
-   "image image description description description"
-   "gameshelf gameshelf description description description"
-   "review review review review review"
-}
 
-#game-img {
-   grid-area: image;
-   /* max-height: 800px; */
-   /* width: 100%; */
 }
 
 #game-img img{
    object-fit: contain;
    height: 450px;
-   /* height: 100%; */
    width: 100%; 
 }
 
-#gameshelf-dropdown {
-   grid-area: gameshelf
-}
-
 #game-title {
-   grid-area: title;
    width: 100%;
    background-color: white;
    display: flex;
@@ -44,7 +87,6 @@
    border: 3px solid black;
    font-family: "Bungee";
    font-size: 27px;
-   /* padding: 20px; */
 }
 
 #game-score {
@@ -58,10 +100,9 @@
    align-items: center;
    font-size: 25px;
    margin: 0 5px;
-}
+} */
 
-#description-container {
-   grid-area: description;
+/* #description-container {
    width: 100%;
    background-color: white;
    border: 3px solid black;
@@ -78,10 +119,9 @@
 
 #year-released-title, #developer-title, #platforms-title, #genre-title {
    font-family: "Bungee";
-}
+} */
 
 #reviews {
-   grid-area: review;
    width: 100%;
    background-color: white;
    border: 2px solid black;
