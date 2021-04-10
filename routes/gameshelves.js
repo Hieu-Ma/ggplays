@@ -9,15 +9,19 @@ const Op = Sequelize.Op;
 router.get('/', requireAuth, asyncHandler(async (req, res, next) => {
     const { userId } = req.session.auth;
     const shelves = await Gameshelf.findAll({
+        // include: Game,
         where: { user_id: userId },
-        include: Game
     });
     const games = await Game.findAll({
         include: Genre
     });
 
-    // res.json({shelves})
-    res.render('gameshelves', { shelves, games });
+    const shelvesGames = await Gameshelf.findAll({
+        where: { user_id: userId },
+        include: Game
+    })
+    // res.json({shelvesGames})
+    res.render('gameshelves', { shelves, games, shelvesGames });
 }));
 
 const shelfValidators = [

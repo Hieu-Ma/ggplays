@@ -26,7 +26,7 @@ block content
                         li
                         a(href=`/gameshelves/${shelf.id}`)= shelf.title
         div(class="games-container")
-            each shelf in shelves
+            each shelf in shelvesGames
                 each game in shelf.Games
                     //div(id="gameshelves-game-container")
                         //- div(id="title-description")
