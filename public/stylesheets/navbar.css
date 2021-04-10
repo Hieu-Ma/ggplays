@@ -14,14 +14,19 @@ body {
    /* justify-content: space-around;     */
    justify-items: center;
    /* align-items: center; */
+
+   background: linear-gradient(#3c3d47 0%, #232327 100%);
+   
 }
 
 .navbar-button {
    /* background-color: white; */
+   padding-bottom: 0;
+
 } 
 
 .navbar-link {
-   color: white;
+   color: whitesmoke;
    font-family: bungee, sans-serif;
    font-weight: 400;
    font-style: normal;
@@ -29,20 +34,32 @@ body {
    text-decoration: none;
 }
 
+.navbar-link:hover {
+   color: #cecece;
+   text-decoration: underline;
+   text-decoration-thickness: 3px;
+   text-decoration-color: #cecece;
+}
+
 #logo {
    grid-area: logo;
    justify-items: center;
-
-   background-color: #F66767;
+   background: linear-gradient(#fd5959 0%, #803131 100%);
+   /* background-color: #F66767; */
    height: 141px;
    width: 398px;
    display: flex;
    justify-content: center;
    align-items: center;
+   border: 2px solid #373840;
+   border-radius: 3px;
+   filter: drop-shadow(10px 0px 50px rgba(255, 255, 255, 0.16));
+
 }
 
 #logo-name {
-   color: white;
+   text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+   color: whitesmoke;
    font-size: 59px;
    font-family: bungee, sans-serif;
    font-weight: 600;
@@ -74,7 +91,7 @@ body {
    font-family: bungee, sans-serif;
    font-weight: 400;
    font-style: normal;
-   color: white;
+   color: whitesmoke;
    font-size: 21px;
 }
 
