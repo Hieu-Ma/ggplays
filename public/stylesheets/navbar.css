@@ -21,10 +21,12 @@ body {
 
 .navbar-button {
    /* background-color: white; */
+   padding-bottom: 0;
+
 } 
 
 .navbar-link {
-   color: white;
+   color: whitesmoke;
    font-family: bungee, sans-serif;
    font-weight: 400;
    font-style: normal;
@@ -32,10 +34,17 @@ body {
    text-decoration: none;
 }
 
+.navbar-link:hover {
+   color: #cecece;
+   text-decoration: underline;
+   text-decoration-thickness: 3px;
+   text-decoration-color: #cecece;
+}
+
 #logo {
    grid-area: logo;
    justify-items: center;
-   background: linear-gradient(#F66767 0%, #7e3535 100%);
+   background: linear-gradient(#fd5959 0%, #803131 100%);
    /* background-color: #F66767; */
    height: 141px;
    width: 398px;
@@ -50,7 +59,7 @@ body {
 
 #logo-name {
    text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
-   color: white;
+   color: whitesmoke;
    font-size: 59px;
    font-family: bungee, sans-serif;
    font-weight: 600;
@@ -82,7 +91,7 @@ body {
    font-family: bungee, sans-serif;
    font-weight: 400;
    font-style: normal;
-   color: white;
+   color: whitesmoke;
    font-size: 21px;
 }
 
