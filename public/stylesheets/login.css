@@ -3,7 +3,7 @@ body {
 }
 
 #login-container {
-    font-family: "Bungee Inline";
+    font-family: "Bungee Inline", "Bungee";
     background-color: #fff;
     position: relative;
     display: flex;
@@ -61,7 +61,7 @@ body {
 }
 
 .login-button {
-    font-family: "Bungee Inline";
+    font-family: "Bungee Inline", "Bungee";
     background-color: #fff;
     border: #3C3D47 solid 1px;
     font-size: 15px;
@@ -72,7 +72,7 @@ body {
 }
 
 #cancel-login-button {
-    font-family: "Bungee Inline";
+    font-family: "Bungee Inline", "Bungee";
     font-size: 15px;
     text-decoration: none;
 

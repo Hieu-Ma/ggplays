@@ -1,6 +1,6 @@
 body {
     background-color: #f9d5bb;
-    font-family: "Bungee Inline";
+    font-family: "Bungee Inline", "Bungee";
 }
 
 div.homepage_container {
@@ -16,7 +16,7 @@ div.genre_title {
 }
 
 h2 a{
-    font-family: "Bungee Inline";
+    font-family: "Bungee Inline", "Bungee";
     font-size: 40px;
     text-decoration: none;
 }

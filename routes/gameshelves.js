@@ -25,7 +25,10 @@ router.get('/', requireAuth, asyncHandler(async (req, res, next) => {
         //     model: Game,
         //     order: ['name']
         // }]
-        include: Game,
+        include: [{
+            model: Game,
+            include: Genre
+        }],
         order: [
             [{model: Game}, 'name']
         ]
