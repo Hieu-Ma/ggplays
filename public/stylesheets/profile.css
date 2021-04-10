@@ -56,7 +56,6 @@ div#gameshelves-title {
     margin-left: 20px; */
 }
 
-<<<<<<< HEAD
 #greeting h2 {
     font-size: 37px;
     margin: 20px 20px 0 0;
@@ -75,10 +74,6 @@ div#gameshelves-title {
 
 h3 a{
     font-family: "Bungee Inline", "Bungee";
-=======
-#gameshelves-title a{
-    font-family: "Bungee Inline";
->>>>>>> master
     font-size: 30px;
     width: fit-content;
     text-decoration: none;
