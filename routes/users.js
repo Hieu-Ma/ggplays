@@ -130,8 +130,6 @@ router.post('/login', csrfProtection, loginValidators,
       password,
     } = req.body;
 
-    // console.log(req.body);
-
     let errors = [];
     const validatorErrors = validationResult(req);
 
@@ -176,9 +174,6 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/profile', requireAuth, asyncHandler(async (req, res, next) => {
-  // const userId = parseInt(req.params.userId, 10);
-  // res.locals.user
-  console.log("gameshelf", Gameshelf);
   const { userId } = req.session.auth;
   const user = await User.findByPk(userId);
   const gameshelves = await Gameshelf.findAll({
@@ -188,13 +183,9 @@ router.get('/profile', requireAuth, asyncHandler(async (req, res, next) => {
     where: { user_id: userId },
     include: Game
   })
-  console.log("reviews", reviews);
-  // console.log("test log " + user.username);
-  // const username = await User.findByPk(userId);
-  // let user = User;
+
   res.render('profile', { user, gameshelves, reviews });
 }));
 
-router.post('/demo-user',)
 
 module.exports = router;
