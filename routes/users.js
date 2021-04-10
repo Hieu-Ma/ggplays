@@ -7,7 +7,7 @@ const { User } = require('../db/models')
 const { csrfProtection, asyncHandler } = require('./utils');
 const { loginUser, logoutUser, requireAuth } = require('../auth');
 const db = require('../db/models');
-const { Gameshelf, Review, Game } = require('../db/models');
+const { Gameshelf, Review, Game, Pro, Con } = require('../db/models');
 
 router.get('/sign-up', csrfProtection, asyncHandler(async (req, res) => {
   const user = User.build();
@@ -181,9 +181,9 @@ router.get('/profile', requireAuth, asyncHandler(async (req, res, next) => {
   });
   const reviews = await Review.findAll({
     where: { user_id: userId },
-    include: Game
+    include: [Game, User, Pro, Con]
   })
-
+  
   res.render('profile', { user, gameshelves, reviews });
 }));
 
