@@ -92,6 +92,17 @@ router.post('/:id/review', asyncHandler(async (req, res) => {
       pro_id: pro_options,
       con_id: con_options,
    })
+
+   let shelfToDestroy = await Shelf.destroy({
+      where: {
+         game_id: gameId
+      }
+   })
+
+   let newShelf = await Shelf.create({
+      game_id: gameId,
+      game_shelf_id: gameshelf
+   })
    // console.log(gameshelf)
    // console.log(review_title, game_review_score, review_description, pro_options, con_options, gameId, userId);
    // console.log("this property is,", game_review_score)
@@ -122,6 +133,8 @@ router.get('/:id/review/edit', asyncHandler(async (req, res) => {
          game_id: id
       }
    })
+
+   
    // console.log("this is the gameId", userReview.description)
    // res.json({userReview});
    res.render('review-edit', {userReview, game, gameshelves, cons, pros })
@@ -150,6 +163,17 @@ router.post('/:id/review/edit', asyncHandler(async (req, res) => {
       game_id: gameId,
       pro_id: pro_options,
       con_id: con_options,
+   })
+
+   let shelfToDestroy = await Shelf.destroy({
+      where: {
+         game_id: gameId
+      }
+   })
+
+   let newShelf = await Shelf.create({
+      game_id: gameId,
+      game_shelf_id: gameshelf
    })
    // console.log(gameshelf)
    // console.log(review_title, game_review_score, review_description, pro_options, con_options, gameId, userId);
