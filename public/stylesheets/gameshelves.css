@@ -91,11 +91,18 @@ div.games-container#game-description {
     margin-left: 200px;
 } */
 
-div.games-container {
+.games-container {
     display: flex;
     flex-direction: column;
 }
 
+#gameshelves-game-container {
+    display: flex;
+    background-color: white;
+    border: 2px solid black;
+    margin: 10px;
+}
+/* 
 div.games-container#game-description {
     grid-area: games;
     display: flex;
@@ -134,4 +141,4 @@ div.games-container#game-description {
     margin-top: 50px;
     margin: 50px;
 
-}
+} */

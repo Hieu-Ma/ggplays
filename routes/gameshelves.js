@@ -15,6 +15,7 @@ router.get('/', requireAuth, asyncHandler(async (req, res, next) => {
         include: Genre
     });
 
+    // res.json({games})
     res.render('gameshelves', { shelves, games });
 }));
 

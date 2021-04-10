@@ -27,15 +27,17 @@ block content
                     a(href=`/gameshelves/${shelf.id}`)= shelf.title
         div(class="games-container")
             each game in games
-                div(class="games-container" id="title-description")
-                    div(class="games-container" id="game")
+                div(id="gameshelves-game-container")
+                    div(id="title-description")
+                    div(id="game")
+                        div(id="game-name")= game.name
                         div(id="game-img")
-                            h3 Games:
                             img(id="image-id" src=game.image_url)
-                            h3=`${game.name}`
-                div(class="games-container" id="description")
-                    div(class="games-container" id="game-description")
-                            h3 Description:
-                            h5= `Developer: ${game.developer}`
-                            h5= `Release Date: ${game.year_released}`
-                            h5= `Genre: ${game.Genre.type}`
+                            //- h3=`${game.name}`
+                            
+                //- div(id="description")
+                //-     div(class="games-container" id="game-description")
+                //-             h3 Description:
+                //-             h5= `Developer: ${game.developer}`
+                //-             h5= `Release Date: ${game.year_released}`
+                //-             h5= `Genre: ${game.Genre.type}`
