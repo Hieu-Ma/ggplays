@@ -7,10 +7,16 @@ append head
 block content
    div(id= "profile-container")
       div(id= "profile-info")
-         div(id= "user-greeting")= `${user.username}'s Profile`
-         p= `Member Since: ${user.createdAt.getFullYear()}`
+         div(id= "greeting")
+            h2= `Welcome, ${user.username}`
+            div(id= "member-since")
+               p= `Member Since: ${user.createdAt.getFullYear()}`
+            div(id= "num-reviews-container")
+               a(href= "#reviews-container")= `${reviews.length} Reviews`
+
+               
          div(id="gameshelves-container")
-            div(id="genre-title")
+            div(id="gameshelves-title")
                h3
                   a(href="/gameshelves")= "Game Shelves"
             div(class="scroll")
@@ -18,14 +24,14 @@ block content
                   each shelf in gameshelves
                      div(class="game")
                         div(class="title")
-                           a(href=`/gameshelves/`)= shelf.title
+                           a(href=`/gameshelves/${shelf.id}`)= shelf.title
 
    div(id="reviews-container")
       h2 Reviews
       each review in reviews
          div(id="review-container")
             div(id= "review-title-container")
-               h4= review.Game.name
+               a(href= `/games/${review.Game.id}`)= review.Game.name
                div(id= "review-score")= review.score
             div(id= "review-game-name")= "\"" + review.title + "\"" 
             div(id= "pros-and-cons")
@@ -35,3 +41,5 @@ block content
                   div(id= "con-description")= review.Con.content
             div(id= "review-description-container")
                div(id= "review-description")= review.description
+      div(id="scroll-top")
+         a(href= "#top") Top

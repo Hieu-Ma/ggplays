@@ -188,10 +188,7 @@ router.get('/profile', requireAuth, asyncHandler(async (req, res, next) => {
     where: { user_id: userId },
     include: [Game, User, Pro, Con]
   })
-  console.log("reviews", reviews);
-  // console.log("test log " + user.username);
-  // const username = await User.findByPk(userId);
-  // let user = User;
+  
   res.render('profile', { user, gameshelves, reviews });
 }));
 
