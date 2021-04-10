@@ -9,16 +9,14 @@ block content
       div(id= "profile-info")
          div(id= "greeting")
             h2= `Welcome, ${user.username}`
-            div(id= "member-since")
-               p= `Member Since: ${user.createdAt.getFullYear()}`
-            div(id= "num-reviews-container")
-               a(href= "#reviews-container")= `${reviews.length} Reviews`
-
-               
+            div(id= "user-info")
+               div(id= "member-since")
+                  p= `Member Since: ${user.createdAt.getFullYear()}`
+               div(id= "num-reviews-container")
+                  a(href= "#reviews-container")= `${reviews.length} Reviews`
          div(id="gameshelves-container")
             div(id="gameshelves-title")
-               h3
-                  a(href="/gameshelves")= "Game Shelves"
+               a(href="/gameshelves")= "Game Shelves"
             div(class="scroll")
                ul(class="menu")
                   each shelf in gameshelves

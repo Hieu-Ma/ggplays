@@ -83,7 +83,7 @@ router.post('/sign-up', csrfProtection, userValidators, asyncHandler(async (req,
     await user.save();
     loginUser(req, res, user);
     const { userId } = req.session.auth;
-    
+
     await db.Gameshelf.create(
       { title: "Want to Play", user_id: userId },
     );
@@ -181,10 +181,16 @@ router.get('/profile', requireAuth, asyncHandler(async (req, res, next) => {
   });
   const reviews = await Review.findAll({
     where: { user_id: userId },
-    include: [Game, User, Pro, Con]
+    include: [Game, User, Pro, Con],
   })
-  
-  res.render('profile', { user, gameshelves, reviews });
+  const latestReview = await Review.findOne({
+    where: { user_id: userId },
+    include: [Game],
+    order: [['createdAt', 'DESC']],
+    limit: 1
+  })
+
+  res.render('profile', { user, gameshelves, reviews, latestReview });
 }));
 
 
