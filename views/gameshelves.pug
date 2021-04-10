@@ -27,6 +27,7 @@ block content
                         a(href=`/gameshelves/${shelf.id}`)= shelf.title
         div(class="games-container")
             each shelf in shelvesGames
+                div()= shelf.title
                 each game in shelf.Games
                     //div(id="gameshelves-game-container")
                         //- div(id="title-description")
