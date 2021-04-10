@@ -32,14 +32,15 @@ block content
                            option() Want To Play
                            option() Currently Playing
                            option() Played
-         div(id= "year-released-title") Release Year:
-            div(id= "year-released")= game.year_released
-         div(id= "developer-title") Developer:
-            div(id= "developer")= game.developer
-         div(id= "platforms-title") Platform(s):
-            div(id= "platforms")= game.platforms
-         div(id= "genre-title") Genre:
-            div(id= "genre")= game.Genre.type
+         div(id="game-details-container")
+            div(id= "genre-title") Genre:
+               div(id= "genre")= game.Genre.type
+            div(id= "year-released-title") Release Year:
+               div(id= "year-released")= game.year_released
+            div(id= "developer-title") Developer:
+               div(id= "developer")= game.developer
+            div(id= "platforms-title") Platform(s):
+               div(id= "platforms")= game.platforms
       div(id="description-text")
          div(id= "description-title") Description:
             div(id= "description")= game.description
