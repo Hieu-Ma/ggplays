@@ -93,11 +93,11 @@ router.post('/:id/review', asyncHandler(async (req, res) => {
       con_id: con_options,
    })
 
-   let shelfToDestroy = await Shelf.destroy({
-      where: {
-         game_id: gameId
-      }
-   })
+   // let shelfToDestroy = await Shelf.destroy({
+   //    where: {
+   //       game_id: gameId
+   //    }
+   // })
 
    let newShelf = await Shelf.create({
       game_id: gameId,
@@ -165,11 +165,11 @@ router.post('/:id/review/edit', asyncHandler(async (req, res) => {
       con_id: con_options,
    })
 
-   let shelfToDestroy = await Shelf.destroy({
-      where: {
-         game_id: gameId
-      }
-   })
+   // let shelfToDestroy = await Shelf.destroy({
+   //    where: {
+   //       game_id: gameId
+   //    }
+   // })
 
    let newShelf = await Shelf.create({
       game_id: gameId,

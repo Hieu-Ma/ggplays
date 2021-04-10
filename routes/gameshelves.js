@@ -94,7 +94,7 @@ router.get('/:id', requireAuth, asyncHandler(async (req, res) => {
     // const games = await Game.findAll({
     //     where: { gameshelfId: game_id }
     // })
-    console.log("these are our gameshelves" , gameshelf);
+    // console.log("these are our gameshelves" , gameshelf);
     // res.json({ gameshelf });
     // res.json(shelves);
     res.render('gameshelves-list', { shelves, gameshelf })
