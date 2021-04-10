@@ -16,13 +16,22 @@ html {
     "greeting game-shelves"
 }
 
-#greeting {
+#greeting h2 {
     grid-area: "greeting";
-    /* background-color: white;
+    font-size: 30px;
+    width: fit-content;
+    border-bottom: 10px solid #F66767;
+}
+
+
+#user-info {
+    background: white;
     border: 2px solid black;
     border-radius: 5px;
-    padding: 0 25px 25px 25px;
-    box-shadow: -1px 1px 5px 5px rgba(124, 123, 123, 0.2); */
+    margin: 15px 20px 0 0;
+    padding: 5px 25px 25px 25px;
+    box-shadow: -1px 1px 5px 5px rgba(124, 123, 123, 0.1);
+    height: 79%;
 }
 
 #gameshelves-container {
@@ -40,12 +49,14 @@ html {
 div#gameshelves-title {
     border-bottom: 10px solid #F66767;
     width: fit-content;
+    margin-bottom: 5px;
+    margin-left: 45px;
     /* grid-area: "game-shelves-header";
     align-items: flex-end;
-    margin-bottom: 70px;
     margin-left: 20px; */
 }
 
+<<<<<<< HEAD
 #greeting h2 {
     font-size: 37px;
     margin: 20px 20px 0 0;
@@ -64,12 +75,16 @@ div#gameshelves-title {
 
 h3 a{
     font-family: "Bungee Inline", "Bungee";
+=======
+#gameshelves-title a{
+    font-family: "Bungee Inline";
+>>>>>>> master
     font-size: 30px;
     width: fit-content;
     text-decoration: none;
 }
 
-h3 a:hover {
+#gameshelves-title a:hover {
     color: #3C3D47;
     transition-duration: 0.2s;
 }
@@ -80,33 +95,24 @@ div#gameshelves-title:hover {
 }
 
 div.scroll {
-    /* margin:  20px 120px 60px 120px; */
-    /* padding: 20px; */
-    background-color: #fdf2ea;
     overflow-y: scroll;
     height: 250px;
-    max-width: 300px;
+    max-width: 340px;
     overflow-x: hidden;
     overflow: scroll;
-    /* 
-    border: 2px solid #52535f;
-    border-radius: 5px;
-    box-shadow: inset 0px 0px 20px 10px rgba(160, 160, 160, 0.6); */
-    /* display: flex;
-    flex-direction: column; */
 }
 
 div.scroll div.game {
     background-color: #3C3D47;
     margin: 10px 15px 5px 15px;
-    border: 1px solid lightpink;
+    border: 1px solid #3C3D47;
     border-radius: 10px;
-    display: inline-block;
     color: whitesmoke;
     text-align: center;
     padding: 30px;
     text-decoration: none;
-    min-width: 270px;
+    min-width: 300px;
+    box-shadow: 1px 2px 3px rgba(33,33,33,.4); 
 }
 
 .game:hover {
@@ -114,6 +120,7 @@ div.scroll div.game {
     text-shadow: 0 0 1px lightpink;
     transform: scale(1.1, 1.1);
     transition-duration: 0.1s;
+    box-shadow: 1px 1px 11px rgba(33,33,33,.2); 
 }
 
 .title a {
@@ -125,15 +132,22 @@ div.scroll div.game {
     background-color: #FDF2E9;
     border-radius: 10px;
     padding: 40px;
-    margin: 50px;
     margin: 10px 100px 100px 100px;
+}
+
+#reviews-container h2 {
+    font-family: "Bungee Inline";
+    font-size: 30px;
+    margin: 20px 20px 0 20px;
+    border-bottom: 10px solid #F66767;
+    width: fit-content;
 }
 
 #review-container {
     background: white;
     border: 2px solid black;
     border-radius: 5px;
-    margin: 30px 20px;
+    margin: 15px 20px 30px 20px;
     padding: 0 25px 25px 25px;
     box-shadow: -1px 1px 5px 5px rgba(124, 123, 123, 0.2);
 }
