@@ -53,8 +53,12 @@ div.gameshelves-list h3 {
     margin-top: 50px;
 }
 
+div.gameshelves-list ul {
+    margin-left:25px;
+}
+
 #form-container {
-    padding: 0 25px 25px 25px;
+    padding-bottom: 25px;
 }
 
 #errors-container {
@@ -76,10 +80,10 @@ div.gameshelves-list h3 {
     margin-left: 5px;
 }
 
-div.gameshelves-list li {
+.gameshelves-list li {
     font-size: 18px;
-    padding: 10px;
-    padding-left: 25px;
+    padding: 5px 0px;
+    /* padding-left: 25px; */
     list-style: none;
 }
 
@@ -90,17 +94,74 @@ div.gameshelves-list li {
 div.games-container#game-description {
     margin-left: 200px;
 } */
-
-.games-container {
-    display: flex;
-    flex-direction: column;
+#newshelf-form {
+    /* border-top: 2px solid rgba(0, 0, 0, 0.30); */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.30);
+    margin: 0px 25px;
+    /* padding: 25px 0px; */
+    padding-bottom: 30px;
+    margin-bottom: 25px;
 }
 
-#gameshelves-game-container {
+#create-new-shelf-label {
+    width:100%;
+    /* margin-left:25px */
+    
+}
+
+#create-new-shelf-container {
+    display: flex;
+    height: 25px;
+    /* margin: 0px 25px; */
+}
+#create-new-shelf-container button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* ------------------------------------------------------------------- */
+.games-container {
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-template-rows: auto;
+}
+
+/* #gameshelves-game-container {
     display: flex;
     background-color: white;
     border: 2px solid black;
     margin: 10px;
+} */
+
+#game {
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    border: 2px solid black;
+    grid-template-areas:
+    "image . . . "
+    "image . . . "
+    "title . . . "
+    ;
+}
+
+#game-img {
+    grid-area: image;
+   
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#image-id {
+    object-fit:fill;
+}
+
+#game-name {
+    grid-area: title;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 /* 
 div.games-container#game-description {
