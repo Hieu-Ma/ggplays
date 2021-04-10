@@ -5,24 +5,33 @@ append head
 
 
 block content
-   div(id="profile-container")
-      div(id="profile-info")
-         h3= `${user.username}'s Profile`
+   div(id= "profile-container")
+      div(id= "profile-info")
+         div(id= "user-greeting")= `${user.username}'s Profile`
          p= `Member Since: ${user.createdAt.getFullYear()}`
-   div(id="gameshelves-container")
-      div(id="genre-title")
-         h3
-            a(href="/gameshelves")= "Game Shelves"
-      div(class="scroll")
-         ul(class="menu")
-            each shelf in gameshelves
-               div(class="game")
-                  div(class="title")
-                     a(href=`/gameshelves/`)= shelf.title
+         div(id="gameshelves-container")
+            div(id="genre-title")
+               h3
+                  a(href="/gameshelves")= "Game Shelves"
+            div(class="scroll")
+               ul(class="menu")
+                  each shelf in gameshelves
+                     div(class="game")
+                        div(class="title")
+                           a(href=`/gameshelves/`)= shelf.title
 
-   div(id="reviews-and-container")
+   div(id="reviews-container")
       h2 Reviews
       each review in reviews
-         div(id="reviews-container")
-            h4=`${review.Game.name}`
-               h5=`${review.description}`
+         div(id="review-container")
+            div(id= "review-title-container")
+               h4= review.Game.name
+               div(id= "review-score")= review.score
+            div(id= "review-game-name")= "\"" + review.title + "\"" 
+            div(id= "pros-and-cons")
+               div(id= "pro-title") Pro:  
+                  div(id= "pro-description")= review.Pro.content
+               div(id= "con-title") Con:  
+                  div(id= "con-description")= review.Con.content
+            div(id= "review-description-container")
+               div(id= "review-description")= review.description
