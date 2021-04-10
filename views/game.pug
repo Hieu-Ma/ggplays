@@ -8,31 +8,30 @@ block content
    div(id= "game-container")
       div(id= "game-title")= game.name
       div(id= "game-score-container")
-         div(id= "game-score-circle")
-         div(id= "game-score")= score
+         div(id= "score-container")
+            div(id="game-score-circle")
+            div(id="game-score")= score
       div(id= "description-container")
          div(id= "game-img")
             img(src= src=game.image_url)
-         div(id="gameshelf-dropdown-container")
-            if userId
-               div(id="gameshelf-dropdown")
-                  form(class="select-form")
-                     input(type="hidden" value=game.id name="gameId")
-                     select(class="select-options" name="gameshelf")
-                        option(value= "")= "Add to Shelf"
-                        each shelf in gameshelves
-                           option(value=shelf.id)= shelf.title 
-            else
-               div(id="gameshelf-dropdown")
-                  form(class="select-form")
-                     input(type="hidden" value=game.id name="gameId")
-                     select(class="select-options" name="gameshelf")
-                        option(value= "")= " "
-                        option() Want To Play
-                        option() Currently Playing
-                        option() Played
-         div(id= "description-title") Description:
-            div(id= "description")= game.description
+            div(id="gameshelf-dropdown-container")
+               if userId
+                  div(id="gameshelf-dropdown")
+                     form(class="select-form")
+                        input(type="hidden" value=game.id name="gameId")
+                        select(class="select-options" name="gameshelf")
+                           option(value= "")= "Add to Shelf"
+                           each shelf in gameshelves
+                              option(value=shelf.id)= shelf.title 
+               else
+                  div(id="gameshelf-dropdown")
+                     form(class="select-form")
+                        input(type="hidden" value=game.id name="gameId")
+                        select(class="select-options" name="gameshelf")
+                           option(value= "")= " "
+                           option() Want To Play
+                           option() Currently Playing
+                           option() Played
          div(id= "year-released-title") Release Year:
             div(id= "year-released")= game.year_released
          div(id= "developer-title") Developer:
@@ -41,6 +40,9 @@ block content
             div(id= "platforms")= game.platforms
          div(id= "genre-title") Genre:
             div(id= "genre")= game.Genre.type
+      div(id="description-text")
+         div(id= "description-title") Description:
+            div(id= "description")= game.description
       div(id= "reviews")
          div(id= "reviews-title") Reviews
          if (locals.authenticated && hasReview)

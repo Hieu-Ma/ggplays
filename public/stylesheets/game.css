@@ -2,7 +2,8 @@
    display: flex;
    flex-direction: column;
    background-color: #FDF2E9;
-   border: solid rgb(255, 202, 211);
+   /* border: solid rgb(255, 202, 211); */
+   border:3px solid #555661;
    border-radius: 10px;
    padding: 60px;
    margin: 100px;
@@ -21,13 +22,14 @@
 
 #game-score-circle{
    position: absolute;
-   top: 50px;
-   right: 150px;
+   top: 80px;
+   right: 80px;
    font-size: 50px;
    border: 5px solid #555661;
    height: 150px;
    width: 150px;
    border-radius: 50%;
+   background-color: #F66767;
    /* z-index: 99 !important; */
    
 }
@@ -35,30 +37,55 @@
 #game-score {
    font-family: "Bungee";
    position: absolute;
-   top: 50px;
-   right: 80px;
+   top: 90px;
+   right: 120px;
    font-size: 50px;
+   color: whitesmoke;
 
 }
 
-div#description-container {
-   border: 3px solid #555661;
-   border-top: none;
-   margin-bottom: 70px;
-   background-color: #f8f8f8;
-   flex-direction: row;
-   /* position: relative; */
-
+#flex-div {
+   display: flex;
+   flex-direction: column;
 }
 
 #game-img img {
    object-fit: contain;
    height: 250px;
-   width: 150; 
+   width: 200px; 
    margin-top: 30px;
    margin-left: 30px;
+}
+
+
+#gameshelf-dropdown {
+   margin: 15px 0px 15px 30px;
+   width: 200px; 
    
 }
+
+.select-options {
+   width: 200px; 
+}
+
+div#description-container {
+   border: 3px solid #555661;
+   border-top: none;
+   border-bottom: none;
+   background-color: #f8f8f8;
+   flex-direction: row;
+   display:flex;
+   /* position: relative; */
+
+}
+
+#description-text {
+   background-color: #f8f8f8;
+   border: 3px solid #555661;
+   border-top: none;
+   margin-bottom: 70px;
+}
+
 
 
 /* #game-container {
@@ -122,9 +149,10 @@ div#description-container {
 } */
 
 #reviews {
-   width: 100%;
-   background-color: white;
-   border: 2px solid black;
+   /* width: 100%; */
+   background-color: #f8f8f8;
+   border: 3px solid #555661;
+   border-radius: 5px;
    font-family: "Bungee";
    padding: 15px 30px;
 }
