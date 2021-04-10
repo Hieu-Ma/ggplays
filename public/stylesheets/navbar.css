@@ -14,6 +14,9 @@ body {
    /* justify-content: space-around;     */
    justify-items: center;
    /* align-items: center; */
+
+   background: linear-gradient(#3c3d47 0%, #232327 100%);
+   
 }
 
 .navbar-button {
@@ -32,16 +35,21 @@ body {
 #logo {
    grid-area: logo;
    justify-items: center;
-
-   background-color: #F66767;
+   background: linear-gradient(#F66767 0%, #7e3535 100%);
+   /* background-color: #F66767; */
    height: 141px;
    width: 398px;
    display: flex;
    justify-content: center;
    align-items: center;
+   border: 2px solid #373840;
+   border-radius: 3px;
+   filter: drop-shadow(10px 0px 50px rgba(255, 255, 255, 0.16));
+
 }
 
 #logo-name {
+   text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
    color: white;
    font-size: 59px;
    font-family: bungee, sans-serif;
