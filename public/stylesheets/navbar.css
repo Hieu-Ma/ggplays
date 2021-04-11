@@ -102,10 +102,12 @@ body {
 .dropdown-content {
    display: none;
    background-color: #3C3D47;
-   width: 213px;
-   /* position:absolute; */
-   /* top:106px; */
-   top:300px;
+   width: 217px;
+   position:absolute; 
+   top:106px; 
+   padding-right: 500px
+
+   /* top:300px; */
    /* right:0px; */
 }
 
@@ -117,6 +119,7 @@ body {
 #dropdown-logout {
    width: 100%;
    border-top: 1px solid black;
+   padding-right: 500px
 }
 
 #dropdown-logout:hover {
@@ -136,6 +139,7 @@ body {
    background: none;
    cursor: pointer;
    padding-left: 5px;
+   padding-right: 500px;
 }
 
 #dropdown-gameshelf:hover {
