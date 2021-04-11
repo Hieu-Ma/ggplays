@@ -22,7 +22,7 @@ ggPlays is a web application that allows users to view various video games, publ
 ## [Features](https://github.com/Hieu-Ma/ggplays/wiki/Feature-List)
 - Uses bcryptjs library to secure authentication
 - Grants logged in users access to create reviews, store games, and view their profile
-- Uses AJAX to asynchronously render elemnts like renaming or deleting a game shelf
+- Uses AJAX to asynchronously render elements like renaming or deleting a game shelf
 - Prevents csrf attacks and uses validation forms to authenticate users
 
 ## [Database Schema](https://github.com/Hieu-Ma/ggplays/wiki/Database-Schema)
