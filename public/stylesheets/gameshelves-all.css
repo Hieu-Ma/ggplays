@@ -110,8 +110,23 @@ div.gameshelves-list ul {
    grid-template-rows: auto;
 }
 
+#shelf-title {
+   border: 2px solid black;
+   margin: 25px;
+   padding: 10px 0px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 25px;
+   /* color: black; */
+   /* background-color:linear-gradient(#29292f 0%, #232327 100%); */
+   background-color: rgb(65, 65, 65);
+   background: linear-gradient(rgb(65, 65, 65) 0%, #232327 100%);
+   color: white;
+   font-family: "Bungee";
+}
 #all-games {
-   border: 2px solid grey;
+   border: 2px solid black;
    /* padding: 25px 0px; */
    margin: 25px;
    display:grid;
@@ -120,6 +135,7 @@ div.gameshelves-list ul {
    grid-template-areas: 
    "title description-title options-title "
    "img description options-container ";
+   background-color: white;
 }
 
 #all-game-name {
@@ -131,6 +147,7 @@ div.gameshelves-list ul {
    margin: 0px 20px;
    font-size: 15px;
    min-width: 100px;
+   border-top: hidden
 }
 
 
@@ -155,10 +172,10 @@ div.gameshelves-list ul {
    margin: 0px 20px;
    font-size: 15px;
    min-width: 100px;
+   border-top: hidden
 }
 
 #all-game-description {
-   background-color: white;
    grid-area: description;
    margin: 10px 20px;
 }
@@ -176,11 +193,12 @@ div.gameshelves-list ul {
     margin: 0px 20px;
     font-size: 15px;
     min-width: 100px;
+    border-top: hidden
 }
 
 #all-game-options-container {
    grid-area: options-container;
-   border: 2px solid black;
+   /* border: 2px solid black; */
    
 }
 
@@ -193,15 +211,45 @@ div.gameshelves-list ul {
    justify-content: center;
 }
 
-
 #all-game-options-bookshelf {
-   border: 2px solid black;
+   /* border: 2px solid black; */
    display: flex;  
    flex-wrap: wrap;
    justify-content: center;
    /* align-items: center; */
    margin: 0px 20px;
    font-size: 15px;
+   padding-bottom: 15px;
    min-width: 100px;
+   padding-top: 15px;;
+}
 
+#add-gameshelf-button {
+   font-family: "Bungee";
+   font-size:10px;
+}
+
+#delete-from-gameshelf-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+}
+
+#delete-game-from-gameshelf-form {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   /* margin: 0 50px; */
+   /* width:100%; */
+}
+
+#delete-from-gameshelf-div {
+
+}
+
+#delete-from-gameshelf {
+   font-family: "bungee";
+   font-size:10px;
+   width: 165px   
 }

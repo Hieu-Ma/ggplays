@@ -37,6 +37,45 @@ router.get('/', requireAuth, asyncHandler(async (req, res, next) => {
     res.render('gameshelves', { shelves, games, shelvesGames });
 }));
 
+router.post('/delete', requireAuth, asyncHandler(async (req, res, next) => {
+    const { userId } = req.session.auth;
+    const {gameId, gameshelf} = req.body;
+    // console.log(gameId, gameshelf)
+    // let newShelf = await Shelf.create({
+    //     game_id: gameId,
+    //     game_shelf_id: gameshelf
+    //  })
+
+    console.log("id's",gameId, gameshelf)
+    // let shelfToDestroy = await Shelf.findOne({
+    //     where: {
+    //         game_id: gameId,
+    //         game_shelf_id: gameshelf
+    //     }
+    // })
+
+    await Shelf.destroy({
+        where: {
+            game_shelf_id: gameshelf,
+            game_id: gameId,
+        }
+    })
+    // await shelfToDestroy.destroy();
+    // res.json({shelfToDestroy})
+    res.redirect(`/gameshelves`);
+}));
+router.post('/', requireAuth, asyncHandler(async (req, res, next) => {
+    const { userId } = req.session.auth;
+    const {gameId, gameshelf} = req.body;
+    console.log(gameId, gameshelf)
+    let newShelf = await Shelf.create({
+        game_id: gameId,
+        game_shelf_id: gameshelf
+     })
+    res.redirect(`/gameshelves`)
+}));
+
+
 const shelfValidators = [
     check('title')
         .exists({ checkFalsy: true })

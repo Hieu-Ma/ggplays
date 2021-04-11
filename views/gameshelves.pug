@@ -27,7 +27,8 @@ block content
                         a(href=`/gameshelves/${shelf.id}`)= shelf.title
         div(class="all-games-container")
             each shelf in shelvesGames
-                div(id= "shelf-title")= shelf.title
+                div(id= "shelf-title-container")
+                    div(id= "shelf-title")= shelf.title
                     each game in shelf.Games
                         //div(id="gameshelves-game-container")
                             //- div(id="title-description")
@@ -45,16 +46,23 @@ block content
                                     div(id="all-game-description-released")= game.year_released
                                 div() Genre:
                                     div(id="all-game-description-released")= game.Genre.type
-                            div(id="all-game-options") Options
+                            div(id="all-game-options") Add to a bookshelf
                             div(id="all-game-options-container")
                                 div(id="all-game-options-bookshelf")
-                                    form(action="/gameshelves" method="post" id="all-games-forms") 
-                                        label(for='gameshelf') Add to gameshelf:
+                                    form(action="/gameshelves" method="post" id="all-games-forms")
+                                        input(type="hidden" name="gameId" value= game.id) 
+                                        label(for='gameshelf')
                                         select(id='all-select-options' name='gameshelf' required)
                                           option(value= '')= ''
                                           each shelf in shelvesGames
                                              option(value=shelf.id)= shelf.title
-                                        button() Add
+                                        button(type='submit' id='add-gameshelf-button') Add
+                                //- div(id="delete-from-gameshelf-container")
+                                    //- form(action="/gameshelves/delete" method="post" id="delete-from-gameshelf-form")
+                                    //-     input(type="hidden" name="gameId" value= game.id)
+                                    //-     input(type="hidden" name="gameshelf" value= shelf.id)  
+                                    //-     button(type='submit' id='delete-from-gameshelf') 
+                                    //-         a(href="/gameshelves/delete") Delete
                             
                 //- div(id="description")
                 //-     div(class="games-container" id="game-description")
