@@ -8,7 +8,7 @@ html
         link(rel='stylesheet' href='/stylesheets/game.css')
         link(rel='stylesheet' href='/stylesheets/review.css')
         link(rel="stylesheet" href="https://use.typekit.net/yhv1vwm.css")
-        script(src="/javascripts/index.js")
+        script(src="/javascripts/index.js" type="module" defer)
 
   body
     div(id='navbar-container' class='navbar')
@@ -22,8 +22,10 @@ html
             a(id='profile' class='navbar-link' href='/users/profile') Profile
             div(id='dropdown-content' class= 'dropdown-content')
               form(class= 'dropdown-item' action='/users/logout' method='post')
-                button(id='logout' type='submit') Logout
-              a(class= 'dropdown-item' href='/gameshelves') Gameshelves
+                button(id='logout' type='submit') 
+                  a() Logout
+              div(class= 'dropdown-item') 
+                a(href='/gameshelves') Gameshelves
         else
           span(class='navbar-button')
             a(class='navbar-link' href='/users/login') Login
