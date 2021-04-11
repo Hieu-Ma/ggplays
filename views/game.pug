@@ -6,38 +6,53 @@ append head
 
 block content 
    div(id= "game-container")
-      div(id= "game-img")
-         img(src= src=game.image_url)
-      if userId
-         div(id="gameshelf-dropdown")
-            form(class="select-form")
-               input(type="hidden" value=game.id name="gameId")
-               select(class="select-options" name="gameshelf")
-                  option(value= "")= ""
-                  each shelf in gameshelves
-                     option(value=shelf.id)= shelf.title 
-      else
-         div(id="gameshelf-dropdown")
-            form(class="select-form")
-               input(type="hidden" value=game.id name="gameId")
-               select(class="select-options" name="gameshelf")
-                  option(value= "")= ""
-                  option() Want To Play
-                  option() Currently Playing
-                  option() Played
       div(id= "game-title")= game.name
-         div(id= "game-score")= score
+      div(id= "game-score-container")
+         div(id= "score-container")
+            div(id="game-score-circle")
+            div(id="game-score")= score
       div(id= "description-container")
-         div(id= "description-title") Description:
-            div(id= "description")= game.description
-         div(id= "year-released-title") Release Year:
-            div(id= "year-released")= game.year_released
-         div(id= "developer-title") Developer:
-            div(id= "developer")= game.developer
-         div(id= "platforms-title") Platform(s):
-            div(id= "platforms")= game.platforms
-         div(id= "genre-title") Genre:
-            div(id= "genre")= game.Genre.type
+         div(id= "game-img")
+            img(src= src=game.image_url)
+            div(id="gameshelf-dropdown-container")
+               if userId
+                  div(id="gameshelf-dropdown")
+                     form(class="select-form")
+                        input(type="hidden" value=game.id name="gameId")
+                        select(class="select-options" name="gameshelf")
+                           option(value= "")= "Add to Shelf"
+                           each shelf in gameshelves
+                              option(value=shelf.id)= shelf.title 
+               else
+                  div(id="gameshelf-dropdown")
+                     form(class="select-form")
+                        input(type="hidden" value=game.id name="gameId")
+                        select(class="select-options" name="gameshelf")
+                           option(value= "")= " "
+                           option() Want To Play
+                           option() Currently Playing
+                           option() Played
+         div(id="game-details-container")
+            div(id= "genre-title") Genre:
+               div(id= "genre")= game.Genre.type
+            div(id= "year-released-title") Release Year:
+               div(id= "year-released")= game.year_released
+            div(id= "developer-title") Developer:
+               div(id= "developer")= game.developer
+            div(id= "platforms-title") Platform(s):
+               div(id= "platforms")= game.platforms
+         div(id="description-text")
+            div(id= "description-title") Description:
+               div(id= "description")= game.description
+      div(id= "pros-cons-container") 
+         h3 PROS
+         div(id= "pros")
+            each pro in prosArray
+               div(id= "pros-content")= pro
+         h3 CONS
+         div(id="cons") 
+            each con in consArray
+               div(id="cons-content")= con
       div(id= "reviews")
          div(id= "reviews-title") Reviews
          if (locals.authenticated && hasReview)
