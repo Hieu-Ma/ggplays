@@ -1,15 +1,15 @@
-extends layout.pug 
+extends layout.pug
 
-append head 
+append head
   link(rel="stylesheet" href="/stylesheets/games-list.css")
 
 
-block content 
+block content
     div(id= "gameshelves-container")
         div(class="gameshelves-list")
             h3 Genres
             li All Games
-            ul 
+            ul
                 each genre in genres
                     li: a(href=`/games-list/${genre.id}`)= genre.type
         div(class="games-container")
@@ -18,7 +18,9 @@ block content
                 each game in games
                     div(class="game")
                         div(class="gameImg")
-                        a(href=`/games/${game.id}`)
-                            img(src=`${game.image_url}` width="150" height="200")
-                        div(class="title")
-                        p= game.name  
+                            //- div(id= "game-score")= score
+                        div(id= "game-title")= game.name
+                            a(href=`/games/${game.id}`)
+                                img(src=`${game.image_url}` width="200" height="250")
+                            //- div(class="title")
+                        //- p= game.name

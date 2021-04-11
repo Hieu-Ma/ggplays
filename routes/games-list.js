@@ -9,6 +9,8 @@ router.get('/', asyncHandler(async (req, res, next) => {
     const genres = await Genre.findAll()
 
     res.render('games-list', { genres, games })
+
+
 }));
 
 router.get('/:id', asyncHandler(async (req, res) => {
@@ -22,6 +24,8 @@ router.get('/:id', asyncHandler(async (req, res) => {
 
 
     res.render('games-list', { genres, games })
+
+    
 }));
 
 

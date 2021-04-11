@@ -12,8 +12,13 @@ body {
     margin-top: 85px;
     display: grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-areas: 
+    grid-template-areas:
     "shelves-list games";
+}
+
+div#game-title {
+    font-size: 20px;
+    
 }
 
 div.gameshelves-list {
@@ -41,7 +46,7 @@ div.games-container {
     flex-wrap:wrap;
     justify-content: space-around;
     padding-bottom: 50px;
-    
+
 }
 
 .game {
@@ -50,7 +55,7 @@ div.games-container {
     min-width: 50px;
     max-height: 200px;
     max-width: 150px;
-    margin-top: 50px; 
+    margin-top: 50px;
     margin: 50px;
     /* padding: 0px; */
 }
