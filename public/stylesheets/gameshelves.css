@@ -102,6 +102,14 @@ div.gameshelves-list ul {
     display: grid;
     grid-template-columns: repeat(4, 1fr) ;
     grid-template-rows: auto;
+    justify-items: center;
+    margin: 25px 0px;
+    grid-row-gap: 40px;
+    /* display: inline-block; */
+    color: white;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
 }
 
 .all-games-container {

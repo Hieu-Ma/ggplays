@@ -10,12 +10,11 @@ block content
         div(class="gameshelves-list")
             h3 My Game Shelves
             div(class="form" id="form-container")
+            form(id="newshelf-form" action='/gameshelves/create-shelf' method="post")
                 if errors
                     div(id="errors-container")
-                        ul
-                            each error in errors
-                                li= error               
-            form(id="newshelf-form" action='/gameshelves/create-shelf' method="post")
+                        each error in errors
+                            li= error               
                 label(for="title" id="create-new-shelf-label") Create New Shelf:
                 div(id="create-new-shelf-container")
                     input(type="text" id="title" name="title" value=title)
@@ -26,7 +25,7 @@ block content
                         li
                         a(href=`/gameshelves/${shelf.id}`)= shelf.title
         div(class="all-games-container")
-            each shelf in shelvesGames
+            each shelf in shelves
                 div(id= "shelf-title-container")
                     div(id= "shelf-title")= shelf.title
                     each game in shelf.Games
@@ -54,7 +53,7 @@ block content
                                         label(for='gameshelf')
                                         select(id='all-select-options' name='gameshelf' required)
                                           option(value= '')= ''
-                                          each shelf in shelvesGames
+                                          each shelf in shelves
                                              option(value=shelf.id)= shelf.title
                                         button(type='submit' id='add-gameshelf-button') Add
                                 //- div(id="delete-from-gameshelf-container")
