@@ -27,7 +27,7 @@ block content
    div(id="reviews-container")
       h2 Reviews
       each review in reviews
-         div(id="review-container")
+         div(id="user-review-container")
             div(id= "review-title-container")
                a(href= `/games/${review.Game.id}`)= review.Game.name
                div(id= "review-score")= review.score
