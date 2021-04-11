@@ -183,13 +183,15 @@ router.get('/:id', requireAuth, asyncHandler(async (req, res) => {
             [{model: Game}, 'name']
         ]
     })
+
+    const shelf = await Gameshelf.findByPk(gameshelfId)
     // const games = await Game.findAll({
     //     where: { gameshelfId: game_id }
     // })
     // console.log("these are our gameshelves" , gameshelf);
     // res.json({ gameshelf });
     // res.json(shelves);
-    res.render('gameshelves-list', { shelves, gameshelf })
+    res.render('gameshelves-list', { shelves, gameshelf, shelf })
     // res.json({ gameshelf }); // amazing for seeing what you're working with
 }));
 

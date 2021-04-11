@@ -183,6 +183,7 @@ div#edit-shelves a {
 #all-image-id {
    max-height: 400px;
    max-width: 200px;
+   margin: 0;
 }
 
 #all-game-description-container {
