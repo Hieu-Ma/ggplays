@@ -3,7 +3,6 @@ extends layout.pug
 append head 
    script(src="/javascripts/updatingGameshelf.js", type="module")
 
-
 block content 
    div(id= "game-container")
       div(id= "game-title")= game.name
@@ -62,7 +61,10 @@ block content
                      div(id= "my-review-title") My Review
                      div(id= "edit-button-container")
                         button(id= "edit-button") 
-                           a(href= `/games/${game.id}/review/edit` id= "edit-button-link") Edit
+                           a(href= `/games/${game.id}/review/edit` class= "edit-button-link") Edit
+                        form(action=`/games/${game.id}` method= 'post')
+                           button(type= "submit" id= "delete-button") 
+                              a(class= "edit-button-link") Delete
                   div(id= "review-title-container")
                      div(id= "review-score")= userReview.score
                      div(id= "review-title")= userReview.User.username + ": " + "\"" + userReview.title + "\"" 

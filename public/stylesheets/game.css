@@ -7,7 +7,7 @@
    border-radius: 10px;
    padding: 60px 60px 20px 60px;
    margin: 100px;
-   position: relative;
+   /* position: relative; */
 }
 
 #game-title {
@@ -22,8 +22,8 @@
 
 #game-score-circle {
    position: absolute;
-   top: 83px;
-   right: 100px;
+   top: 292px;
+   right: 207px;
    border: 3px solid black;
    height: 70px;
    width: 70px;
@@ -35,8 +35,8 @@
 #game-score {
    font-family: "Bungee";
    position: absolute;
-   top: 72px;
-   right: 111px;
+   top: 282px;
+   right: 218px;
    font-size: 36px;
    color: whitesmoke;
 }
@@ -271,10 +271,15 @@ div#description {
 
 #edit-button {
    font-family: "Bungee";
-   margin: 5px 0;
+   margin: 5px 10px;
 }
 
-#edit-button-link {
+#delete-button {
+   font-family: "Bungee";
+   margin: 5px 0px;
+}
+
+.edit-button-link {
    text-decoration: none;
 }
 
