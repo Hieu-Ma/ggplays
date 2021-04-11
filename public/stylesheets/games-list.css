@@ -1,19 +1,60 @@
 body {
-    font-family: "Bungee Inline";
+    font-family: "Bungee", "Bungee Inline" ;
 }
 
 #gameshelves-container {
     background-color: #FDF2E9;
-    /* opacity: .68; */
     border: solid lightpink;
     border-radius: 10px;
-    /* padding: 40px; */
     margin: 50px;
     margin-top: 85px;
     display: grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-areas: 
+    grid-template-areas:
     "shelves-list games";
+}
+
+.game {
+    min-height: 100px;
+    min-width: 50px;
+    max-height: 200px;
+    max-width: 150px;
+    margin-top: 50px;
+    margin: 50px 50px;
+    padding: 0px;
+}
+
+.gameImg {
+    max-height: 200px;
+    max-width: 150px;
+    float: inherit;
+    box-shadow: 10px 15px 8px lightslategray;
+}
+
+.gameImg img {
+    object-fit: inherit;
+    max-height: 200px;
+    max-width: 150px;
+}
+
+div#game-title-text {
+    font-size: 12px;
+    background-color: #3C3D47;
+    width: 150px;
+    max-height: 200px;
+    /* box-shadow: 10px 10px 9px lightslategray; */
+    box-shadow: 9px 10px 8px lightslategray;
+    color: white;
+    text-align: center;
+    padding: 1px;
+}
+
+p {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    word-wrap: break-word;
+    max-width: 150px;
+    font-size: 12px;
 }
 
 div.gameshelves-list {
@@ -25,8 +66,13 @@ div.gameshelves-list {
 
 h3 {
     font-size: 24px;
-    padding: 0 25px 25px 25px;
+    padding: 0 25px 15px 25px;
     margin-top: 50px;
+}
+
+#category-title h3 {
+    font-size: 40px;
+    padding: 0 25px 0px 25px;
 }
 
 div.gameshelves-list li {
@@ -36,21 +82,17 @@ div.gameshelves-list li {
     list-style: none;
 }
 
+.gameshelves-list a:hover {
+    color: #F66767;
+    transition-duration: 0.2s;
+}
+
 div.games-container {
     display: flex;
     flex-wrap:wrap;
     justify-content: space-around;
     padding-bottom: 50px;
-    
+
 }
 
-.game {
-    border: 2px solid grey;
-    min-height: 100px;
-    min-width: 50px;
-    max-height: 200px;
-    max-width: 150px;
-    margin-top: 50px; 
-    margin: 50px;
-    /* padding: 0px; */
-}
+

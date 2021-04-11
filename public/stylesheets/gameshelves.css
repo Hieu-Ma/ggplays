@@ -1,13 +1,13 @@
 body {
-    font-family: "Bungee Inline";
+    font-family: "Bungee Inline", "Bungee";
 }
 
 h5 {
-    font-family: "Bungee Inline";
+    font-family: "Bungee Inline", "Bungee";
 }
 
 h3 {
-    font-family: "Bungee Inline";
+    font-family: "Bungee Inline", "Bungee";
 }
 
 #gameshelves-container {
@@ -24,21 +24,6 @@ h3 {
     "shelves-list games";
 }
 
-/* .games-container {
-    background-color: white;
-    border: black;
-} */
-
-#game-img {
-    display: flex;
-    flex-direction: column;
-}
-
-#image-id {
-    max-height: 200px;
-    max-width: 150px;
-    float: inherit;
-}
 
 div.gameshelves-list {
     grid-area: shelves-list;
@@ -53,8 +38,21 @@ div.gameshelves-list h3 {
     margin-top: 50px;
 }
 
+div#edit-shelves a {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    margin-right: 2px;
+}
+
+div.gameshelves-list ul {
+    margin-left:25px;
+}
+
 #form-container {
-    padding: 0 25px 25px 25px;
+    padding-bottom: 25px;
 }
 
 #errors-container {
@@ -67,7 +65,7 @@ div.gameshelves-list h3 {
 }
 
 .login-button {
-    font-family: "Bungee Inline";
+    font-family: "Bungee Inline", "Bungee";
     background-color: #fff;
     border: #3C3D47 solid 1px;
     font-size: 14px;
@@ -76,62 +74,77 @@ div.gameshelves-list h3 {
     margin-left: 5px;
 }
 
-div.gameshelves-list li {
+.gameshelves-list li {
     font-size: 18px;
-    padding: 10px;
-    padding-left: 25px;
+    padding: 5px 0px;
+    /* padding-left: 25px; */
     list-style: none;
 }
 
-/* div.games-container#title-description {
-    float: left;
+#newshelf-form {
+    /* border-top: 2px solid rgba(0, 0, 0, 0.30); */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.30);
+    margin: 0px 25px;
+    /* padding: 25px 0px; */
+    padding-bottom: 30px;
+    margin-bottom: 25px;
 }
 
-div.games-container#game-description {
-    margin-left: 200px;
-} */
-
-div.games-container {
-    display: flex;
-    flex-direction: column;
+#create-new-shelf-label {
+    width:100%;
+    /* margin-left:25px */
+    
 }
 
-div.games-container#game-description {
-    grid-area: games;
+#create-new-shelf-container {
     display: flex;
-    justify-content: space-around;
-    flex-direction: row;
+    height: 25px;
+    /* margin: 0px 25px; */
+}
+#create-new-shelf-container button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* ------------------------------------------------------------------- */
+.games-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) ;
+    grid-template-rows: auto;
+    justify-items: center;
+    margin: 25px 0px;
+    grid-row-gap: 40px;
+    /* display: inline-block; */
+    color: white;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
 }
 
-#title-description {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    font-size: 24px;
-    padding: 0 25px 25px 25px;
-    margin-top: 50px;
+.all-games-container {
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-template-rows: auto;
 }
 
 #game {
-    border: 2px solid grey;
-    background-color: white;
-    min-height: 100px;
-    min-width: 50px;
-    max-height: 200px;
-    max-width: 150px;
-    margin-top: 50px;
-    margin: 50px;
+
+    border: 2px solid black;
 
 }
 
-#description {
-    border: 2px solid blue;
-    background-color: white;
-    min-height: 100px;
-    min-width: 400px;
-    max-height: 200px;
-    max-width: 800px;
-    margin-top: 50px;
-    margin: 50px;
-
+#game-title-and-game {
+    /* background-color: white; */
+    width: 300px;
 }
+
+
+#game-name {
+    border: 2px solid black;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    margin: 0px 20px;
+    font-size: 12px;
+}
+

@@ -6,6 +6,7 @@ let profile = document.getElementById('profile');
 
 let dropDownItems = document.getElementById('dropdown-content');
 // console.log(dropDownItems);
+try {
 
 profile.addEventListener("mouseover", (event) => {
     dropDownItems.style.display = "block";
@@ -21,3 +22,7 @@ dropDownItems.addEventListener("mouseover", (event) => {
 dropDownItems.addEventListener("mouseout", (event) => {
     dropDownItems.style.display = "none";
 })
+    
+} catch (e){
+    console.log("no errors here chief ;)")
+}

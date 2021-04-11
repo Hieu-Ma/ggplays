@@ -7,7 +7,7 @@
 }
 
 #gameshelves-title {
-  font-family: "Bungee Inline";
+  font-family: "Bungee", "Bungee Inline";
   font-size: 49px;
   margin: 40px;
   padding-left: 20px;
@@ -19,7 +19,7 @@
 }
 
 #shelf, #custom-shelf {
-  font-family: "Bungee Inline";
+  font-family: "Bungee", "Bungee Inline";
   background-color: white;
   border: 1px solid lightpink;
   font-size: 25px;
@@ -41,28 +41,37 @@
 }
 
 .save-btn {
-  display: none;
+  display: none;;
 }
 
 .delete-btn {
   position: absolute;
-  top: 50%;
-  bottom: 50%;
-  right: 20px;
-  height: 20px;
-  width: 20px;
+  margin-top: 8px;
+  right: 25px;
+  text-align: center;
 }
 
 #rename-btn {
-  /* position: absolute; */
-  margin-left: 15px;
-  align-content: center;
+  margin: 8px 0 0 0;
 } 
 
+button {
+  font-family: "Bungee","Bungee Inline" ;
+  background-color: #EFEFEF;
+  border: #3C3D47 solid 1px;
+  font-size: 13px;
+  padding: 3px 10px;
+  border-radius: 5px;
+  margin-left: 5px;
+}
 
-/* 
-div#rename-delete-btn {
+button:hover {
+  background-color: #e2e2e2;
+}
+
+#rename-container {
   display: flex;
-  justify-content: space-between;
-} */
+  align-items: center;
+  margin: 8px 0 0 10px;
+}
 

@@ -8,15 +8,73 @@ const Op = Sequelize.Op;
 
 router.get('/', requireAuth, asyncHandler(async (req, res, next) => {
     const { userId } = req.session.auth;
-    const shelves = await Gameshelf.findAll({
-        where: { user_id: userId }
-    });
+    // const shelves = await Gameshelf.findAll({
+    //     // include: Game,
+    //     where: { user_id: userId },
+    // });
     const games = await Game.findAll({
-        include: Genre
+        include: Genre,
+        order: [
+            'name'
+        ]
     });
 
-    res.render('gameshelves', { shelves, games });
+    const shelves = await Gameshelf.findAll({
+        where: { user_id: userId },
+        // include: [{
+        //     model: Game,
+        //     order: ['name']
+        // }]
+        include: [{
+            model: Game,
+            include: Genre
+        }],
+        order: [
+            [{model: Game}, 'name']
+        ]
+    })
+    // res.json({shelvesGames})
+    res.render('gameshelves', { shelves, games});
 }));
+
+// router.post('/delete', requireAuth, asyncHandler(async (req, res, next) => {
+//     const { userId } = req.session.auth;
+//     const {gameId, gameshelf} = req.body;
+//     // console.log(gameId, gameshelf)
+//     // let newShelf = await Shelf.create({
+//     //     game_id: gameId,
+//     //     game_shelf_id: gameshelf
+//     //  })
+
+//     console.log("id's",gameId, gameshelf)
+//     // let shelfToDestroy = await Shelf.findOne({
+//     //     where: {
+//     //         game_id: gameId,
+//     //         game_shelf_id: gameshelf
+//     //     }
+//     // })
+
+//     await Shelf.destroy({
+//         where: {
+//             game_shelf_id: gameshelf,
+//             game_id: gameId,
+//         }
+//     })
+//     // await shelfToDestroy.destroy();
+//     // res.json({shelfToDestroy})
+//     res.redirect(`/gameshelves`);
+// }));
+router.post('/', requireAuth, asyncHandler(async (req, res, next) => {
+    const { userId } = req.session.auth;
+    const {gameId, gameshelf} = req.body;
+    console.log(gameId, gameshelf)
+    let newShelf = await Shelf.create({
+        game_id: gameId,
+        game_shelf_id: gameshelf
+     })
+    res.redirect(`/gameshelves`)
+}));
+
 
 const shelfValidators = [
     check('title')
@@ -32,13 +90,36 @@ router.post('/create-shelf', requireAuth, shelfValidators, asyncHandler(async (r
         title,
     } = req.body;
 
-    const shelves = await Gameshelf.findAll({
-        where: { user_id: userId }
-    });
+    // const shelves = await Gameshelf.findAll({
+    //     where: { user_id: userId }
+    // });
+
+    // const games = await Game.findAll({
+    //     include: Genre
+    // });
 
     const games = await Game.findAll({
-        include: Genre
+        include: Genre,
+        order: [
+            'name'
+        ]
     });
+
+    const shelves = await Gameshelf.findAll({
+        where: { user_id: userId },
+        // include: [{
+        //     model: Game,
+        //     order: ['name']
+        // }]
+        include: [{
+            model: Game,
+            include: Genre
+        }],
+
+        order: [
+            [{model: Game}, 'name']
+        ]
+    })
 
     const newGameshelf = Gameshelf.build({
         title: title,
@@ -86,11 +167,27 @@ router.get('/:id', requireAuth, asyncHandler(async (req, res) => {
     const gameshelf = await Gameshelf.findByPk(gameshelfId, {
         include: Game,
     })
-    const shelves = await Gameshelf.findAll({
-        // include: Shelf,
-        where: { user_id: userId }
-        // where: { gameshelfId : game_shelf_id }
+    const games = await Game.findAll({
+        include: Genre,
+        order: [
+            'name'
+        ]
     });
+
+    const shelves = await Gameshelf.findAll({
+        where: { user_id: userId },
+        // include: [{
+        //     model: Game,
+        //     order: ['name']
+        // }]
+        include: [{
+            model: Game,
+            include: Genre
+        }],
+        order: [
+            [{model: Game}, 'name']
+        ]
+    })
     // const games = await Game.findAll({
     //     where: { gameshelfId: game_id }
     // })
