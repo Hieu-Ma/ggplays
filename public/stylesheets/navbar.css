@@ -6,6 +6,7 @@ body {
 #navbar-container {
    height: 106px;
    background-color: #3C3D47;
+   background: linear-gradient(#3c3d47 0%, #232327 100%);
    display: grid;
    grid-template-columns: repeat(3, 1fr);
    grid-template-areas:
@@ -15,7 +16,6 @@ body {
    justify-items: center;
    /* align-items: center; */
 
-   background: linear-gradient(#3c3d47 0%, #232327 100%);
    
 }
 
@@ -96,36 +96,56 @@ body {
 }
 
 .dropdown {
-
+   
  }
 
 .dropdown-content {
    display: none;
    background-color: #3C3D47;
-   /* height: 300px; */
-   width: 300px;
-   margin-right: 30px;
-   position:absolute;
-   top:106px;
-   /* right:10px; */
-}
-
-.dropdown-item  a{
-   font-family: bungee, sans-serif;
-   font-weight: 400;
-   font-style: normal;
-   color: white;
-   text-decoration: none;
-   font-size: 21px;
-   border-top: 1px solid black;
-   /* width:100%; */
-   /* border-bottom: 3px solid black; */
+   width: 213px;
+   /* position:absolute; */
+   /* top:106px; */
+   top:300px;
+   /* right:0px; */
 }
 
 #profile {
    padding-bottom: 26px;
 }
 
+
+#dropdown-logout {
+   width: 100%;
+   border-top: 1px solid black;
+}
+
+#dropdown-logout:hover {
+   background-color: #3C3D47;
+   background: linear-gradient(#3c3d47 0%, #232327 100%);
+}
+
+#dropdown-gameshelf {
+   width: 100%;
+   border-top: 1px solid black;
+   border-bottom: 1px solid black;
+   font-family: bungee, sans-serif;
+   font-weight: 400;
+   font-style: normal;
+   color: white;
+   font-size: 21px;
+   background: none;
+   cursor: pointer;
+   padding-left: 5px;
+}
+
+#dropdown-gameshelf:hover {
+   background-color: #3C3D47;
+   background: linear-gradient(#3c3d47 0%, #232327 100%);
+}
+
+#dropdown-gameshelf a {
+   text-decoration: none;
+}
 /* 
 regular
 

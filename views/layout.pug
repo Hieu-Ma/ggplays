@@ -21,11 +21,11 @@ html
           div(class= 'dropdown')
             a(id='profile' class='navbar-link' href='/users/profile') Profile
             div(id='dropdown-content' class= 'dropdown-content')
-              form(class= 'dropdown-item' action='/users/logout' method='post')
+              form(id='dropdown-logout' class= 'dropdown-item' action='/users/logout' method='post' ) 
                 button(id='logout' type='submit') 
-                  a() Logout
-              div(class= 'dropdown-item') 
-                a(href='/gameshelves') Gameshelves
+                  a(id='test-button') Logout
+              div(id='dropdown-gameshelf' class= 'dropdown-item') 
+                a(id='gameshelves-link' href='/gameshelves') Gameshelves
         else
           span(class='navbar-button')
             a(class='navbar-link' href='/users/login') Login
