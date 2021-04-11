@@ -121,7 +121,7 @@ div.gameshelves-list ul {
    /* color: black; */
    /* background-color:linear-gradient(#29292f 0%, #232327 100%); */
    background-color: rgb(65, 65, 65);
-   background: linear-gradient(rgb(65, 65, 65) 0%, #232327 100%);
+   background: linear-gradient(rgb(89, 89, 89) 0%, #232327 100%);
    color: white;
    font-family: "Bungee";
 }
