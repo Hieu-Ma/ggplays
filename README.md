@@ -6,9 +6,13 @@ ggPlays is a web application that allows users to view various video games, publ
 
 ### Index
 [Technologies](#technologies)
+
 [Key Features](#key-features)
+
 [Code Snippets](#code-snippets)
+
 [Wiki Pages](#wiki-pages)
+
 [Stretch Goals](#stretch-goals)
 
 ***
@@ -19,6 +23,7 @@ ggPlays is a web application that allows users to view various video games, publ
 - HTML rendered through Pug templating
 - CSS styling
 - [Favicon.io](https://favicon.io/) for favicon
+- Adobe XD
 - Hosted on Heroku
 
 #### Back End
@@ -54,6 +59,7 @@ const shelves = await Gameshelf.findAll({
 })
 ````
 
+##### Api Route to find a shelf by it's ID and dynamically change it's name on the current page
 ````javascript
 router.put('/', requireAuth, asyncHandler(async (req, res) => {
   const { newName, shelfId } = req.body;
@@ -67,6 +73,7 @@ router.put('/', requireAuth, asyncHandler(async (req, res) => {
   res.json({ customShelf });
 }))
 ````
+##### Api Route to find a shelf by it's ID and dynamically delete it on the current page, as well as delete all the associated books that belong to that shelf
 
 ````javascript
 // delete Gameshelf and any associated 'shelves' (games in the shelf)
@@ -84,7 +91,8 @@ router.delete('/delete', requireAuth, asyncHandler(async (req, res) => {
 ### Wiki Pages
 #### [API Documentation](https://github.com/Hieu-Ma/ggplays/wiki/API-Documentation)
 #### [Database Schema](https://github.com/Hieu-Ma/ggplays/wiki/Database-Schema)
-<img src="https://i.ibb.co/wNBRLY7/gg-Plays-Schema-2.png" alt="gg-Plays-Schema-2">
+<img src="https://i.ibb.co/wNBRLY7/gg-Plays-Schema-2.png" alt="gg-Plays-Schema-2" height="300">
+
 #### [Feature List](https://github.com/Hieu-Ma/ggplays/wiki/Feature-List)
 #### [Frontend Routes](https://github.com/Hieu-Ma/ggplays/wiki/Frontend-Routes)
 #### [User Stories](https://github.com/Hieu-Ma/ggplays/wiki/User-Stories)
