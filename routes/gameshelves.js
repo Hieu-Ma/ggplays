@@ -21,10 +21,6 @@ router.get('/', requireAuth, asyncHandler(async (req, res, next) => {
 
     const shelves = await Gameshelf.findAll({
         where: { user_id: userId },
-        // include: [{
-        //     model: Game,
-        //     order: ['name']
-        // }]
         include: [{
             model: Game,
             include: Genre
@@ -33,7 +29,6 @@ router.get('/', requireAuth, asyncHandler(async (req, res, next) => {
             [{model: Game}, 'name']
         ]
     })
-    // res.json({shelvesGames})
     res.render('gameshelves', { shelves, games});
 }));
 

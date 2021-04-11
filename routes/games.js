@@ -91,6 +91,20 @@ router.get('/:id', asyncHandler(async (req, res) => {
    }
 }));
 
+router.post('/:id', asyncHandler(async (req, res) => {
+   let userId = req.session.auth.userId;
+   const id = parseInt(req.params.id, 10);
+   console.log('afewfwafawfawef', userId);
+   let reviewToDestroy = await Review.findOne({
+      where: {
+         user_id: userId,
+         game_id: id
+      }
+   })
+   await reviewToDestroy.destroy()
+   res.redirect(`/games/${id}`);
+}));
+
 router.get('/:id/review', asyncHandler(async (req, res) => {
    let userId = req.session.auth.userId;
    const id = parseInt(req.params.id, 10);

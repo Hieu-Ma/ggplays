@@ -271,10 +271,15 @@ div#description {
 
 #edit-button {
    font-family: "Bungee";
-   margin: 5px 0;
+   margin: 5px 10px;
 }
 
-#edit-button-link {
+#delete-button {
+   font-family: "Bungee";
+   margin: 5px 0px;
+}
+
+.edit-button-link {
    text-decoration: none;
 }
 
