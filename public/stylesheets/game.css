@@ -87,24 +87,54 @@ div#description-container {
    margin-left: 25px;
 }
 
-#pros-cons-container h3 {
-   font-family: "Bungee";
-   margin-left: 30px;
+#description-text {
+   background-color: #f8f8f8;
+   /* border: 3px solid #555661; */
+   border-top: none;
    margin-top: 20px;
+   margin-right: 10px;
+   /* margin-bottom: 70px; */
+   padding-left: 35px;
+   padding-right: 40px;
+   line-height: 30px;
+}
+
+#description-title {
+   margin-top: 10px;
+   font-family: "Bungee";
+   font-size: 25px;
+}
+
+#description, #year-released, #developer, #platforms, #genre {
+   margin-top: 20px;
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 18px;
 }
 
 #pros-cons-container {
-   /* padding-top: 70px; */
+   display: flex;
+   background-color: #f8f8f8;
+   border: 3px solid #555661;
+   border-top: none;
+   margin-bottom: 100px;
+   padding-bottom: 20px;
 }
 
+#pros-cons-container h3 {
+   font-family: "Bungee";
+   font-size: 20px;
+   margin-left: 30px;
+   /* margin-bottom: 15px */
+}
 
 #pros, #cons {
    /* height: 100px; */
-   margin-left: 30px;
+   /* margin-left: 30px; */
    display: flex;
    flex-direction: row;
    flex-wrap: wrap;
    align-items: center;
+   width: 450px;
 }
 
 #pros-content, #cons-content {
@@ -121,24 +151,6 @@ div#description-container {
    margin-top: 25px;
 }
 
-#description-text {
-   background-color: #f8f8f8;
-   border: 3px solid #555661;
-   border-top: none;
-   margin-bottom: 70px;
-   padding-left: 35px;
-   padding-bottom: 35px;
-   padding-right: 35px;
-}
-
-#description-title {
-   font-family: "Bungee";
-   font-size: 25px;
-}
-
-#description, #year-released, #developer, #platforms, #genre {
-   font-family: Arial, Helvetica, sans-serif;
-}
 
 #platforms {
    width: 250px;
