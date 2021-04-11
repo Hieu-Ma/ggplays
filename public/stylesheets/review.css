@@ -131,7 +131,7 @@
 #submit-review {
    border: 2px solid black;
    margin-top: 5px;
-   font-family: "Bungee Inline";
+   font-family: "Bungee", "Bungee Inline";
    padding: 10px;
    font-size: 15px;
    max-width: 300px;

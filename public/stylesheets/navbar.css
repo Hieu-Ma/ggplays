@@ -75,17 +75,6 @@ body {
    padding-left: 320px;
 }
 
-#logout {   
-   font-family: bungee, sans-serif;
-   font-weight: 400;
-   font-style: normal;
-   color: white;
-   font-size: 21px;
-   background: none;
-   border: none;
-   outline: none;
-   cursor: pointer;
-}
 
 .slash {
    font-family: bungee, sans-serif;
@@ -96,8 +85,7 @@ body {
 }
 
 .dropdown {
-   
- }
+}
 
 .dropdown-content {
    display: none;
@@ -106,9 +94,7 @@ body {
    position:absolute; 
    top:106px; 
    padding-right: 500px
-
-   /* top:300px; */
-   /* right:0px; */
+   
 }
 
 #profile {
@@ -117,20 +103,51 @@ body {
 
 
 #dropdown-logout {
-   width: 100%;
    border-top: 1px solid black;
-   padding-right: 500px
+   border-left: 2px solid black;
+   border-bottom: 2px solid black;
+   padding-right: 500px;
 }
 
-#dropdown-logout:hover {
+#dropdown-logout:hover, #dropdown-gameshelf:hover, #dropdown-games-list:hover {
    background-color: #3C3D47;
    background: linear-gradient(#3c3d47 0%, #232327 100%);
+}
+
+#logout {   
+   width: 100%;
+   font-family: bungee, sans-serif;
+   border-bottom: 2px solid black;
+   font-weight: 400;
+   font-style: normal;
+   color: white;
+   font-size: 21px;
+   background: none;
+   border: none;
+   outline: none;
+   cursor: pointer;
+}
+
+#dropdown-games-list {
+   width: 100%;
+   border-top: 1px solid black;
+   border-left: 2px solid black;
+   font-family: bungee, sans-serif;
+   font-weight: 400;
+   font-style: normal;
+   color: white;
+   font-size: 21px;
+   background: none;
+   cursor: pointer;
+   padding-left: 5px;
+   padding-right: 500px;
+   text-decoration: none;
 }
 
 #dropdown-gameshelf {
    width: 100%;
    border-top: 1px solid black;
-   border-bottom: 1px solid black;
+   border-left: 2px solid black;
    font-family: bungee, sans-serif;
    font-weight: 400;
    font-style: normal;
@@ -142,14 +159,12 @@ body {
    padding-right: 500px;
 }
 
-#dropdown-gameshelf:hover {
-   background-color: #3C3D47;
-   background: linear-gradient(#3c3d47 0%, #232327 100%);
-}
-
-#dropdown-gameshelf a {
+#dropdown-gameshelf a, #dropdown-games-list a {
    text-decoration: none;
 }
+
+
+
 /* 
 regular
 
