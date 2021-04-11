@@ -55,6 +55,7 @@ p {
     word-wrap: break-word;
     max-width: 150px;
     font-size: 12px;
+    margin: 2px;
 }
 
 div.gameshelves-list {
