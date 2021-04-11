@@ -9,7 +9,10 @@ block content
     div(id= "gameshelves-container")
         div(class="gameshelves-list")
             h3 My Game Shelves
-            div(class="form" id="form-container")
+                div(id="edit-shelves") 
+                    a(href='/gameshelves/edit') (Edit)
+            //- div(class="form" id="form-container")
+                
             form(id="newshelf-form" action='/gameshelves/create-shelf' method="post")
                 if errors
                     div(id="errors-container")
