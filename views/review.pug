@@ -10,28 +10,29 @@ block content
             label(for='game_review_score') Rating:
             input(type='number' value=10 name='game_review_score' min='0' max='100' required)
          div(id='gameshelf-options-container')
-            label(for='gameshelf') gameshelves:
+            label(for='gameshelf') gameshelf:
             select(id='select-options' name='gameshelf' required)
               option(value= '')= ''
               each shelf in gameshelves
                  option(value=shelf.id)= shelf.title
          div(id='pro-options-container')
-            label(for='pro_options') pros:
+            label(for='pro_options') pro:
             select(id='pro-options' name='pro_options' required)
               option(value= '')= ''
               each pro in pros
                  option(value=pro.id)= pro.content
          div(id='con-options-container')
-            label(for='con_options') cons:
+            label(for='con_options') con:
             select(id='con-options' name='con_options' required)
               option(value= '')= ''
               each con in cons
                  option(value=con.id)= con.content
          div(id='review-page-title-container')
-            label(for='review_title') title
-            input(type='text' name='review_title')
+            label(for='review_title') title:
+            input(type='text' name='review_title' required)
          div(id='review-input-container')
             label(for='review_description')
-            textarea(id='review-text' name='review_description' placeholder='your review here!')
-         button(type='submit' id='submit-review') submit                       
+            textarea(id='review-text' name='review_description' placeholder='your review here!' required)
+         div(id='submit-btn')
+            button(type='submit' id='submit-review') Submit Review                       
               

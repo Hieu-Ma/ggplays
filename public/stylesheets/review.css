@@ -4,20 +4,19 @@
    border: solid pink;
    border-radius: 10px;
    padding: 60px;
-   margin: 100px;
-   margin-top: 85px;
+   margin: 85px 100px 100px 100px;
+   display: flex;
+   justify-content: center;
 }
 
 #review-form {
-   margin:0 200px;
    display: grid;
    grid-template-areas:
    "title title title title"
    "gameshelf score pros cons"
-   "reviewTitle reviewTitle . ."
+   "reviewTitle reviewTitle reviewTitle reviewTitle"
    "review review review review"
-   ". . . submit"
-   ;
+   ". . . submit";
    grid-template-columns: repeat(4, 1fr);
 }
 
@@ -25,11 +24,14 @@
    grid-area: title;
    background-color: white;
    border: 2px solid black;
-   font-size: 20px;
    display: flex;
    justify-content: center;
    align-items: center;
    font-family: "Bungee";
+}
+
+#game-review-title {
+   font-size: 27px;
 }
 
 #game-review-score-container {
@@ -56,7 +58,15 @@
    font-family: "Bungee";
    background-color: white;
    border-radius: 10px;
+   padding: 5px;
 }
+
+#gameshelf-options-container label,
+#game-review-score-container label,
+#pro-options-container label,
+#con-options-container label { 
+    padding-right: 5px;
+ }
 
 #pro-options-container {
    grid-area: pros;
@@ -71,10 +81,14 @@
    border-radius: 10px;
 }
 
+#pro-options, #con-options {
+   max-width: 150px;
+}
+
 #con-options-container {
    grid-area: cons;
    display: flex;
-   justify-content: flex-end;
+   justify-content: center;
    align-items: center;
    margin: 10px;
    margin-right: 0px;
@@ -94,14 +108,16 @@
    background-color: white;
 }
 
-#review-input-container {
-   grid-area: review;
+#review-page-title-container label {
+   padding: 0 5px;
 }
 
-#submit-review {
-   grid-area: submit;
-   border: 2px solid black;
-   font-size: 20px;
+#review-page-title-container input {
+   min-width: 500px;
+}
+
+#review-input-container {
+   grid-area: review;
 }
 
 #review-text {
@@ -109,4 +125,25 @@
    width: 100%;
    height: 300px;
    border: 2px solid black;
+   padding: 20px;
+}
+
+#submit-review {
+   border: 2px solid black;
+   margin-top: 5px;
+   font-family: "Bungee Inline";
+   padding: 10px;
+   font-size: 15px;
+   max-width: 300px;
+}
+
+
+#submit-btn {
+   grid-area: submit;
+   display: flex;
+   justify-self: flex-end;
+}
+
+#submit-review:hover {
+   background-color: rgb(226, 222, 222);
 }
