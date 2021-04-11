@@ -6,6 +6,7 @@ body {
 #navbar-container {
    height: 106px;
    background-color: #3C3D47;
+   background: linear-gradient(#3c3d47 0%, #232327 100%);
    display: grid;
    grid-template-columns: repeat(3, 1fr);
    grid-template-areas:
@@ -15,7 +16,6 @@ body {
    justify-items: center;
    /* align-items: center; */
 
-   background: linear-gradient(#3c3d47 0%, #232327 100%);
    
 }
 
@@ -75,17 +75,6 @@ body {
    padding-left: 320px;
 }
 
-#logout {   
-   font-family: bungee, sans-serif;
-   font-weight: 400;
-   font-style: normal;
-   color: white;
-   font-size: 21px;
-   background: none;
-   border: none;
-   outline: none;
-   cursor: pointer;
-}
 
 .slash {
    font-family: bungee, sans-serif;
@@ -96,32 +85,85 @@ body {
 }
 
 .dropdown {
-
- }
+}
 
 .dropdown-content {
    display: none;
    background-color: #3C3D47;
-   /* height: 300px; */
-   width: 300px;
-   position:absolute;
-   top:106px;
-}
-
-.dropdown-item {
-   font-family: bungee, sans-serif;
-   font-weight: 400;
-   font-style: normal;
-   color: white;
-   text-decoration: none;
-   font-size: 21px;
-   border-top: 1px solid black;
-   /* border-bottom: 3px solid black; */
+   width: 217px;
+   position:absolute; 
+   top:106px; 
+   padding-right: 500px
+   
 }
 
 #profile {
    padding-bottom: 26px;
 }
+
+
+#dropdown-logout {
+   border-top: 1px solid black;
+   border-left: 2px solid black;
+   border-bottom: 2px solid black;
+   padding-right: 500px;
+}
+
+#dropdown-logout:hover, #dropdown-gameshelf:hover, #dropdown-games-list:hover {
+   background-color: #3C3D47;
+   background: linear-gradient(#3c3d47 0%, #232327 100%);
+}
+
+#logout {   
+   width: 100%;
+   font-family: bungee, sans-serif;
+   border-bottom: 2px solid black;
+   font-weight: 400;
+   font-style: normal;
+   color: white;
+   font-size: 21px;
+   background: none;
+   border: none;
+   outline: none;
+   cursor: pointer;
+}
+
+#dropdown-games-list {
+   width: 100%;
+   border-top: 1px solid black;
+   border-left: 2px solid black;
+   font-family: bungee, sans-serif;
+   font-weight: 400;
+   font-style: normal;
+   color: white;
+   font-size: 21px;
+   background: none;
+   cursor: pointer;
+   padding-left: 5px;
+   padding-right: 500px;
+   text-decoration: none;
+}
+
+#dropdown-gameshelf {
+   width: 100%;
+   border-top: 1px solid black;
+   border-left: 2px solid black;
+   font-family: bungee, sans-serif;
+   font-weight: 400;
+   font-style: normal;
+   color: white;
+   font-size: 21px;
+   background: none;
+   cursor: pointer;
+   padding-left: 5px;
+   padding-right: 500px;
+}
+
+#dropdown-gameshelf a, #dropdown-games-list a {
+   text-decoration: none;
+}
+
+
 
 /* 
 regular
