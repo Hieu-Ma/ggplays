@@ -65,6 +65,7 @@ div#edit-shelves a {
     font-size: 13px;
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
+    margin-right: 2px;
 }
 
 #errors-container {
@@ -263,10 +264,6 @@ div#edit-shelves a {
    align-items: center;
    /* margin: 0 50px; */
    /* width:100%; */
-}
-
-#delete-from-gameshelf-div {
-
 }
 
 #delete-from-gameshelf {
