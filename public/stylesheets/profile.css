@@ -3,7 +3,7 @@ html {
 }
 
 #profile-info {
-    font-family: "Bungee Inline", "Bungee";
+    font-family: "Bungee", "Bungee Inline" ;
     background-color: #FDF2E9;
     border: solid pink;
     border-radius: 10px;
@@ -35,7 +35,7 @@ html {
 }
 
 #gameshelves-container {
-    font-family: "Bungee Inline", "Bungee";
+    font-family: "Bungee", "Bungee Inline" ;
     grid-area: "game-shelves";
     display: grid;
     justify-content: flex-end;
@@ -57,7 +57,7 @@ div#gameshelves-title {
 }
 
 #gameshelves-title a{
-    font-family: "Bungee Inline";
+    font-family: "Bungee", "Bungee Inline" ;
     font-size: 30px;
     width: fit-content;
     text-decoration: none;
@@ -115,7 +115,7 @@ div.scroll div.game {
 }
 
 #reviews-container h2 {
-    font-family: "Bungee Inline";
+    font-family: "Bungee", "Bungee Inline" ;
     font-size: 30px;
     margin: 20px 20px 0 20px;
     border-bottom: 10px solid #F66767;
@@ -132,7 +132,7 @@ div.scroll div.game {
 }
 
 #review-title-container a {
-    font-family: "Bungee Inline", "Bungee";
+    font-family: "Bungee", "Bungee Inline" ;
     margin: 0 5px;
     font-size: 20px;
     text-decoration: none;
@@ -174,7 +174,7 @@ div.scroll div.game {
     border-radius: 50%;
     height: 35px;
     width: 35px;
-    font-family: "Bungee Inline", "Bungee";
+    font-family: "Bungee", "Bungee Inline" ;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -184,7 +184,7 @@ div.scroll div.game {
 
 #review-game-name {
     padding: 13px 0;
-    font-family: "Bungee Inline", "Bungee";
+    font-family: "Bungee", "Bungee Inline" ;
 }
 
 #pros-and-cons {
@@ -228,7 +228,7 @@ div.scroll div.game {
 
 #scroll-top {
    float: right;
-   font-family: "Bungee Inline", "Bungee";
+   font-family: "Bungee", "Bungee Inline" ;
 }
 
 #scroll-top a:hover {
