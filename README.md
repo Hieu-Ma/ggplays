@@ -1,6 +1,6 @@
 # ggPlays
 
-### Live link: [ggPlays](ggplay.herokuapp.com)
+### Live link: [ggPlays](ggplays.herokuapp.com)
 ggPlays is a web application that allows users to view various video games, publish game reviews, and catalog games into game shelves that can be customized. This was inspired by [Goodreads](https://www.goodreads.com/), a website where individuals can search for books, create reviews, catalog books into libraries, discuss all things books, and more. 
 
 ## Technologies
