@@ -36,7 +36,8 @@ block content
     div(id= "gameshelves-container")
         div(class="gameshelves-list")
             h3 My Game Shelves
-            div(class="form" id="form-container")
+                div(id="edit-shelves") 
+                    a(href='/gameshelves/edit') (Edit)
                 if errors
                     div(id="errors-container")
                         each error in errors
