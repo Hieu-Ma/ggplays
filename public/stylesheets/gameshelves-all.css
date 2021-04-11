@@ -1,13 +1,13 @@
 body {
-   font-family: "Bungee Inline", "Bungee";
+   font-family: "Bungee", "Bungee Inline" ;
 }
 
 h5 {
-   font-family: "Bungee Inline", "Bungee";
+   font-family: "Bungee","Bungee Inline" ;
 }
 
 h3 {
-   font-family: "Bungee Inline", "Bungee";
+   font-family: "Bungee","Bungee Inline" ;
 }
 
 /* body {
@@ -78,7 +78,7 @@ div#edit-shelves a {
 }
 
 .login-button {
-   font-family: "Bungee Inline", "Bungee";
+   font-family: "Bungee", "Bungee Inline" ;
    background-color: #fff;
    border: #3C3D47 solid 1px;
    font-size: 14px;
@@ -183,6 +183,7 @@ div#edit-shelves a {
 #all-image-id {
    max-height: 400px;
    max-width: 200px;
+   margin: 0;
 }
 
 #all-game-description-container {

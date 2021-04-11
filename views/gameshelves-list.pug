@@ -52,16 +52,19 @@ block content
                     each shelf in shelves
                         li
                         a(href=`/gameshelves/${shelf.id}`)= shelf.title
-        div(class="games-container")
-            each game in gameshelf.Games
-              div(class="game")
-                div(class="gameImg")
-                  a(href=`/games/${game.id}`)
-                    img(src=`${game.image_url}` width="150" height="200")
-                div(class="title")
-                  p= game.name            
-                //- div(id="game")
-                //-     div(id="game-name")= game.name
-                //-     div(id="game-img")
-                //-         img(id="image-id" src=game.image_url)
-                //-             //- h5= `Genre: ${game.Genre.type}`
+        div()   
+            div(id= "games-container-shelf-title")
+                h3(id= "test")= shelf.title    
+            div(class="games-container")
+                each game in gameshelf.Games
+                  div(class="game")
+                    div(class="gameImg")
+                      a(href=`/games/${game.id}`)
+                        img(src=`${game.image_url}` width="150" height="200")
+                    div(class="title")
+                      p= game.name            
+                    //- div(id="game")
+                    //-     div(id="game-name")= game.name
+                    //-     div(id="game-img")
+                    //-         img(id="image-id" src=game.image_url)
+                    //-             //- h5= `Genre: ${game.Genre.type}`
