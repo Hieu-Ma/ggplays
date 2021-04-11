@@ -7,7 +7,7 @@ html
         link(rel='stylesheet' href='/stylesheets/navbar.css')
         link(rel='stylesheet' href='/stylesheets/game.css')
         link(rel='stylesheet' href='/stylesheets/review.css')
-        //- link(rel='stylesheet' href='/stylesheets/footer.css')
+        link(rel='stylesheet' href='/stylesheets/footer.css')
         link(rel="stylesheet" href="https://use.typekit.net/yhv1vwm.css")
         script(src="/javascripts/index.js" type="module" defer)
 
@@ -49,18 +49,26 @@ html
       //-   span(class='navbar-text px-4')
       //-     a(class='btn btn-sm btn-dark mr-2' href='/users/login') Login
       //-     a(class='btn btn-sm btn-dark' href='/users/sign-up') Register
-    //- block footer
-    //-   div(id= 'footer')
-    //-     div(id= 'contributors')
-    //-       div(id= 'contributor-1')
-    //-         img(src="https://img.icons8.com/material-sharp/48/ffffff/github.png")
-    //-         p= 'Ellen Park'
-    //-       div(id= 'contributor-2')
-    //-         img(src="https://img.icons8.com/material-sharp/48/ffffff/github.png")
-    //-         p= 'Hieu Ma'
-    //-       div(id= 'contributor-3')
-    //-         img(src="https://img.icons8.com/material-sharp/48/ffffff/github.png")
-    //-         p= 'Tran Le'
-    //-       div(id= 'contributor-4')
-    //-         img(src="https://img.icons8.com/material-sharp/48/ffffff/github.png")
-    //-         p= 'Vishaal Meduri'
+    block footer
+      div(id= 'footer')
+        div(id= 'contributors')
+          div(id= 'contributor-1')
+            a(href='https://github.com/pixzzels')
+              center
+                img(src="https://img.icons8.com/material-sharp/40/ffffff/github.png")
+            p= 'Ellen Park'
+          div(id= 'contributor-2')
+            a(href='https://github.com/Hieu-Ma')
+              center
+                img(src="https://img.icons8.com/material-sharp/40/ffffff/github.png")
+            p= 'Hieu Ma'
+          div(id= 'contributor-3')
+            a(href='https://github.com/trnle')
+              center
+                img(src="https://img.icons8.com/material-sharp/40/ffffff/github.png")
+            p= 'Tran Le'
+          div(id= 'contributor-4')
+            a(href='https://github.com/vmeduri1')
+              center
+                img(src="https://img.icons8.com/material-sharp/40/ffffff/github.png")
+            p= 'Vishaal Meduri'
