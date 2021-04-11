@@ -2,13 +2,13 @@ extends layout.pug
 
 block content 
    div(id='review-container')
+      //- h1 hello
       form(id='review-form' action='/games/:id/review' method='post')
-         input(type="hidden" value=game.id name="gameId")
          div(id='game-review-title-container')
             div(id='game-review-title')= game.name
          div(id='game-review-score-container')
-            label(for='game_review_score') Rating:
-            input(type='number' value=10 name='game_review_score' min='0' max='100' required)
+            label(for='game-review-score') Rating:
+            input(type='number' name='game-review-score' min='0' max='100' required)
          div(id='gameshelf-options-container')
             label(for='gameshelf') gameshelf:
             select(id='select-options' name='gameshelf' required)

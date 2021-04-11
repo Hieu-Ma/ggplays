@@ -9,14 +9,72 @@ const Op = Sequelize.Op;
 router.get('/', requireAuth, asyncHandler(async (req, res, next) => {
     const { userId } = req.session.auth;
     const shelves = await Gameshelf.findAll({
-        where: { user_id: userId }
+        // include: Game,
+        where: { user_id: userId },
     });
     const games = await Game.findAll({
-        include: Genre
+        include: Genre,
+        order: [
+            'name'
+        ]
     });
 
-    res.render('gameshelves', { shelves, games });
+    const shelvesGames = await Gameshelf.findAll({
+        where: { user_id: userId },
+        // include: [{
+        //     model: Game,
+        //     order: ['name']
+        // }]
+        include: [{
+            model: Game,
+            include: Genre
+        }],
+        order: [
+            [{model: Game}, 'name']
+        ]
+    })
+    // res.json({shelvesGames})
+    res.render('gameshelves', { shelves, games, shelvesGames });
 }));
+
+router.post('/delete', requireAuth, asyncHandler(async (req, res, next) => {
+    const { userId } = req.session.auth;
+    const {gameId, gameshelf} = req.body;
+    // console.log(gameId, gameshelf)
+    // let newShelf = await Shelf.create({
+    //     game_id: gameId,
+    //     game_shelf_id: gameshelf
+    //  })
+
+    console.log("id's",gameId, gameshelf)
+    // let shelfToDestroy = await Shelf.findOne({
+    //     where: {
+    //         game_id: gameId,
+    //         game_shelf_id: gameshelf
+    //     }
+    // })
+
+    await Shelf.destroy({
+        where: {
+            game_shelf_id: gameshelf,
+            game_id: gameId,
+        }
+    })
+    // await shelfToDestroy.destroy();
+    // res.json({shelfToDestroy})
+    res.redirect(`/gameshelves`);
+}));
+router.post('/', requireAuth, asyncHandler(async (req, res, next) => {
+    const { userId } = req.session.auth;
+    const {gameId, gameshelf} = req.body;
+    console.log(gameId, gameshelf)
+    let newShelf = await Shelf.create({
+        game_id: gameId,
+        game_shelf_id: gameshelf
+     })
+    res.redirect(`/gameshelves`)
+}));
+
 
 const shelfValidators = [
     check('title')
