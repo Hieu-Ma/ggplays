@@ -13,20 +13,24 @@ block content
                     li: a(href=`/games-list/${genre.id}`)= genre.type
         div(class="games-container")
             if genreId
-                h3= genre.type
+                div(id= "category-title")
+                    h3= genre.type
                 div(class="games-container")
                     each game in games
                         div(class="game")
                             div(class="gameImg")
-                            div(id= "game-title")= game.name
                                 a(href=`/games/${game.id}`)
                                     img(src=`${game.image_url}` width="200" height="250")
+                            div(id= "game-title-text")
+                                p= game.name
             else
-                h3 All Games
-                    div(class="games-container" id="games-container")
-                        each allGame in allGames
-                            div(class="game")
-                                div(class="gameImg")
-                                    a(href=`/games/${allGame.id}`)
-                                        img(src=`${allGame.image_url}` width="200" height="250")
-                                    div(id= "game-title")= allGame.name
+                div(id= "category-title")
+                    h3 All Games
+                div(class="games-container" id="games-container")
+                    each allGame in allGames
+                        div(class="game")
+                            div(class="gameImg")
+                                a(href=`/games/${allGame.id}`)
+                                    img(src=`${allGame.image_url}` width="200" height="250")
+                            div(id= "game-title-text")
+                                p= allGame.name
