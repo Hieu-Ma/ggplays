@@ -22,7 +22,7 @@
 
 #game-score-circle {
    position: absolute;
-   top: 293px;
+   top: 292px;
    right: 207px;
    border: 3px solid black;
    height: 70px;
@@ -35,7 +35,7 @@
 #game-score {
    font-family: "Bungee";
    position: absolute;
-   top: 283px;
+   top: 282px;
    right: 218px;
    font-size: 36px;
    color: whitesmoke;
