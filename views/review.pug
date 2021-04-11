@@ -10,28 +10,29 @@ block content
             label(for='game-review-score') Rating:
             input(type='number' name='game-review-score' min='0' max='100' required)
          div(id='gameshelf-options-container')
-            label(for='gameshelf') gameshelves:
+            label(for='gameshelf') gameshelf:
             select(id='select-options' name='gameshelf' required)
               option(value= '')= ''
               each shelf in gameshelves
                  option(value=shelf.id)= shelf.title
          div(id='pro-options-container')
-            label(for='pro-options') pros:
-            select(id='pro-options' name='pro-options' required)
+            label(for='pro_options') pro:
+            select(id='pro-options' name='pro_options' required)
               option(value= '')= ''
               each pro in pros
                  option(value=pro.id)= pro.content
          div(id='con-options-container')
-            label(for='con-options') cons:
-            select(id='con-options' name='con-options' required)
+            label(for='con_options') con:
+            select(id='con-options' name='con_options' required)
               option(value= '')= ''
               each con in cons
                  option(value=con.id)= con.content
-         div(id='review-title-container')
-            label(for='reveiew-title') title
-            input(type='text')
+         div(id='review-page-title-container')
+            label(for='review_title') title:
+            input(type='text' name='review_title' required)
          div(id='review-input-container')
-            label(for='input-review')
-            textarea(id='review-text' name='' placeholder='your review here!')
-         button(type='submit' id='submit-review') submit                       
+            label(for='review_description')
+            textarea(id='review-text' name='review_description' placeholder='your review here!' required)
+         div(id='submit-btn')
+            button(type='submit' id='submit-review') Submit Review                       
               

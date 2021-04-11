@@ -122,8 +122,7 @@ div.scroll div.game {
     width: fit-content;
 }
 
-/*  */
-#review-container {
+#user-review-container {
     background: white;
     border: 2px solid black;
     border-radius: 5px;
