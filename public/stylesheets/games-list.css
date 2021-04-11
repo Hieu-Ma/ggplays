@@ -59,3 +59,22 @@ div.games-container {
     margin: 50px;
     /* padding: 0px; */
 }
+
+.gameImg {
+    max-height: 200px;
+    max-width: 150px;
+    float: inherit;
+    box-shadow: 10px 15px 8px lightslategray;
+}
+
+.gameImg img {
+    object-fit: inherit;
+}
+
+div.game-title {
+    background-color: #3C3D47;
+    width: 150px;
+    max-height: 100px;
+    padding: 1px;
+    box-shadow: 10px 10px 8px lightslategray;
+}
