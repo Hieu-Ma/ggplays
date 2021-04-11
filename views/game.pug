@@ -41,6 +41,15 @@ block content
                div(id= "developer")= game.developer
             div(id= "platforms-title") Platform(s):
                div(id= "platforms")= game.platforms
+         div(id= "pros-cons-container") 
+            h3 PROS
+            div(id= "pros")
+               each pro in prosArray
+                  div(id= "pros-content")= pro
+            h3 CONS
+            div(id="cons") 
+               each con in consArray
+                  div(id="cons-content")= con
       div(id="description-text")
          div(id= "description-title") Description:
             div(id= "description")= game.description

@@ -49,11 +49,11 @@
 
 #game-img img {
    object-fit: contain;
-   height: 250px;
+   /* height: 250px; */
    width: 200px;
    margin-top: 35px;
    margin-left: 35px;
-   box-shadow: rgb(0, 0, 0);
+   box-shadow: -1px 1px 10px 5px rgba(124, 123, 123, 0.2);
 }
 
 #gameshelf-dropdown {
@@ -86,6 +86,36 @@ div#description-container {
    justify-content: space-between;
    margin-left: 25px;
 }
+
+#pros-cons-container h3 {
+   font-family: "Bungee";
+   margin-left: 30px;
+   margin-top: 20px;
+}
+
+#pros-cons-container {
+   /* padding-top: 70px; */
+}
+
+
+#pros, #cons {
+   /* height: 100px; */
+   margin-left: 30px;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   align-items: center;
+}
+
+#pros-content, #cons-content {
+   font-family: Arial, Helvetica, sans-serif;
+   margin-top: 10px;
+   margin-left: 25px;
+   border: 1px lightgray solid;
+   border-radius: 10px;
+   padding: 5px;
+}
+
 
 #genre-title {
    margin-top: 25px;
