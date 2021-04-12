@@ -56,7 +56,6 @@ router.get('/:id', asyncHandler(async (req, res) => {
       let score = Math.floor((total / count) * 100);
 
       // getting all pros and cons for a specific game
-
       let prosArray = []
       let consArray = []
 
@@ -124,7 +123,6 @@ router.get('/:id/review', asyncHandler(async (req, res) => {
 
 router.post('/:id/review', asyncHandler(async (req, res) => {
    const userId = req.session.auth.userId;
-   // const id = parseInt(req.params.id, 10);
    const { review_title, game_review_score, review_description, pro_options, con_options, gameId, gameshelf } = req.body;
    let review = await Review.create({
       title: review_title,
@@ -136,21 +134,10 @@ router.post('/:id/review', asyncHandler(async (req, res) => {
       con_id: con_options,
    })
 
-   // let shelfToDestroy = await Shelf.destroy({
-   //    where: {
-   //       game_id: gameId
-   //    }
-   // })
-
    let newShelf = await Shelf.create({
       game_id: gameId,
       game_shelf_id: gameshelf
    })
-   // console.log(gameshelf)
-   // console.log(review_title, game_review_score, review_description, pro_options, con_options, gameId, userId);
-   // console.log("this property is,", game_review_score)
-   // res.json(rating)
-   // res.json({review});
    res.redirect(`/games/${gameId}`);
 }));
 
@@ -177,9 +164,6 @@ router.get('/:id/review/edit', asyncHandler(async (req, res) => {
       }
    })
 
-
-   // console.log("this is the gameId", userReview.description)
-   // res.json({userReview});
    res.render('review-edit', { userReview, game, gameshelves, cons, pros })
 }));
 
@@ -194,9 +178,6 @@ router.post('/:id/review/edit', asyncHandler(async (req, res) => {
          game_id: gameId
       }
    })
-   // console.log("this is the id of the game", id)
-   // console.log("this is the 2nd id of the game", gameshelf)
-   // await reviewToDelete.destroy();
 
    let review = await Review.create({
       title: review_title,
@@ -208,21 +189,10 @@ router.post('/:id/review/edit', asyncHandler(async (req, res) => {
       con_id: con_options,
    })
 
-   // let shelfToDestroy = await Shelf.destroy({
-   //    where: {
-   //       game_id: gameId
-   //    }
-   // })
-
    let newShelf = await Shelf.create({
       game_id: gameId,
       game_shelf_id: gameshelf
    })
-   // console.log(gameshelf)
-   // console.log(review_title, game_review_score, review_description, pro_options, con_options, gameId, userId);
-   // console.log("this property is,", game_review_score)
-   // res.json(rating)
-   // res.json({review});
    res.redirect(`/games/${gameId}`);
 }));
 

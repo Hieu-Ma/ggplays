@@ -18,7 +18,6 @@ html
       div(id='button-container')
         span(class='navbar-button')
         if locals.authenticated
-          //- span(class='navbar-text px-4') Welcome #{user.username}!
           div(class= 'dropdown')
             a(id='profile' class='navbar-link' href='/users/profile') Profile
             div(id='dropdown-content' class= 'dropdown-content')
@@ -34,23 +33,7 @@ html
             a(class='navbar-link' href='/users/login') Login
             span(class='slash')  / 
             a(class='navbar-link' href='/users/sign-up') Register
-        //- div(id='dropdown-content' class= 'dropdown-content')
-        //-   form(class='form-inline pr-4' action='/users/logout' method='post')
-        //-     button(id='logout' type='submit') Logout
-        //-   a(class= 'dropdown-item' href='/') Link 1
     block content
-
-      //-     a( href='/users/profile') Profile
-      //- button(class="demo_login") 
-      //-   a(href='/') Demo Login
-      //- if locals.authenticated
-      //-   span(class='navbar-text px-4') Welcome #{user.username}!
-      //-   form(class='form-inline pr-4' action='/users/logout' method='post')
-      //-     button(class='btn btn-sm btn-warning' type='submit') Logout
-      //- else
-      //-   span(class='navbar-text px-4')
-      //-     a(class='btn btn-sm btn-dark mr-2' href='/users/login') Login
-      //-     a(class='btn btn-sm btn-dark' href='/users/sign-up') Register
     block footer
       div(id= 'contributors')
         div(id= 'contributor-1')

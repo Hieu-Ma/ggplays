@@ -11,7 +11,6 @@ block content
             h3 My Game Shelves
                 div(id="edit-shelves") 
                     a(href='/gameshelves/edit') (Edit)
-            //- div(class="form" id="form-container")
                 
             form(id="newshelf-form" action='/gameshelves/create-shelf' method="post")
                 if errors
@@ -59,16 +58,3 @@ block content
                                           each shelf in shelves
                                              option(value=shelf.id)= shelf.title
                                         button(type='submit' id='add-gameshelf-button') Add
-                                //- div(id="delete-from-gameshelf-container")
-                                    //- form(action="/gameshelves/delete" method="post" id="delete-from-gameshelf-form")
-                                    //-     input(type="hidden" name="gameId" value= game.id)
-                                    //-     input(type="hidden" name="gameshelf" value= shelf.id)  
-                                    //-     button(type='submit' id='delete-from-gameshelf') 
-                                    //-         a(href="/gameshelves/delete") Delete
-                            
-                //- div(id="description")
-                //-     div(class="games-container" id="game-description")
-                //-             h3 Description:
-                //-             h5= `Developer: ${game.developer}`
-                //-             h5= `Release Date: ${game.year_released}`
-                //-             h5= `Genre: ${game.Genre.type}`

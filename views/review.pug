@@ -2,7 +2,6 @@ extends layout.pug
 
 block content 
    div(id='review-container')
-      //- h1 hello
       form(id='review-form' action='/games/:id/review' method='post')
          input(type="hidden" name="gameId" value= game.id)
          div(id='game-review-title-container')
@@ -35,5 +34,4 @@ block content
             label(for='review_description')
             textarea(id='review-text' name='review_description' placeholder='your review here!' required)
          div(id='submit-btn')
-            button(type='submit' id='submit-review') Submit Review                       
-              
+            button(type='submit' id='submit-review') Submit Review

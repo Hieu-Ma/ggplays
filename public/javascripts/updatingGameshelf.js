@@ -2,7 +2,6 @@ const gameshelfSelect = document.querySelector(".select-options");
 const selectForm = document.querySelector(".select-form")
 
 gameshelfSelect.addEventListener('change', async() => {
-    // e.preventDefault();
     const formData = new FormData(selectForm);
     const shelfId = formData.get("gameshelf");
     const gameId = formData.get("gameId")
