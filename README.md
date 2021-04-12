@@ -45,6 +45,11 @@ ggPlays is a web application that allows users to view various video games, publ
 ***
 
 ### Code Snippets
+#### Query for all shelves in a Gameshelf that belongs to a specific user with constraints.
+
+Found all gameshelves associated with the logged-in user. `Gameshelf` includes the model `Game`, `Game` includes the model `Genre`.
+
+Then ordered the games queried by name/alphabetical order.
 
 ````javascript
 const shelves = await Gameshelf.findAll({
@@ -59,7 +64,12 @@ const shelves = await Gameshelf.findAll({
 })
 ````
 
-##### Api Route to find a shelf by it's ID and dynamically change it's name on the current page
+##### Api Route to find a shelf by its ID and dynamically change its name on the current page
+Each shelf has a corresponding ID, input value that we retrieved from req.body
+
+Queried for the Gameshelf with the `shelfId` the we retrieved from req.body
+
+Set the title property of the shelf we queried for to the `newName` (the value from req.body)
 ````javascript
 router.put('/', requireAuth, asyncHandler(async (req, res) => {
   const { newName, shelfId } = req.body;
@@ -68,12 +78,12 @@ router.put('/', requireAuth, asyncHandler(async (req, res) => {
 
   customShelf.title = newName;
   await customShelf.save();
-  // await customShelf.update({ title: newName }); || same as two lines above
 
   res.json({ customShelf });
 }))
 ````
-##### Api Route to find a shelf by it's ID and dynamically delete it on the current page, as well as delete all the associated books that belong to that shelf
+
+##### Api Route to find a shelf by its ID and dynamically delete it on the current page, as well as delete all the associated games that belong to that shelf
 
 ````javascript
 // delete Gameshelf and any associated 'shelves' (games in the shelf)
