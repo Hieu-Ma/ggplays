@@ -34,12 +34,12 @@ block content
                         //div(id="gameshelves-game-container")
                             //- div(id="title-description")
                         div(id="all-games")
-                            div(id="all-game-name")= game.name
+                            //- div(id="all-game-name")= game.name
                             div(id="all-gameshelf-game-img")
                                 img(id="all-image-id" src=game.image_url)
-                            div(id="all-game-description-container") Description
+                            div(id="all-game-description-container") Game Info
                             div(id="all-game-description")
-                                div() Developers:
+                                div() Developer:
                                     div(id="all-game-description-developers")= game.developer 
                                 div() Platforms:
                                     div(id="all-game-description-platforms")= game.platforms
