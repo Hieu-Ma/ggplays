@@ -13,12 +13,14 @@ div.genre_title {
     margin-left: 120px;
     border-bottom: 10px solid #F66767;
     width: fit-content;
+    height: 80px; 
 }
 
 h2 a{
     font-family: "Bungee", "Bungee Inline" ;
     font-size: 40px;
     text-decoration: none;
+
 }
 
 div.genre_title:hover {

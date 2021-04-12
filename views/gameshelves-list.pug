@@ -1,29 +1,3 @@
-//- extends layout.pug
-
-//- append head
-//-   link(rel="stylesheet" href="/stylesheets/games-list.css")
-
-
-//- block content
-//-     div(id= "gameshelves-container")
-//-         div(class="gameshelves-list")
-//-             h3 Games in Gameshelf
-//-             li Gameshelf Games
-//-             ul
-//-                 each game in gameshelf.Games
-//-                     li
-//-                         img(src=`${game.image_url}`)
-//-                         p= game.name
-        //- div(class="games-container")
-        //-     h3 Games
-        //-     div(class="games-container")
-        //-         each game in games
-        //-             div(class="game")
-        //-                 div(class="gameImg")
-        //-                 a(href=`/games/${game.id}`)
-        //-                     img(src=`${game.image_url}` width="150" height="200")
-        //-                 div(class="title")
-        //-                 p= game.name
 extends layout.pug
 
 include utils.pug

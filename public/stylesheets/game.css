@@ -2,12 +2,10 @@
    display: flex;
    flex-direction: column;
    background-color: #FDF2E9;
-   /* border: solid rgb(255, 202, 211); */
    border: 3px solid lightpink;
    border-radius: 10px;
    padding: 60px 60px 20px 60px;
    margin: 100px;
-   /* position: relative; */
 }
 
 #game-title {
@@ -17,7 +15,6 @@
    border: 3px solid #555661;
    margin-top: 10px;
    background-color: #f8f8f8;
-   /* position: relative; */
 }
 
 #game-score-circle {
@@ -29,7 +26,6 @@
    width: 70px;
    border-radius: 50% ;
    background-color: #F66767;
-   /* z-index: 99 !important; */
 }
 
 #game-score {
@@ -48,7 +44,6 @@
 
 #game-img img {
    object-fit: contain;
-   /* height: 250px; */
    width: 200px;
    margin-top: 35px;
    margin-left: 35px;
@@ -63,7 +58,6 @@
 .select-form select {
    width: 190px;
    background-color: whitesmoke;
-   /* opacity: .2; */
    height: 30px;
    border: solid #555661;
 }
@@ -75,7 +69,6 @@ div#description-container {
    background-color: #f8f8f8;
    flex-direction: row;
    display: flex;
-   /* position: relative; */
 }
 
 #game-details-container {
@@ -88,11 +81,9 @@ div#description-container {
 
 #description-text {
    background-color: #f8f8f8;
-   /* border: 3px solid #555661; */
    border-top: none;
    margin-top: 20px;
    margin-right: 10px;
-   /* margin-bottom: 70px; */
    padding-left: 35px;
    padding-right: 40px;
    line-height: 28px;
@@ -126,12 +117,9 @@ div#description-container {
    font-family: "Bungee";
    font-size: 20px;
    margin-left: 30px;
-   /* margin-bottom: 15px */
 }
 
 #pros, #cons {
-   /* height: 100px; */
-   /* margin-left: 30px; */
    display: flex;
    flex-direction: row;
    flex-wrap: wrap;
@@ -155,77 +143,13 @@ div#description-container {
 
 #platforms {
    width: 250px;
-   /* white-space: break-word;
-   word-break: break-all; */
 }
 
 div#description {
    font-family: Arial, Helvetica, sans-serif;
 }
 
-
-/* #game-container {
-   background-color: #FDF2E9;
-   border: solid pink;
-   border-radius: 10px;
-   padding: 60px;
-   margin: 100px;
-   margin-top: 85px;
-   display: grid;
-
-}
-
-#game-img img{
-   object-fit: contain;
-   height: 450px;
-   width: 100%; 
-}
-
-#game-title {
-   width: 100%;
-   background-color: white;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   border: 3px solid black;
-   font-family: "Bungee";
-   font-size: 27px;
-}
-
-#game-score {
-   border: 3px solid black;
-   border-radius: 50%;
-   height: 50px;
-   width: 50px;
-   font-family: "Bungee";
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   font-size: 25px;
-   margin: 0 5px;
-} */
-
-/* #description-container {
-   width: 100%;
-   background-color: white;
-   border: 3px solid black;
-   padding: 20px;
-}
-
-#description-title {
-   font-family: "Bungee";
-}
-
-#description, #year-released, #developer, #platforms, #genre {
-   font-family: Arial, Helvetica, sans-serif;
-}
-
-#year-released-title, #developer-title, #platforms-title, #genre-title {
-   font-family: "Bungee";
-} */
-
 #reviews {
-   /* width: 100%; */
    background-color: #f8f8f8;
    border: 3px solid #555661;
    border-radius: 5px;
@@ -287,7 +211,6 @@ div#description {
    display: flex;
    align-items: center;
    margin-top: 5px;
-   /* border: 3px solid black; */
 }
 
 #review-title {
@@ -316,7 +239,6 @@ div#description {
 
 #pro-title {
    display: flex;
-   /* justify-content: center; */
    align-items: center;
    margin-left: 5px;
 }
@@ -329,7 +251,6 @@ div#description {
 
 #con-title {
    display: flex;
-   /* justify-content: center; */
    align-items: center;
 }
 
@@ -341,9 +262,6 @@ div#description {
 #review-description-container {
    padding-bottom: 15px;
    padding-top: 5px;
-   /* margin: 0 5px; */
-   /* border: 2px solid black;
-   border-radius: 5px; */
 }
 
 #review-description {

@@ -5,14 +5,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
     let buttonId = event.target.id;
     let buttonClass = event.target.classList[0];
 
-    // document.querySelectorAll('.rename-form').style.display = 'none';
     // rename form
-
     if (buttonClass === 'rename-btn') {
       const customShelfId = buttonId.slice(7);
       document.getElementById(`${buttonId}`).style.display = "none";
       document.getElementById(`save-${customShelfId}`).style.display = "block";
-      // document.querySelectorAll('.save-btn').style.display = 'block'; 
       const renameInputField = document.getElementById(`rename-input-${customShelfId}`)
       renameInputField.type = 'text';
     }
@@ -24,9 +21,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
       document.getElementById(`rename-${customShelfId}`).style.display = "block";
       const renameInputField = document.getElementById(`rename-input-${customShelfId}`)
       renameInputField.type = 'hidden';
-
-      // document.querySelector('.rename-form').style.display = 'none';
-      // document.querySelector('.rename-btn').style.display = 'block';
 
       const renameForm = document.getElementById(`form-${customShelfId}`);
       const formData = new FormData(renameForm);

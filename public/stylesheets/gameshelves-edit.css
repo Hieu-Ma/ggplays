@@ -27,8 +27,6 @@
   margin: 20px;
   box-shadow: -1px 1px 3px 3px rgba(124, 123, 123, 0.1);
   display: flex;
-  /* justify-content: space-between; */
-  /* position: relative; */
 }
 
 #custom-shelf {

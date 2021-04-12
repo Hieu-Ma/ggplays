@@ -18,19 +18,6 @@ router.post(`/:id`, asyncHandler(async (req, res) => {
         return shelf.id
     })
 
-    // for (let i = 0; i < gameshelves.length; i++) {
-    //     let gameshelvesId = gameshelves[i];
-    //     const shelf = await Shelf.findOne({
-    //         where: { game_shelf_id: gameshelvesId, game_id: gameId }
-    //     })
-
-    //     // destroying the association of the game and the game shelf 
-    //     // NOT destroying the Game Shelf
-    //     if (shelf) {
-    //         await shelf.destroy();
-    //     }
-    // }
-
     // adding game to game shelf
     await Shelf.create({
         game_id: gameId,

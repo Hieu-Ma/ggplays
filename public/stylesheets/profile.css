@@ -17,12 +17,12 @@ html {
 }
 
 #greeting h2 {
+    height: 70px;
     grid-area: "greeting";
     font-size: 30px;
     width: fit-content;
     border-bottom: 10px solid #F66767;
 }
-
 
 #user-info {
     background: white;
@@ -39,21 +39,14 @@ html {
     grid-area: "game-shelves";
     display: grid;
     justify-content: flex-end;
-    /* background-color: white;
-    border: 2px solid black;
-    border-radius: 5px;
-    padding: 0 25px 25px 25px;
-    box-shadow: -1px 1px 5px 5px rgba(124, 123, 123, 0.2); */
 }
 
 div#gameshelves-title {
+    height: 70px;
     border-bottom: 10px solid #F66767;
     width: fit-content;
     margin-bottom: 5px;
     margin-left: 45px;
-    /* grid-area: "game-shelves-header";
-    align-items: flex-end;
-    margin-left: 20px; */
 }
 
 #gameshelves-title a{
@@ -115,6 +108,7 @@ div.scroll div.game {
 }
 
 #reviews-container h2 {
+    height: 70px;
     font-family: "Bungee", "Bungee Inline" ;
     font-size: 30px;
     margin: 20px 20px 0 20px;
@@ -195,7 +189,6 @@ div.scroll div.game {
 
 #pro-title {
    display: flex;
-   /* justify-content: center; */
    align-items: center;
    margin-left: 5px;
 }
@@ -208,7 +201,6 @@ div.scroll div.game {
 
 #con-title {
    display: flex;
-   /* justify-content: center; */
    align-items: center;
 }
 

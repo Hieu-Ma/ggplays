@@ -12,15 +12,11 @@ body {
    grid-template-areas:
    ". logo buttons"
    ;
-   /* justify-content: space-around;     */
    justify-items: center;
-   /* align-items: center; */
 }
 
 .navbar-button {
-   /* background-color: white; */
    padding-bottom: 0;
-
 } 
 
 .navbar-link {
@@ -43,7 +39,6 @@ body {
    grid-area: logo;
    justify-items: center;
    background: linear-gradient(#fd5959 0%, #803131 100%);
-   /* background-color: #F66767; */
    height: 141px;
    width: 398px;
    display: flex;
@@ -52,7 +47,6 @@ body {
    border: 2px solid #373840;
    border-radius: 3px;
    filter: drop-shadow(10px 0px 50px rgba(255, 255, 255, 0.16));
-
 }
 
 #logo-name {
@@ -73,16 +67,12 @@ body {
    padding-left: 320px;
 }
 
-
 .slash {
    font-family: bungee, sans-serif;
    font-weight: 400;
    font-style: normal;
    color: whitesmoke;
    font-size: 21px;
-}
-
-.dropdown {
 }
 
 .dropdown-content {
@@ -92,7 +82,6 @@ body {
    position:absolute; 
    top:106px; 
    padding-right: 500px
-   
 }
 
 #profile {
@@ -160,23 +149,3 @@ body {
 #dropdown-gameshelf a, #dropdown-games-list a {
    text-decoration: none;
 }
-
-
-
-/* 
-regular
-
-font-family: bungee, sans-serif;
-
-font-weight: 400;
-
-font-style: normal; */
-
-/* 
-inline
-
-font-family: bungee, sans-serif;
-
-font-weight: 600;
-
-font-style: normal; */
