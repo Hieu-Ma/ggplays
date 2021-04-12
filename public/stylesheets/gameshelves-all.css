@@ -155,21 +155,22 @@ div#edit-shelves a {
    grid-template-columns: 1fr 3fr 1fr;
    grid-template-rows: auto;
    grid-template-areas: 
-   "title description-title options-title "
+   "img description-title options-title "
    "img description options-container ";
    background-color: white;
 }
 
 #all-game-name {
-   grid-area: title;
-   border: 2px solid black;
-   display: flex;  
+   /* grid-area: title; */
+   /* border: 2px solid black; */
+   /* display: flex;  
    justify-content: center;
    align-items: center;
    margin: 0px 20px;
    font-size: 15px;
-   min-width: 100px;
-   border-top: hidden
+   min-width: 100px; */
+   /* border-top: hidden */
+   /* border-bottom: 2px solid black; */
 }
 
 
@@ -188,14 +189,15 @@ div#edit-shelves a {
 
 #all-game-description-container {
    grid-area: description-title;
-   border: 2px solid black;
+   /* border: 2px solid black; */
    display: flex;  
    justify-content: center;
    align-items: center;
    margin: 0px 20px;
    font-size: 15px;
    min-width: 100px;
-   border-top: hidden
+   /* border-top: hidden */
+   border-bottom: 2px solid black;
 }
 
 #all-game-description {
@@ -209,20 +211,20 @@ div#edit-shelves a {
 
 #all-game-options {
     grid-area: options-title;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     display: flex;  
     justify-content: center;
     align-items: center;
     margin: 0px 20px;
     font-size: 15px;
     min-width: 100px;
-    border-top: hidden
+    /* border-top: hidden */
+    border-bottom: 2px solid black;
 }
 
 #all-game-options-container {
    grid-area: options-container;
    /* border: 2px solid black; */
-   
 }
 
 /* #all-game-options-bookshelf {
