@@ -13,7 +13,8 @@
   height: 85px;
   max-width: 100%;
   margin-top: 50px;
-  position: static;
+  /* position: fixed; */
+  bottom: 0px;
   height: 100%;
 
 }
