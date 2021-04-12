@@ -134,19 +134,6 @@ div#edit-shelves a {
    background-color: white;
 }
 
-#all-game-name {
-   /* grid-area: title; */
-   /* border: 2px solid black; */
-   /* display: flex;  
-   justify-content: center;
-   align-items: center;
-   margin: 0px 20px;
-   font-size: 15px;
-   min-width: 100px; */
-   /* border-top: hidden */
-   /* border-bottom: 2px solid black; */
-}
-
 #all-gameshelf-game-img {
    grid-area: img;
    display: flex;  
@@ -162,14 +149,12 @@ div#edit-shelves a {
 
 #all-game-description-container {
    grid-area: description-title;
-   /* border: 2px solid black; */
    display: flex;  
    justify-content: center;
    align-items: center;
    margin: 0px 20px;
    font-size: 15px;
    min-width: 100px;
-   /* border-top: hidden */
    border-bottom: 2px solid black;
 }
 
@@ -184,20 +169,17 @@ div#edit-shelves a {
 
 #all-game-options {
     grid-area: options-title;
-    /* border: 2px solid black; */
     display: flex;  
     justify-content: center;
     align-items: center;
     margin: 0px 20px;
     font-size: 15px;
     min-width: 100px;
-    /* border-top: hidden */
     border-bottom: 2px solid black;
 }
 
 #all-game-options-container {
    grid-area: options-container;
-   /* border: 2px solid black; */
 }
 
 #all-games-forms {

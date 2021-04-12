@@ -22,7 +22,6 @@ h3 {
     "shelves-list games";
 }
 
-
 div.gameshelves-list {
     grid-area: shelves-list;
     border-right: 1px solid lightpink;

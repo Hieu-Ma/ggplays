@@ -47,7 +47,6 @@ body {
    border: 2px solid #373840;
    border-radius: 3px;
    filter: drop-shadow(10px 0px 50px rgba(255, 255, 255, 0.16));
-
 }
 
 #logo-name {
@@ -67,7 +66,6 @@ body {
    padding-bottom: 35px;
    padding-left: 320px;
 }
-
 
 .slash {
    font-family: bungee, sans-serif;
