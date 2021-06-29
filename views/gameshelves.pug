@@ -36,7 +36,8 @@ block content
                         div(id="all-games")
                             //- div(id="all-game-name")= game.name
                             div(id="all-gameshelf-game-img")
-                                img(id="all-image-id" src=game.image_url)
+                                a(href=`/games/${game.id}`)
+                                    img(id="all-image-id" src=game.image_url)
                             div(id="all-game-description-container") Game Info
                             div(id="all-game-description")
                                 div() Developer:
