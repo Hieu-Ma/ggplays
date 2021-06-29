@@ -68,6 +68,11 @@ body {
     padding: 5px 10px;
     border-radius: 5px;
     margin-right: 25px;
+    cursor: pointer;
+}
+
+.signup-button:hover {
+    background-color: rgb(226, 222, 222);
 }
 
 #cancel-login-button {

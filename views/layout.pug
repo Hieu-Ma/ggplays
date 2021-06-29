@@ -8,6 +8,10 @@ html
         link(rel='stylesheet' href='/stylesheets/game.css')
         link(rel='stylesheet' href='/stylesheets/review.css')
         link(rel='stylesheet' href='/stylesheets/footer.css')
+        meta(property='og:title' content='GGPlays')
+        meta(property='og:image' content='https://res.cloudinary.com/dn2tap8j5/image/upload/v1624930177/Screen_Shot_2021-06-28_at_8.29.12_PM_zmcng0.png')
+        meta(property='og:description' content='GGPlays image')
+        meta(property='og:url' content='https://ggplays.herokuapp.com/')
         link(rel="stylesheet" href="https://use.typekit.net/yhv1vwm.css")
         script(src="/javascripts/index.js" type="module" defer)
 
@@ -21,17 +25,17 @@ html
           div(class= 'dropdown')
             a(id='profile' class='navbar-link' href='/users/profile') Profile
             div(id='dropdown-content' class= 'dropdown-content')
-              button(id='dropdown-games-list' class= 'dropdown-item') 
+              button(id='dropdown-games-list' class= 'dropdown-item')
                 a(href='/games-list/0') Games
-              button(id='dropdown-gameshelf' class= 'dropdown-item') 
+              button(id='dropdown-gameshelf' class= 'dropdown-item')
                 a(href='/gameshelves') Gameshelves
-              form(id='dropdown-logout' class= 'dropdown-item' action='/users/logout' method='post' ) 
-                button(id='logout' type='submit') 
+              form(id='dropdown-logout' class= 'dropdown-item' action='/users/logout' method='post' )
+                button(id='logout' type='submit')
                   a() Logout
         else
           span(class='navbar-button')
             a(class='navbar-link' href='/users/login') Login
-            span(class='slash')  / 
+            span(class='slash')  /
             a(class='navbar-link' href='/users/sign-up') Register
     block content
     block footer
